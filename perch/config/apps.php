@@ -1,3 +1,3 @@
 <?php
-	$apps_list = [ 
+	$apps_list = [
 	];
