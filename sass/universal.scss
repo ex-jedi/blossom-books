@@ -5,7 +5,7 @@
 
 //********** Imports **********
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@use 'bits' as *; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Wrappers **

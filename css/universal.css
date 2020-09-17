@@ -1,0 +1,69 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hide-outline .no-outline {
+  outline: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.form-identification-number {
+  overflow: hidden;
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.show-on-focus {
+  position: absolute;
+  color: #252525;
+  background-color: white;
+  padding: 10px;
+  font-size: 1.25rem;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0.5rem 0 0 0.5rem;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  text-decoration: none;
+}
+.show-on-focus:focus {
+  z-index: 20;
+  width: auto;
+  height: auto;
+  clip: auto;
+}
+/*# sourceMappingURL=universal.css.map */
