@@ -1,0 +1,226 @@
+//*==============================================================================
+//** Colour, font stacks, media queries, that kind of thing  **
+//*==============================================================================
+
+//*=========================================
+//** Layout **
+//*=========================================
+
+//* Main Grid Mixin
+@mixin main-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "h h h h"
+    "m m m m"
+    "f f f f";
+  grid-gap: $grid-gap;
+}
+
+//* Flex Mixin
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+//* Layout Variables
+$grid-gap: 0 1rem;
+
+//*=========================================
+//** Typography **
+//*=========================================
+
+//* Font Stacks
+@mixin main-font-stack {
+  font-family: "baskerville-poster-pt", serif;
+  font-weight: 400;
+}
+
+@mixin utility-font-stack {
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 400;
+}
+
+//********** Sizing & spacing **********
+
+//* Header
+$header-spacing: 5rem;
+$header-spacing-large: 10rem;
+
+//* Headings
+
+//Sizing
+$h1-size: 2.5rem;
+$h2-size: 1.5rem;
+$h3-size: 1rem;
+
+//Spacing
+$h1-spacing-large: 5rem;
+$h1-spacing: 2.5rem;
+$h2-spacing: 1.5rem;
+$h3-spacing: 1rem;
+
+//* Sections
+
+$section-spacing-extra-large: 20rem;
+$section-spacing-large: 15rem;
+$section-spacing-medium: 10rem;
+$section-spacing-small: 5rem;
+
+//* Paragraphs
+
+//Font sizing
+$font-size-large: 2.5rem;
+$font-size: 1.25rem;
+$font-size-small: 1rem;
+
+//Spacing
+$paragraph-spacing-extra-large: 3rem;
+$paragraph-spacing-large: 1.5rem;
+$paragraph-spacing-medium: 1rem;
+$paragraph-spacing-small: 0.5rem;
+
+//* Forms
+
+//Sizing
+$input-font-size: $font-size-small;
+
+//Spacing
+$input-spacing: 1rem;
+
+//********** Links **********
+
+//* Fancy Link Underline
+@mixin link-underline($colour) {
+  transition: all $transition-one;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+
+  &:hover,
+  &focus {
+    border-bottom: 3px solid $colour;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    outline: 0;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+}
+
+//* Fancy Link Underline With Visited styles
+@mixin link-underline-visited($colour) {
+  transition: all $transition-one;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+
+  @include breakpoint(800) {
+    border-bottom: 3px solid transparent;
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &focus {
+    border-bottom: 3px solid $colour;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    outline: 0;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+
+  &:visited {
+    border-bottom: 3px solid $link-visited;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+}
+
+//*=========================================
+//** Colours  **
+//*=========================================
+
+//Main brand Colours
+$light-beige: rgb(233, 227, 226);
+$dark-beige: rgb(195, 179, 177);
+$dark-grey: rgb(47, 47, 47);
+$white: rgb(255, 255, 255);
+
+//Main Font Colours
+$dark-font-colour: #252525;
+$light-font-colour: $white;
+$link-colour: #3c3cf6;
+$link-visited: #8608fb;
+
+//Background Colours
+$main-background-colour: $light-beige;
+$accent-background-colour: $dark-beige;
+$dark-background-colour: $dark-grey;
+$light-background-colour: $white;
+$light-background-gradient: linear-gradient(
+  180deg,
+  rgba(233, 228, 227, 1) 0%,
+  rgba(195, 179, 177, 1) 100%
+);
+
+//*=========================================
+//** Effects and Animation  **
+//*=========================================
+
+//********** Animation Stagger **********
+
+@mixin stagger-anim-delay($elem, $initial-delay, $stagger-delay) {
+  @for $i from 1 through $elem {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+
+//********** Transition Timings**********
+
+$transition-one: 0.3s ease-in-out 0s;
+
+//*=========================================
+//** Media Queries   **
+//*=========================================
+
+//********** Width **********
+
+//TODO: Change snippets to match below
+@mixin width-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+//********** Width and Orientation **********
+
+@mixin width-orientation-breakpoint($point, $orientation: portrait) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) and (orientation: $orientation) {
+    @content;
+  }
+}
+
+//* Alternative Media Queries
+//TODO: You must Choose!
+
+// @mixin breakpoint($point) {
+//   @if $point == 2000 {
+//     @media (max-width: 2000) {
+//       @content;
+//     }
+//   }
+// }
