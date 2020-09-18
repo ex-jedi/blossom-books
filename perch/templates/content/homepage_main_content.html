@@ -1,0 +1,30 @@
+<p class="homepage-paragraph-one">
+  <perch:content id="homepageParagraphOne" type="text" label="Paragraph One"  required divider-before="Homepage Text">
+</p>
+
+<img class="homepage-main-image" src="<perch:content id="homepageMainImage" type="image" width="2000" label="Main Image" order="1" divider-before="Homepage Image">" alt="<perch:content id="alt" type="text" label="Image description" order="2">"
+sizes="100vw"
+srcset="<perch:content type="image" id="homepageMainImage" width="2000" > 2000w,
+<perch:content type="image" id="homepageMainImage" width="1700" > 1700w,
+<perch:content type="image" id="homepageMainImage" width="1400" > 1400w,
+<perch:content type="image" id="homepageMainImage" width="900" > 900w,
+<perch:content type="image" id="homepageMainImage" width="600" > 600w,
+<perch:content type="image" id="homepageMainImage" width="400" > 400w" >
+
+<p class="homepage-paragraph-two">
+  <perch:content id="homepageParagraphTwo" type="textarea" label="Paragraph Two" required>
+</p>
+
+<p class="homepage-paragraph-three">
+  <perch:content id="homepageParagraphThree" type="textarea" label="Paragraph Three" required>
+</p>
+
+<div class="paragraph-four-wrapper">
+  <p class="homepage-paragraph-four">
+    <perch:content id="homepageParagraphFour" type="textarea" label="Paragraph Four" required>
+  </p>
+</div>
+
+<p class="find-out-more-box-paragraph">
+  <perch:content id="findOutMoreText" type="text" label="Paragraph Five - Box"  required  html>
+</p>

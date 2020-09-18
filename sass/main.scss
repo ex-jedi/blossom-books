@@ -34,6 +34,7 @@ body {
   position: relative;
   min-width: 320px;
   max-width: 2000px;
+  @include main-font-stack;
 }
 
 // *=========================================
@@ -66,7 +67,7 @@ img {
 .main-header {
   background-color: $background-colour-main;
   margin: 0;
-  @include main-font-stack;
+
   position: relative;
   font-size: $font-size-main;
 }
@@ -116,6 +117,7 @@ img {
 // *=========================================
 .main-content {
   background-color: $background-colour-main;
+  color: $font-colour-main;
   font-size: $font-size-main;
   margin: 0;
 }
