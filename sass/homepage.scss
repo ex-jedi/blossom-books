@@ -3,6 +3,14 @@
 //*=========================================
 //** Main **
 //*=========================================
+//********** Image **********
+
+.homepage-main-image {
+  margin-bottom: $section-spacing-small;
+}
+
+//********** Text **********
+
 .homepage-main-content {
   @include flex(column);
   align-items: center;
