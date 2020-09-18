@@ -1,10 +1,7 @@
 <footer class="main-footer">
 	<div class="footer-social-media">
 		<a href="#" class="footer-social-media-link">
-			<img class="footer-social-media-icon" src="/images/instagram-icon.svg">
-		</a>
-		<a href="#" class="footer-social-media-link">
-			<img class="footer-social-media-icon" src="/images/twitter-icon.svg">
+			<!-- <img class="footer-social-media-icon" src="/images/instagram-icon.svg"> -->
 		</a>
 	</div>
 	<div class="footer-legal">

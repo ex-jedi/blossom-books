@@ -68,6 +68,7 @@ img {
   margin: 0;
   @include main-font-stack;
   position: relative;
+  font-size: $font-size-main;
 }
 
 .main-logo {
@@ -83,7 +84,6 @@ img {
 }
 
 .header-intro-text {
-  font-size: $font-size-main;
   color: $font-colour-main;
 }
 // *=========================================
@@ -104,7 +104,6 @@ img {
   text-decoration: none;
   text-transform: lowercase;
   color: $font-colour-two;
-  font-size: $font-size-main;
   margin: $paragraph-spacing-large 0;
 }
 
@@ -117,6 +116,7 @@ img {
 // *=========================================
 .main-content {
   background-color: $background-colour-main;
+  font-size: $font-size-main;
   margin: 0;
 }
 
