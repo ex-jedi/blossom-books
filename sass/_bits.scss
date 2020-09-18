@@ -32,8 +32,9 @@ $grid-gap: 0 1rem;
 
 //* Font Stacks
 @mixin main-font-stack {
-  font-family: 'baskerville-poster-pt', serif;
-  font-weight: 400;
+  font-family: 'futura-pt', sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 //********** Sizing & spacing **********
@@ -142,8 +143,8 @@ $input-spacing: 1rem;
 
 //Main brand Colours
 $background-colour-main: #f4f1f0;
-$background-colour-two: #756c91;
-$background-colour-three: #6c9184;
+$background-colour-two: #6c9184;
+$background-colour-three: #756c91;
 
 //Main Font Colours
 $font-colour-main: #756c91;
@@ -154,9 +155,6 @@ $font-colour-four: #918f73;
 $light-font-colour: #f4f1f0;
 $link-colour: #3c3cf6;
 $link-visited: #8608fb;
-
-//Background Colours
-$main-background-colour: $light-beige;
 
 //*=========================================
 //** Effects and Animation  **

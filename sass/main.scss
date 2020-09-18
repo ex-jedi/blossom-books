@@ -55,6 +55,9 @@ img {
 // *=========================================
 // ** Header  **
 // *=========================================
+.main-header {
+  @include main-font-stack;
+}
 
 // *=========================================
 // ** Main Nav  **
@@ -106,8 +109,8 @@ select {
 //*Skip to content link
 .show-on-focus {
   position: absolute;
-  color: $dark-font-colour;
-  background-color: $light-background-colour;
+  color: $font-colour-main;
+  background-color: $background-colour-main;
   padding: 10px;
   font-size: $font-size;
   top: 0;

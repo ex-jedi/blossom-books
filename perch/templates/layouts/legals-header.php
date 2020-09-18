@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/legals.css">
 	<!-- Typekit -->
-	<script src="https://use.typekit.net/kbq2qtf.js"></script>
+	<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<!-- Perch Meta -->
 	<?php
