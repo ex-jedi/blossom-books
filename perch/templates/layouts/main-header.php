@@ -34,6 +34,7 @@
 <?php perch_content('Analytics'); ?>
 
 <!-- Cookie Warning -->
+<!-- TODO: Move to footer -->
 <?php perch_content("Cookie Warning"); ?>
 
 
@@ -43,7 +44,9 @@
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>
+
 					<?php perch_pages_navigation(array(
 							'hide-extensions' => true,
 					)); ?>
+					<?php perch_content("Main Logo"); ?>
 			</header>
