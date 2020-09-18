@@ -1,1 +1,13 @@
 @use 'bits' as *;
+
+//*=========================================
+//** Main **
+//*=========================================
+.homepage-main-content {
+  @include flex(column);
+  align-items: center;
+}
+
+.homepage-reduced-width-paragraph {
+  padding: 0 $section-spacing-medium;
+}
