@@ -63,18 +63,32 @@ img {
   background-color: $background-colour-main;
   margin: 0;
   @include main-font-stack;
+  position: relative;
+}
+
+.main-logo {
+  width: 300px;
+  margin: 0 auto;
 }
 
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 
-#main-nav-trigger {
-  display: none;
+.main-nav {
+  width: fit-content;
+  // padding: 50px 0;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  margin-right: -0.5rem;
+  transform: rotate(-180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.main-nav-li {
-  list-style-type: none;
+#main-nav-trigger {
+  display: none;
 }
 
 // *=========================================
