@@ -28,6 +28,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 // *=========================================
 // ** Content container and block **
 // *=========================================
@@ -56,12 +60,22 @@ img {
 // ** Header  **
 // *=========================================
 .main-header {
+  background-color: $background-colour-main;
+  margin: 0;
   @include main-font-stack;
 }
 
 // *=========================================
 // ** Main Nav  **
 // *=========================================
+
+#main-nav-trigger {
+  display: none;
+}
+
+.main-nav-li {
+  list-style-type: none;
+}
 
 // *=========================================
 // ** Body **
