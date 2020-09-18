@@ -11,9 +11,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    "h h h h"
-    "m m m m"
-    "f f f f";
+    'h h h h'
+    'm m m m'
+    'f f f f';
   grid-gap: $grid-gap;
 }
 
@@ -32,12 +32,7 @@ $grid-gap: 0 1rem;
 
 //* Font Stacks
 @mixin main-font-stack {
-  font-family: "baskerville-poster-pt", serif;
-  font-weight: 400;
-}
-
-@mixin utility-font-stack {
-  font-family: "calluna-sans", sans-serif;
+  font-family: 'baskerville-poster-pt', serif;
   font-weight: 400;
 }
 
@@ -146,10 +141,6 @@ $input-spacing: 1rem;
 //*=========================================
 
 //Main brand Colours
-$light-beige: rgb(233, 227, 226);
-$dark-beige: rgb(195, 179, 177);
-$dark-grey: rgb(47, 47, 47);
-$white: rgb(255, 255, 255);
 
 //Main Font Colours
 $dark-font-colour: #252525;
@@ -159,29 +150,10 @@ $link-visited: #8608fb;
 
 //Background Colours
 $main-background-colour: $light-beige;
-$accent-background-colour: $dark-beige;
-$dark-background-colour: $dark-grey;
-$light-background-colour: $white;
-$light-background-gradient: linear-gradient(
-  180deg,
-  rgba(233, 228, 227, 1) 0%,
-  rgba(195, 179, 177, 1) 100%
-);
 
 //*=========================================
 //** Effects and Animation  **
 //*=========================================
-
-//********** Animation Stagger **********
-
-@mixin stagger-anim-delay($elem, $initial-delay, $stagger-delay) {
-  @for $i from 1 through $elem {
-    &:nth-of-type(#{$i}) {
-      animation-delay: $initial-delay + $stagger-delay * $i;
-    }
-    $i: $i - 1;
-  }
-}
 
 //********** Transition Timings**********
 
@@ -213,14 +185,3 @@ $transition-one: 0.3s ease-in-out 0s;
     @content;
   }
 }
-
-//* Alternative Media Queries
-//TODO: You must Choose!
-
-// @mixin breakpoint($point) {
-//   @if $point == 2000 {
-//     @media (max-width: 2000) {
-//       @content;
-//     }
-//   }
-// }
