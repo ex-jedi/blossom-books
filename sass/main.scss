@@ -77,14 +77,18 @@ img {
 
 .main-nav {
   width: fit-content;
-  // padding: 50px 0;
   writing-mode: vertical-rl;
   text-orientation: sideways;
-  margin-right: -0.5rem;
   transform: rotate(-180deg);
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.main-nav-link {
+  text-decoration: none;
+  text-transform: lowercase;
+  color: $font-colour-two;
 }
 
 #main-nav-trigger {
