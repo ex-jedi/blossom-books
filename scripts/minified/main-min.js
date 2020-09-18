@@ -1,0 +1,2 @@
+const cookieBanner=document.querySelector(".cookie-warning-wrapper"),cookieWarningButton=document.querySelector(".cookie-warning-button");"shown"!==localStorage.getItem("cookieSeen")?cookieBanner.classList.add("show-cookie-warning"):cookieBanner.style.display="none",cookieWarningButton.addEventListener("click",()=>{localStorage.setItem("cookieSeen","shown"),cookieBanner.classList.remove("show-cookie-warning"),cookieBanner.addEventListener("transitionend",()=>{cookieBanner.style.display="none"})},{once:!0});
+//# sourceMappingURL=main-min.js.map
