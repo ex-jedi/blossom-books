@@ -17,7 +17,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
-  font-size: 20px;
+  font-size: 10px;
   overflow-x: hidden;
 }
 
@@ -82,13 +82,15 @@ img {
   transform: rotate(-180deg);
   position: absolute;
   top: 0;
-  left: 0;
+  left: $paragraph-spacing-large;
 }
 
 .main-nav-link {
   text-decoration: none;
   text-transform: lowercase;
   color: $font-colour-two;
+  font-size: $font-size-main;
+  margin: $paragraph-spacing-large 0;
 }
 
 #main-nav-trigger {
@@ -144,7 +146,7 @@ select {
   color: $font-colour-main;
   background-color: $background-colour-main;
   padding: 10px;
-  font-size: $font-size;
+  font-size: $font-size-main;
   top: 0;
   left: 0;
   width: 1px;

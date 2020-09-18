@@ -1,7 +1,6 @@
 #General Stuff
 node_modules
 
-
 #Perch Files
 perch/resources/
 perch/addons/apps/perch_blog/import_data/
