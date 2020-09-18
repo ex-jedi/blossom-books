@@ -11,3 +11,21 @@
 .homepage-reduced-width-paragraph {
   padding: 0 $section-spacing-medium;
 }
+
+.image-paragraph-wrapper {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 $section-spacing-medium;
+
+  svg {
+    flex: 0 1 auto;
+    width: 20%;
+  }
+}
+
+.image-paragraph {
+  margin-bottom: 0;
+  flex: 0 1 auto;
+  width: 50%;
+}
