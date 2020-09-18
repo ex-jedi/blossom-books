@@ -3,8 +3,8 @@
 <main class="main-content homepage-main-content" id="main-content">
 <h1>Ahoy</h1>
 </main>
-<?php perch_layout('universal-footer'); ?>
-<?php perch_layout('universal-footer-end-js'); ?>
+<?php perch_layout('main-footer'); ?>
+<?php perch_layout('main-footer-end-js'); ?>
 <!-- TODO: Remove debug -->
 <!-- <?php PerchUtil::output_debug(); ?> -->
 
