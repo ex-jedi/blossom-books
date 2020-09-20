@@ -94,23 +94,30 @@
 //* Section Two Left aligned paragraph, to make room for absolutely positioned find out more box
 //? TODO: Is there a better way set this box to the right of the adjacent paragraphs?
 
+.section-two-flex-wrapper {
+  @include flex(row);
+  justify-content: space-between;
+}
+
+.flex-inner-wrapper {
+  @include flex(column);
+  align-items: flex-start;
+  flex: 0 1 auto;
+  width: 53%;
+}
+
 .section-two-box-paragraph {
+  flex: 0 0 auto;
   height: 300px;
   width: 300px;
   border: 4px solid $font-colour-light;
-  position: absolute;
-  right: $section-spacing-medium;
-  top: 500px;
+  margin-top: $section-spacing-small;
 }
 
 .left-aligned-paragraphs {
-  text-align: left;
-  margin-left: 0;
-  padding: 0;
-  align-self: flex-start;
+  margin: 0 0 $section-spacing-medium;
 }
 
 .section-two-paragraphs {
   text-align: center;
-  width: 60%;
 }
