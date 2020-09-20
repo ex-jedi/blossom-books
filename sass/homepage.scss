@@ -3,6 +3,7 @@
 //*=========================================
 //** Header **
 //*=========================================
+
 .main-logo {
   width: 300px;
   margin: 0 auto;
@@ -23,6 +24,14 @@
 //*=========================================
 //** Main **
 //*=========================================
+
+//********** Wrappers **********
+
+.homepage-section {
+  @include flex(column);
+  align-items: center;
+  padding: $section-spacing-small $section-spacing-medium;
+}
 //********** Image **********
 
 .homepage-main-image {
@@ -31,24 +40,18 @@
 
 //********** Text **********
 
-.homepage-main-content {
-  @include flex(column);
-  align-items: center;
-}
-
 .homepage-paragraphs {
   margin: 0 auto $section-spacing-small;
 }
 
-.homepage-reduced-width-paragraph {
-  padding: 0 $section-spacing-medium;
-}
+// .homepage-reduced-width-paragraph {
+//   padding: 0 $section-spacing-medium;
+// }
 
 .image-paragraph-wrapper {
   @include flex(row);
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 $section-spacing-medium;
   margin-bottom: $section-spacing-small;
 
   svg {
@@ -68,6 +71,7 @@
   height: 280px;
   width: 280px;
   padding: $font-size-small;
+  margin: 0;
   text-align: center;
 }
 
