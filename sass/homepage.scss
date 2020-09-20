@@ -103,7 +103,7 @@
   @include flex(column);
   align-items: flex-start;
   flex: 0 1 auto;
-  width: 53%;
+  width: 60%;
 }
 
 .section-two-box-paragraph {
@@ -120,4 +120,8 @@
 
 .section-two-paragraphs {
   text-align: center;
+}
+
+.contact-call-to-action-paragraph {
+  width: 60%;
 }
