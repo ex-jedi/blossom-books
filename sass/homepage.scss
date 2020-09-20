@@ -32,6 +32,17 @@
   align-items: center;
   padding: $section-spacing-small $section-spacing-medium;
 }
+
+.homepage-section-one {
+  background-color: $background-colour-main;
+  color: $font-colour-main;
+}
+
+.homepage-section-two {
+  background-color: $background-colour-two;
+  color: $font-colour-light;
+}
+
 //********** Image **********
 
 .homepage-main-image {
