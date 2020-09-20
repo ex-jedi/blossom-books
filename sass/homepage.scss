@@ -1,6 +1,26 @@
 @use 'bits' as *;
 
 //*=========================================
+//** Header **
+//*=========================================
+.main-logo {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.header-image-text-wrapper {
+  @include flex(row);
+  align-items: flex-end;
+  margin: $section-spacing-extra-small auto 0 $section-spacing-medium;
+  padding-right: $section-spacing-medium;
+}
+
+.header-intro-text {
+  color: $font-colour-main;
+  margin: 0;
+}
+
+//*=========================================
 //** Main **
 //*=========================================
 //********** Image **********
@@ -16,6 +36,10 @@
   align-items: center;
 }
 
+.homepage-paragraphs {
+  margin: 0 auto $section-spacing-small;
+}
+
 .homepage-reduced-width-paragraph {
   padding: 0 $section-spacing-medium;
 }
@@ -25,6 +49,7 @@
   justify-content: space-between;
   align-items: flex-end;
   padding: 0 $section-spacing-medium;
+  margin-bottom: $section-spacing-small;
 
   svg {
     flex: 0 1 auto;
@@ -33,7 +58,15 @@
 }
 
 .image-paragraph {
-  margin-bottom: 0;
+  margin: 0;
   flex: 0 1 auto;
   width: 50%;
+}
+
+.find-out-more-box-paragraph {
+  border: 4px solid $font-colour-main;
+  height: 280px;
+  width: 280px;
+  padding: $font-size-small;
+  text-align: center;
 }
