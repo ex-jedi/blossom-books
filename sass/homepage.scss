@@ -37,6 +37,7 @@
 .homepage-section-one {
   background-color: $background-colour-main;
   color: $font-colour-main;
+  padding: $section-spacing-small 0;
 }
 
 .homepage-section-two {
@@ -56,11 +57,15 @@
   margin: 0 auto $section-spacing-small;
 }
 
+.section-one-paragraph {
+  margin: 0 $section-spacing-medium $section-spacing-small;
+}
+
 .image-paragraph-wrapper {
   @include flex(row);
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: $section-spacing-small;
+  margin: 0 $section-spacing-medium $section-spacing-small;
 
   svg {
     flex: 0 1 auto;
