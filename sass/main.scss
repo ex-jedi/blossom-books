@@ -152,7 +152,8 @@ img {
   border: 0;
   line-height: 1;
   resize: none;
-
+  line-height: 4.2rem;
+  background-attachment: local;
   background-image: linear-gradient(
       to right,
       $background-colour-main 0,
@@ -161,9 +162,10 @@ img {
     linear-gradient(to left, $background-colour-main 0, transparent 0),
     repeating-linear-gradient(
       $background-colour-main,
-      $background-colour-main 1.8rem,
+      // Leave
+      $background-colour-main 4rem,
       $font-colour-main 1.8rem,
-      $font-colour-main 1.85rem,
+      $font-colour-main 4.1rem,
       $background-colour-main 1.85rem
     );
 }
