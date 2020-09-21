@@ -280,16 +280,35 @@ select {
 // *========================================
 
 .main-footer {
+  @include flex(column);
+  align-items: center;
   @include main-font-stack;
   font-size: $font-size-main;
   background-color: $background-colour-three;
-  padding: $section-spacing-medium $section-spacing-extra-large;
+  padding: $section-spacing-medium 30%;
   color: $font-colour-light;
 
   a {
     text-decoration: none;
     color: inherit;
   }
+}
+
+.footer-social-media-icon {
+  width: 50px;
+  margin: 0 auto $section-spacing-medium;
+}
+
+.footer-privacy,
+.footer-terms,
+.footer-copyright {
+  margin: 0 auto $section-spacing-extra-small;
+  text-align: center;
+}
+
+.footer-credit {
+  margin: 0 auto;
+  text-align: center;
 }
 
 //*=========================================

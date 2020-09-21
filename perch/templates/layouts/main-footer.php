@@ -9,7 +9,7 @@
 		<p class="footer-copyright" >
 			&copy; <?php echo date("Y"); ?> Blossom Books
 		</p>
-		<p>
+		<p class="footer-credit">
 			Web design & development, brand design & illustration by <a href="" class="promo-link">phoenix & phoenix</a>
 		</p>
 </footer>
