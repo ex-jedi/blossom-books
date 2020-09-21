@@ -108,11 +108,14 @@ img {
 // *=========================================
 
 //* Inherit fonts for inputs and buttons
-input,
-button,
-textarea,
-select {
-  font: inherit;
+
+.general-contact-form-section {
+  @include flex(column);
+  align-items: center;
+  padding: $section-spacing-small $section-spacing-medium;
+  position: relative;
+  background-color: $background-colour-main;
+  color: $font-colour-main;
 }
 
 //********** Honeypot **********
@@ -122,6 +125,14 @@ select {
   position: absolute;
   z-index: -10;
   opacity: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
 }
 
 // *=========================================
