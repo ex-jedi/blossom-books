@@ -49,10 +49,5 @@
 							'hide-extensions' => true,
 					)); ?>
 					<?php perch_content("Main Logo"); ?>
-					<div class="header-image-text-wrapper">
-						<?php perch_content("Header Main Image"); ?>
-						<p class="header-intro-text">
-							<?php perch_content("Header Intro Text"); ?>
-						</p>
-					</div>
+					<?php perch_content("Main Header Content"); ?>
 			</header>
