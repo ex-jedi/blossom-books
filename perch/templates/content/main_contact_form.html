@@ -28,14 +28,7 @@
           </p>
 
           <div class="general-contact-form-input-wrapper radio-buttons-wrapper">
-            <div class="radio-input-wrapper">
-              <perch:input id="emailConsent"  type="radio" value="yes">
-              <label for="emailConsent">Yes&#44; please</label>
-            </div>
-            <div class="radio-input-wrapper">
-              <perch:input id="emailConsent"  type="radio" value="no">
-              <label for="emailConsent">No thanks</label>
-            </div>
+            <perch:input id="emailConsent" type="radio" label="Email Consent" options="Yes&#44; please|yes, No thanks|no" wrap="div.radio-input-wrapper" required></perch:input>
           </div>
 
           <div class="general-contact-form-input-wrapper submit-wrapper">
