@@ -22,3 +22,22 @@ cookieWarningButton.addEventListener(
   },
   { once: true }
 );
+
+// *=========================================
+// ** Main  **
+// *=========================================
+
+// ********** Hiding Text area label on scroll **********
+const textAreaLabel = document.querySelector('.text-area-label');
+const textAreaInput = document.querySelector('.text-area-input');
+
+function textAreaScrollHandler() {
+  if (textAreaInput.scrollTop > 3) {
+    textAreaLabel.classList.add('fade-out');
+  } else {
+    textAreaLabel.classList.remove('fade-out');
+  }
+  // textAreaLabel.style.display = 'none';
+}
+
+textAreaInput.addEventListener('scroll', textAreaScrollHandler);

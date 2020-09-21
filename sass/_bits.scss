@@ -163,6 +163,10 @@ $link-visited: #8608fb;
 
 $transition-one: 0.3s ease-in-out 0s;
 
+//********** Simple Fade Out **********
+.fade-out {
+  opacity: 0;
+}
 //*=========================================
 //** Media Queries   **
 //*=========================================

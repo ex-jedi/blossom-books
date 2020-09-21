@@ -151,6 +151,7 @@ img {
 .text-area-label {
   position: absolute;
   left: $section-spacing-medium;
+  transition: all 0.2s ease-out;
 }
 
 .text-area-input {
