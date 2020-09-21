@@ -250,6 +250,12 @@ input[type='radio']:checked {
   background-color: $background-colour-main;
   border: 4px solid $font-colour-main;
   text-transform: uppercase;
+  transition: $transition-one;
+
+  &:hover {
+    color: $font-colour-light;
+    background-color: $background-colour-three;
+  }
 }
 
 //********** Honeypot **********
