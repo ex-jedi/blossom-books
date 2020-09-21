@@ -1,19 +1,17 @@
 <footer class="main-footer">
-	<div class="footer-social-media">
-		<a href="#" class="footer-social-media-link">
-			<!-- <img class="footer-social-media-icon" src="/images/instagram-icon.svg"> -->
-		</a>
-	</div>
-	<div class="footer-legal">
-		<p class="copyright" >&copy; <?php echo date("Y"); ?> XXXX</p>
-		<p class="privacy"><a href="/privacy-and-cookie-policy.php">PRIVACY &amp; COOKIE PRIVACY POLICY</a></p>
-		<p class="terms"><a href="/terms.php">TERMS OF USE</a></p>
-	</div>
-	<div class="footer-promo">
-		<p>
-			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="" class="promo-link">phoenix & phoenix</a>
+		<?php perch_content("Footer Social Media"); ?>
+		<p class="footer-privacy">
+			<a href="/privacy-and-cookie-policy.php">Privacy &amp; cookie policy</a>
 		</p>
-	</div>
+		<p class="footer-terms">
+			<a href="/terms.php">Terms of use</a>
+		</p>
+		<p class="footer-copyright" >
+			&copy; <?php echo date("Y"); ?> Blossom Books
+		</p>
+		<p>
+			Web design & development, brand design & illustration by <a href="" class="promo-link">phoenix & phoenix</a>
+		</p>
 </footer>
 </div> <!-- wrapper div -->
 <!-- end js files  -->

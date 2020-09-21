@@ -277,7 +277,20 @@ select {
 
 // *=========================================
 // ** Footer  **
-// *=========================================
+// *========================================
+
+.main-footer {
+  @include main-font-stack;
+  font-size: $font-size-main;
+  background-color: $background-colour-three;
+  padding: $section-spacing-medium $section-spacing-extra-large;
+  color: $font-colour-light;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 
 //*=========================================
 //** Utility & Accessibility  **
