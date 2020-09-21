@@ -118,6 +118,32 @@ img {
   color: $font-colour-main;
 }
 
+.general-contact-form {
+  @include flex(column);
+  align-items: center;
+}
+.general-contact-form-input-wrapper {
+  @include flex(row);
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.general-contact-form-label {
+  // width: $section-spacing-large;
+  flex: 0 1 auto;
+  font-weight: 700;
+  vertical-align: bottom;
+  line-height: 0.7;
+}
+
+.general-contact-form-input {
+  flex: 1 1 auto;
+  background-color: $background-colour-main;
+  border: 0;
+  // border-bottom: 1px solid $dark-font-colour;
+}
+
 //********** Honeypot **********
 
 .form-identification-number {
