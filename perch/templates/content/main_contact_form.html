@@ -23,20 +23,22 @@
               <perch:input class="general-contact-form-input text-area-input" type="textarea" rows="3" id="message" label="Message" required>
               <perch:error class="form-error" for="message" type="required">Please add a message</perch:error>
           </div>
-          <div class="general-contact-form-input-wrapper checkbox-div">
-            <perch:label class="mailing-list-check" for="mailingListCheck">Please tick this box if you would like to receive occasional updates on my work via email.</perch:label>
-            <perch:input class="mailing-list-check-checkbox" id="mailingListCheck" type="checkbox" label="Mailing List Consent" value="Yes">
+          <p class="contact-form-check-text">
+            <perch:content id="contactFormCheckText" type="textarea" label="Contact Form Consent Check" size="s"  required>
+          </p>
+
+          <div class="general-contact-form-input-wrapper radio-buttons-wrapper">
+
+
+            <perch:input id="emailConsent" type="radio" label="Email Consent" options="Yes&#44; please|yes, No thanks|no" wrap="div.radio-input-wrapper" required>
           </div>
-          <div class="general-contact-form-input-wrapper checkbox-div consent-checkbox-div">
-            <perch:label class="contact-form-consent" for="contactListConsent">By checking this box you accept the <a class="contact-consent-link"  target="_blank" title="Opens in new window" href="/privacy-and-cookie-policy">Kasper Zak Privacy and Cookie Policy</a></perch:label>
-            <perch:input class="mailing-list-check-checkbox contact-form-consent" id="contactListConsent" type="checkbox" label="Contact Form Consent" value="Yes" required>
-          </div>
+
           <div class="general-contact-form-input-wrapper submit-wrapper">
             <perch:input class="submit" type="submit" id="submit" value="Send">
           </div>
           <perch:success>
               <div class="success">
-                  <perch:content id="success" type="textarea" label="Thank you message" html="true" editor="redactor" />
+                  <perch:content id="success" type="textarea" label="Thank you message" size="s" />
               </div>
           </perch:success>
       </perch:form>

@@ -121,6 +121,7 @@ img {
 .general-contact-form {
   @include flex(column);
   align-items: center;
+  width: 100%;
 }
 .general-contact-form-input-wrapper {
   @include flex(row);
@@ -161,6 +162,7 @@ img {
   resize: none;
   line-height: 4.2rem;
   background-attachment: local;
+  //TODO: Improve text spacing in text area
   background-image: linear-gradient(
       to right,
       $background-colour-main 0,
@@ -177,6 +179,29 @@ img {
       $background-colour-main 1.85rem
     );
 }
+
+.contact-form-check-text {
+  margin: 0 auto $paragraph-spacing-large;
+}
+.radio-buttons-wrapper {
+  @include flex(row);
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.radio-input-wrapper {
+  @include flex(row);
+  align-items: center;
+
+  label {
+    margin-left: 4rem;
+  }
+}
+
+// input[type='radio'] {
+//   position: absolute;
+//   visibility: hidden;
+// }
 
 //********** Honeypot **********
 
