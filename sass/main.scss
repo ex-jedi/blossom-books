@@ -148,7 +148,13 @@ img {
   align-items: flex-start;
 }
 
+.text-area-label {
+  position: absolute;
+  left: $section-spacing-medium;
+}
+
 .text-area-input {
+  text-indent: $section-spacing-small;
   border: 0;
   line-height: 1;
   resize: none;
