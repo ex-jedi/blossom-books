@@ -125,12 +125,12 @@ img {
 .general-contact-form-input-wrapper {
   @include flex(row);
   width: 100%;
-  justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
+  margin-bottom: $section-spacing-small;
 }
 
 .general-contact-form-label {
-  // width: $section-spacing-large;
+  width: $section-spacing-small;
   flex: 0 1 auto;
   font-weight: 700;
   vertical-align: bottom;
@@ -141,7 +141,31 @@ img {
   flex: 1 1 auto;
   background-color: $background-colour-main;
   border: 0;
-  // border-bottom: 1px solid $dark-font-colour;
+  border-bottom: 4px solid $font-colour-main;
+}
+
+.text-area-input-wrapper {
+  align-items: flex-start;
+}
+
+.text-area-input {
+  border: 0;
+  line-height: 1;
+  resize: none;
+
+  background-image: linear-gradient(
+      to right,
+      $background-colour-main 0,
+      transparent 0
+    ),
+    linear-gradient(to left, $background-colour-main 0, transparent 0),
+    repeating-linear-gradient(
+      $background-colour-main,
+      $background-colour-main 1.8rem,
+      $font-colour-main 1.8rem,
+      $font-colour-main 1.85rem,
+      $background-colour-main 1.85rem
+    );
 }
 
 //********** Honeypot **********
