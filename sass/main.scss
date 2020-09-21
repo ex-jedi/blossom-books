@@ -68,7 +68,7 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 // *=========================================
@@ -82,14 +82,14 @@ img {
   transform: rotate(-180deg);
   position: absolute;
   top: 0;
-  left: $paragraph-spacing-large;
+  left: $paragraph-spacing-medium;
 }
 
 .main-nav-link {
   text-decoration: none;
   text-transform: lowercase;
   color: $font-colour-two;
-  margin: $paragraph-spacing-large 0;
+  margin: $paragraph-spacing-medium 0;
 }
 
 #main-nav-trigger {
