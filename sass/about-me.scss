@@ -8,7 +8,7 @@
   margin-bottom: $h2-spacing;
 }
 .main-header {
-  padding: 0 $section-spacing-very-large $section-spacing-small;
+  padding: 0 $section-spacing-very-large;
 }
 
 .about-me-page-heading {
@@ -19,4 +19,21 @@
 
 .about-me-header-image {
   margin: 0 auto;
+}
+
+//*=========================================
+//** Main **
+//*=========================================
+
+.about-me-section {
+  color: $font-colour-two;
+  padding: $section-spacing-small $section-spacing-very-large;
+
+  p {
+    margin: 0 auto $paragraph-spacing-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }

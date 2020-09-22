@@ -7,7 +7,7 @@
 }
 
 .main-header {
-  padding: 0 35rem 20rem;
+  padding: 0 35rem;
 }
 
 .about-me-page-heading {
@@ -20,4 +20,15 @@
 
 .about-me-header-image {
   margin: 0 auto;
+}
+
+.about-me-section {
+  color: #6c9184;
+  padding: 20rem 35rem;
+}
+.about-me-section p {
+  margin: 0 auto 5rem;
+}
+.about-me-section p:last-of-type {
+  margin-bottom: 0;
 }
