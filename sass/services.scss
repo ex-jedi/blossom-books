@@ -13,4 +13,30 @@
   color: $background-colour-three;
   margin: 0 auto;
   width: fit-content;
+  font-weight: 700;
+}
+
+.services-section {
+  padding: $section-spacing-small $section-spacing-extra-large;
+
+  p {
+    margin: 0 auto $paragraph-spacing-medium;
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: $font-colour-two;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  strong {
+    font-weight: 800;
+    color: $font-colour-main;
+  }
 }

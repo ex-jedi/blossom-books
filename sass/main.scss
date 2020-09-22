@@ -70,9 +70,15 @@ img {
   font-size: $font-size-main;
 }
 
+.main-logo-wrapper {
+  @include flex(row);
+  justify-content: center;
+}
+
 .main-logo {
   width: 300px;
-  margin: 0 auto;
+  height: auto;
+  margin: 0;
 }
 
 // *=========================================
@@ -80,7 +86,9 @@ img {
 // *=========================================
 
 .main-nav {
-  width: fit-content;
+  @include flex(row);
+  justify-content: flex-end;
+  // height: 800px;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   transform: rotate(-180deg);
@@ -93,7 +101,7 @@ img {
   text-decoration: none;
   text-transform: lowercase;
   color: $font-colour-two;
-  margin: $paragraph-spacing-medium 0;
+  margin: 0 0 $paragraph-spacing-medium;
 }
 
 #main-nav-trigger {
