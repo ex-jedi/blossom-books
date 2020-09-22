@@ -1,0 +1,407 @@
+// *=======================================================================================
+// ** Styles for all pages  **
+// ** Reset based on https://hankchizljaw.com/wrote/a-modern-css-reset/  **
+// *=======================================================================================
+
+//********** Imports **********
+
+@use 'bits' as *; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Wrappers **
+// *=========================================
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 10px;
+  overflow-x: hidden;
+
+  @include styled-scrollbar(
+    1rem,
+    $background-colour-three,
+    $background-colour-main,
+    $background-colour-main
+  );
+}
+
+// * Box sizing rules
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background-color: $background-colour-main;
+  position: relative;
+  min-width: 320px;
+  max-width: 2000px;
+  @include main-font-stack;
+}
+
+// *=========================================
+// ** Content container and block **
+// *=========================================
+
+//********** Headings**********
+h2 {
+  font-size: $h2-size;
+  font-weight: 700;
+}
+
+//********** Containers **********
+
+//********** Paragraphs **********
+
+// *=========================================
+// ** Inline **
+// *=========================================
+
+//********** Images **********
+
+//* Make images easier to work with
+img {
+  max-width: 100%;
+  display: block;
+}
+
+//********** Links **********
+
+// *=========================================
+// ** Header  **
+// *=========================================
+.main-header {
+  background-color: $background-colour-main;
+  position: relative;
+  font-size: $font-size-main;
+}
+
+.main-logo-wrapper {
+  @include flex(row);
+  justify-content: center;
+}
+
+.main-logo {
+  width: 300px;
+  height: auto;
+  margin: 0;
+}
+
+// *=========================================
+// ** Main Nav  **
+// *=========================================
+
+.main-nav {
+  @include flex(row);
+  justify-content: flex-end;
+  // height: 800px;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  transform: rotate(-180deg);
+  position: absolute;
+  top: 0;
+  left: $paragraph-spacing-medium;
+}
+
+.main-nav-link {
+  text-decoration: none;
+  text-transform: lowercase;
+  color: $font-colour-two;
+  margin: 0 0 $paragraph-spacing-medium;
+}
+
+#main-nav-trigger {
+  display: none;
+}
+
+// *=========================================
+// ** Main **
+// *=========================================
+.main-content {
+  font-size: $font-size-main;
+  margin: 0;
+}
+
+// *=========================================
+// ** Forms  **
+// *=========================================
+
+//* Inherit fonts for inputs and buttons
+
+.general-contact-form-section {
+  @include flex(column);
+  align-items: center;
+  padding: $section-spacing-small $section-spacing-medium;
+  position: relative;
+  background-color: $background-colour-main;
+  color: $font-colour-main;
+}
+
+.general-contact-form {
+  @include flex(column);
+  align-items: center;
+  width: 100%;
+}
+.general-contact-form-input-wrapper {
+  @include flex(row);
+  width: 100%;
+  align-items: flex-end;
+  margin-bottom: $section-spacing-small;
+}
+
+.contact-form-title {
+  margin: 0 0 $h2-spacing;
+}
+
+.general-contact-form-label {
+  width: $section-spacing-small;
+  flex: 0 1 auto;
+  font-weight: 700;
+  vertical-align: bottom;
+  line-height: 0.7;
+}
+
+.general-contact-form-input {
+  flex: 1 1 auto;
+  background-color: $background-colour-main;
+  border: 0;
+  border-bottom: 4px solid $font-colour-main;
+}
+
+.text-area-input-wrapper {
+  align-items: flex-start;
+}
+
+.text-area-label {
+  position: absolute;
+  left: $section-spacing-medium;
+  transition: $transition-one;
+}
+
+//* Text area with underlines
+.text-area-input {
+  // Custom Scrollbar
+  @include styled-scrollbar(
+    1rem,
+    $background-colour-three,
+    $background-colour-main,
+    $background-colour-main
+  );
+  text-indent: $section-spacing-small;
+  border: 0;
+  line-height: 1;
+  resize: none;
+  line-height: 4.2rem;
+  background-attachment: local;
+  //TODO: Improve text spacing in text area
+  // Text area underlining
+  background-image: linear-gradient(
+      to right,
+      $background-colour-main 0,
+      transparent 0
+    ),
+    linear-gradient(to left, $background-colour-main 0, transparent 0),
+    repeating-linear-gradient(
+      $background-colour-main,
+      // Leave
+      $background-colour-main 4rem,
+      $font-colour-main 1.8rem,
+      // Seems to control line thickness
+      $font-colour-main 4.3rem,
+      $background-colour-main 1.85rem
+    );
+}
+
+.contact-form-check-text {
+  margin: 0 auto $paragraph-spacing-large;
+}
+.radio-buttons-wrapper {
+  @include flex(row);
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.radio-input-wrapper {
+  position: relative;
+  @include flex(row);
+  align-items: center;
+
+  label {
+    margin-left: 4rem;
+  }
+}
+
+//* Custom radio button styling
+input[type='radio'] {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 3px solid $font-colour-main;
+    background-color: $background-colour-main;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    top: -8px;
+    left: -4px;
+    z-index: 5;
+    transition: $transition-one;
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    top: -3px;
+    left: 1px;
+    margin: 0;
+    transition: $transition-one;
+    z-index: 6;
+  }
+}
+
+input[type='radio']:checked {
+  &:before {
+    border: 3px solid $font-colour-two;
+  }
+}
+
+input[type='radio']:checked {
+  &:after {
+    background: $font-colour-two;
+  }
+}
+
+.main-contact-submit-button {
+  padding: 2rem;
+  background-color: $background-colour-main;
+  border: 4px solid $font-colour-main;
+  text-transform: uppercase;
+  transition: $transition-one;
+
+  &:hover {
+    color: $font-colour-light;
+    background-color: $background-colour-three;
+  }
+}
+
+//********** Honeypot **********
+
+.form-identification-number {
+  overflow: hidden;
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+// *=========================================
+// ** Footer  **
+// *========================================
+
+.main-footer {
+  @include flex(column);
+  align-items: center;
+  font-size: $font-size-main;
+  background-color: $background-colour-three;
+  padding: $section-spacing-medium 30%;
+  color: $font-colour-light;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.footer-social-media-icon {
+  width: 50px;
+  margin: 0 auto $section-spacing-medium;
+}
+
+.footer-privacy,
+.footer-terms,
+.footer-copyright {
+  margin: 0 auto $section-spacing-extra-small;
+  text-align: center;
+}
+
+.footer-credit {
+  margin: 0 auto;
+  text-align: center;
+}
+
+//*=========================================
+//** Utility & Accessibility  **
+//*=========================================
+
+//* Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//*Skip to content link
+.show-on-focus {
+  position: absolute;
+  color: $font-colour-main;
+  background-color: $background-colour-main;
+  padding: 10px;
+  font-size: $font-size-main;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0.5rem 0 0 0.5rem;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  text-decoration: none;
+
+  &:focus {
+    z-index: 20;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
+}
+
+//* Hides outline unless tab key is pressed
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+.user-is-tabbing {
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 3px dashed #ff5e00;
+  }
+}
+
+//*=========================================
+//** Browser Specific Styles  **
+//*=========================================

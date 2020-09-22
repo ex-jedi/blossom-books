@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="css/universal.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/legals.css">
 	<!-- Typekit -->
-	<script src="https://use.typekit.net/kbq2qtf.js"></script>
+	<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<!-- Perch Meta -->
 	<?php

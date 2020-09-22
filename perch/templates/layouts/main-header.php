@@ -3,8 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/universal.css?v=1.0">
+	<link rel="stylesheet" href="/css/main.css?v=1.0">
 	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.0">
+	<!-- Typekit  -->
+	<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
 	<!-- Perch Meta -->
 	<?php
 	$domain        = 'https://'.$_SERVER["HTTP_HOST"];
@@ -14,8 +16,8 @@
 										    'add-trailing-slash' => false,
 										    'include-domain'     => true,
 										), true);
-	$mainsitename      = "SITE NAME";
-	$pagetitlename = " - SITE NAME";
+	$mainsitename      = "Blossom Books";
+	$pagetitlename = " - Blossom Books";
 	$sharing_image = '/images/default_fb_image.jpg';
 
 	PerchSystem::set_var('domain',$domain);
@@ -31,35 +33,19 @@
 <!-- Google Analytics -->
 <?php perch_content('Analytics'); ?>
 
-<!-- Cookie Consent -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-	<script>
-	window.addEventListener("load", function(){
-	window.cookieconsent.initialise({
-		"palette": {
-			"popup": {
-				"background": "#000"
-			},
-			"button": {
-				"background": "transparent",
-				"text": "#fff",
-				"border": "#fff"
-			}
-		},
-		"content": {
-			"href": "/privacy-and-cookie-policy"
-		}
-	})});
-	</script>
+<!-- Cookie Warning -->
+<!-- TODO: Move to footer -->
+<?php perch_content("Cookie Warning"); ?>
+
 
 </head>
 	<body class="<?php perch_page_attribute('bodyClass', array('template' => 'bits.html' )); ?>">
-				<div id="vue-wrapper" class="site-wrapper" :class="{'hide-outline': outlineHide}" @keydown.9="outlineHide = !outlineHide" itemscope itemtype="http://schema.org/LocalBusiness">
+				<div class="site-wrapper" itemscope itemtype="http://schema.org/LocalBusiness">
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>
+
 					<?php perch_pages_navigation(array(
 							'hide-extensions' => true,
 					)); ?>
-			</header>
+					<?php perch_content("Main Logo"); ?>

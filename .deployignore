@@ -3,10 +3,6 @@ sass/**
 scripts/js/**
 .htaccess
 .gitignore
-.scss-lint.yml
 package.json
-gulpfile.js
-.prettierrc.json
-.eslintrc.json
 package-lock.json
 prepros-6.config
