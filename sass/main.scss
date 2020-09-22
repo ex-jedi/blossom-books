@@ -185,6 +185,13 @@ img {
 
 //* Text area with underlines
 .text-area-input {
+  // Custom Scrollbar
+  @include styled-scrollbar(
+    1rem,
+    $background-colour-three,
+    $background-colour-main,
+    $background-colour-main
+  );
   text-indent: $section-spacing-small;
   border: 0;
   line-height: 1;
@@ -192,6 +199,7 @@ img {
   line-height: 4.2rem;
   background-attachment: local;
   //TODO: Improve text spacing in text area
+  // Text area underlining
   background-image: linear-gradient(
       to right,
       $background-colour-main 0,
