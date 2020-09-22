@@ -1,0 +1,23 @@
+.fade-out {
+  opacity: 0;
+}
+
+.main-logo {
+  margin-bottom: 20rem;
+}
+
+.main-header {
+  padding: 0 35rem 20rem;
+}
+
+.about-me-page-heading {
+  color: #756c91;
+  margin: 0 auto 20rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.about-me-header-image {
+  margin: 0 auto;
+}

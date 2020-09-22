@@ -1,0 +1,22 @@
+@use 'bits' as *;
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.main-logo {
+  margin-bottom: $h2-spacing;
+}
+.main-header {
+  padding: 0 $section-spacing-very-large $section-spacing-small;
+}
+
+.about-me-page-heading {
+  color: $background-colour-three;
+  margin: 0 auto $h2-spacing;
+  width: fit-content;
+}
+
+.about-me-header-image {
+  margin: 0 auto;
+}
