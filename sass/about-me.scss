@@ -37,3 +37,13 @@
     }
   }
 }
+
+.arrow-wrapper {
+  @include flex(row);
+  justify-content: center;
+  margin: $section-spacing-small 0;
+
+  svg .a {
+    stroke: $background-colour-three;
+  }
+}
