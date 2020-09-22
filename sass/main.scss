@@ -19,6 +19,13 @@ html {
   -webkit-tap-highlight-color: transparent;
   font-size: 10px;
   overflow-x: hidden;
+
+  @include styled-scrollbar(
+    1rem,
+    $background-colour-three,
+    $background-colour-main,
+    $background-colour-main
+  );
 }
 
 // * Box sizing rules
