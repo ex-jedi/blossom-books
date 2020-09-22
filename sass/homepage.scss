@@ -4,6 +4,10 @@
 //** Header **
 //*=========================================
 
+.main-header {
+  min-height: 85vh;
+}
+
 .main-logo {
   width: 300px;
   margin: 0 auto;
@@ -23,10 +27,10 @@
 
 .header-plant-image-wrapper {
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 0;
+  right: $section-spacing-extra-large;
   z-index: 1;
-  width: 200px;
+  width: 400px;
 }
 
 //*=========================================
