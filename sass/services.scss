@@ -1,0 +1,16 @@
+@use 'bits' as *;
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.main-logo {
+  margin-bottom: $h2-spacing;
+}
+
+.services-page-heading {
+  font-size: $h2-size;
+  color: $background-colour-three;
+  margin: 0 auto;
+  width: fit-content;
+}

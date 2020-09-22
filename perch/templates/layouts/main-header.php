@@ -49,4 +49,3 @@
 							'hide-extensions' => true,
 					)); ?>
 					<?php perch_content("Main Logo"); ?>
-

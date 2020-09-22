@@ -1,0 +1,16 @@
+.fade-out {
+  opacity: 0;
+}
+
+.main-logo {
+  margin-bottom: 20rem;
+}
+
+.services-page-heading {
+  font-size: 8rem;
+  color: #756c91;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}

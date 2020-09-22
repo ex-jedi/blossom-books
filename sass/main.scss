@@ -287,7 +287,6 @@ select {
 .main-footer {
   @include flex(column);
   align-items: center;
-  @include main-font-stack;
   font-size: $font-size-main;
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
