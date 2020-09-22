@@ -68,7 +68,11 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
-  // min-height: 100vh;
+}
+
+.main-logo {
+  width: 300px;
+  margin: 0 auto;
 }
 
 // *=========================================

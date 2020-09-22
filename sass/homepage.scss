@@ -8,11 +8,6 @@
   min-height: 85vh;
 }
 
-.main-logo {
-  width: 300px;
-  margin: 0 auto;
-}
-
 .header-image-text-wrapper {
   @include flex(row);
   align-items: flex-end;
