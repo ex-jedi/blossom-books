@@ -9,11 +9,9 @@
 }
 
 .services-page-heading {
-  font-size: $h2-size;
   color: $background-colour-three;
   margin: 0 auto;
   width: fit-content;
-  font-weight: 700;
 }
 
 .services-section {
@@ -39,4 +37,19 @@
     font-weight: 800;
     color: $font-colour-main;
   }
+}
+
+.arrow-wrapper {
+  @include flex(row);
+  justify-content: center;
+  margin: $section-spacing-small 0;
+
+  svg .a {
+    stroke: $background-colour-three;
+  }
+}
+
+.services-image {
+  width: 100%;
+  margin: 0;
 }
