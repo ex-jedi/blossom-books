@@ -30,3 +30,18 @@
 .blog-text-block p:last-of-type {
   margin-bottom: 0;
 }
+
+.post-category-wrapper {
+  text-align: center;
+  margin: 0 auto 20rem;
+}
+
+.post-categories-link {
+  text-decoration: none;
+  color: #6c9184;
+}
+
+.blog-post-date-author {
+  text-align: center;
+  color: #6c9184;
+}

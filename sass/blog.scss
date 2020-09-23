@@ -41,3 +41,18 @@
     }
   }
 }
+
+.post-category-wrapper {
+  text-align: center;
+  margin: 0 auto $section-spacing-small;
+}
+
+.post-categories-link {
+  text-decoration: none;
+  color: $font-colour-two;
+}
+
+.blog-post-date-author {
+  text-align: center;
+  color: $font-colour-two;
+}

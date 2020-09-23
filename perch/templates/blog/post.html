@@ -3,6 +3,14 @@
   <perch:blog id="postTitle" type="text" label="Article Heading" required="true" size="l" order="3" >
 </h1>
 
+<div class="post-category-wrapper">
+  <a class="post-categories-link" href="category/<perch:category id="catSlug">">
+    <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" order="6">
+    <perch:category id="catTitle" type="text">
+    </perch:categories>
+  </a>
+</div>
+
 <!--Top  Image -->
 <img class="blog-post-main-image blog-post-image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
 sizes="75vw"
@@ -14,12 +22,12 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
 
 
 <!-- Edit Slug -->
-<perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address (blossombooks.co/articles/this-bit-is-the-slug). This is generated automatically and incorporates the article title. You won't normally need to change this. If you do need to change this use numbers, letters and hyphens only. If you use spaces the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="4" >
+<perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address (blossombooks.co/articles/this-bit-is-the-slug). This is generated automatically and incorporates the article title. You won't normally need to change this. If you do need to change this use numbers, letters and hyphens only. If you use spaces the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="4">
 
 <!-- Perch Blocks -->
 <!-- Full width image -->
-<perch:blocks>
-  <perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder).">
+<perch:blocks order="5">
+  <perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder)." >
       <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
       sizes="100vw"
       srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
@@ -84,14 +92,10 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
 
   </perch:blocks> <!-- Perch blocks end -->
 
+  <!-- Meta information  -->
   <div class="blog-post-date-author">
-    <p>
-    	<time class="dt-published" itemprop="dateCreated" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information">">
+    	<time class="dt-published" itemprop="dateCreated" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information" order="7">">
     		<perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y">
     	</time>
-    </p>
-  </div>
 
-  <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" suppress="true">
-    <perch:category id="catTitle" type="text" suppress="true">
-  </perch:categories>
+  </div>
