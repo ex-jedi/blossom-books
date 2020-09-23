@@ -5,9 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/css/universal.css">
 		<link rel="stylesheet" href="/css/blog.css">
+
 		<!-- Typekit -->
 		<script src="https://use.typekit.net/kbq2qtf.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 		<!-- Perch Meta -->
 	 	<?php perch_blog_post_meta(perch_get('s'));
 

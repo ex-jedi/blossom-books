@@ -6,11 +6,10 @@
 		<link rel="stylesheet" href="/css/universal.css">
 		<link rel="stylesheet" href="/css/blog.css">
 		<!-- Typekit -->
-		<script src="https://use.typekit.net/kbq2qtf.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
 		<!-- Perch Meta -->
 		<?php
-			$domain        = 'https://'.$_SERVER["HTTP_HOST"];// TODO: Check Protocol
+			$domain        = 'https://'.$_SERVER["HTTP_HOST"];
 			$mainurl           = perch_page_url(array(
 												    'hide-extensions'    => true,
 												    'hide-default-doc'   => true,
