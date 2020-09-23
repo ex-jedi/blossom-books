@@ -1,0 +1,106 @@
+  <!-- Cover Image -->
+  <perch:blog id="blogIndexImage" type="image" label="Blog Listing Image" help="This image will appear on the blog homepage with the title." suppress="true" order="2" required="true" width="1350" height="900" help="Images must be over 1315 by 900 pixels to be properly cropped to fit the listing page" crop>
+  <perch:blog id="blogIndexImage" type="image" suppress="true" width="1100" height="733" crop>
+  <perch:blog id="blogIndexImage" type="image" suppress="true" width="800"  height="533" crop>
+  <perch:blog id="blogIndexImage" type="image" suppress="true" width="600"  height="400" crop>
+  <perch:blog id="blogIndexImage" type="image" suppress="true" width="400"  height="267" crop>
+
+  <!-- Title -->
+  <h1 class="section-heading blog-post-title" itemprop="headline"> <!-- Post title -->
+    <perch:blog id="postTitle" type="text" label="Post Title" help="The title will appear at the top of the post and on the blog home page along with the excerpt and cover photo." required="true" size="l" order="1" >
+  </h1>
+<div class="post-wrapper">
+
+
+  <!-- Edit Slug -->
+  <perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address, for example, longshot.photo/journal/this-bit-is-the-slug. You must use numbers, letters, and hyphens only, with no spaces or the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="2" >
+
+  <!-- Excerpt Text -->
+  <perch:blog id="blog-index-excerpt" type="textarea" divider-before="Blog Index Excerpt" help="This text will appear on the blog home page along with the cover image" editor="redactor" html="true" order="3" suppress="true" size="m" required="true" count="words" >
+
+
+  <!-- Perch Blocks -->
+  <perch:blocks>
+  	<perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder)."> <!-- Full width image -->
+  		<figure class="blog-figure">
+        <img class="blog-post-full-width-image fade-up-in lazy" data-src="<perch:blog id="fullWidthBlogImage" type="image" width="1350">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
+        data-sizes="100vw"
+        data-srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1250"> 1250w,
+                <perch:blog type="image" id="fullWidthBlogImage" width="950"> 950w,
+                <perch:blog type="image" id="fullWidthBlogImage" width="750"> 750w,
+                <perch:blog type="image" id="fullWidthBlogImage" width="550"> 550w,
+                <perch:blog type="image" id="fullWidthBlogImage" width="400"> 400w">
+  			<perch:if exists="image-caption">
+  				<figcaption class="blog-image-caption">
+  					<perch:blog id="image-caption" type="textarea" editor="redactor" html="true" label="Image Caption" help="Add optional caption below image." size="small">
+  				</figcaption>
+  			</perch:if>
+  		</figure>
+    </perch:block>
+
+    <!-- General text  -->
+  	<perch:block type="textarea" icon="edit" label="Blog Post Text - (can be dragged up or down to reorder)."> <!-- Text block  -->
+      <div class="blog-text-block">
+        <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true"  help="Blog post text. Add formatting via the toolbar." count="words">
+      </div>
+  	</perch:block>
+
+        <!-- Pull Quote -->
+    <perch:block type="pull-quote" icon="quote" label="Pull Quote With Optional Citation - (can be dragged up or down to reorder).">
+      <!-- With Citation -->
+      <perch:if exists="citationLink">
+        <!-- And Link -->
+        <blockquote class="blog-pull-quote blog-pull-quote-with-citation" cite="<perch:blog id="citationLink" type="text" label="Optional Citation Link" help="Paste in full URL">">
+        <perch:else>
+          <!-- Without Link or Without Citation  -->
+          <blockquote class="blog-pull-quote">
+      </perch:if>
+
+      <div class="pull-quote-text">
+        <perch:blog id="pullQuoteText" type="textarea" editor="redactor" html="true"  help="Pull quote text. Add formatting via the toolbar." count="words" order="1">
+      </div>
+
+      <perch:if exists="citationLink AND citationText">
+          <p class="pull-quote-citation">
+            <a class="pull-quote-citation-link"  href="<perch:blog id="citationLink">" target="_blank" title="Open in new tab">
+              <perch:blog id="citationText" type="text" label="Optional Citation" order="2">
+            </a>
+          </p>
+      <perch:else>
+        <perch:if exists="citationText">
+          <p class="pull-quote-citation">
+            <perch:blog id="citationText">
+          </p>
+        </perch:if>
+    </perch:if>
+
+      </blockquote>
+  	</perch:block>
+
+    <perch:block type="embed" icon="code" label="Embed video - (can be dragged up or down to reorder)."> <!-- Video Embed  -->
+      <div class=" embed blog-embed">
+        <perch:blog id="videoEmbedBlock" type="textarea" editor="markitup" html="true" help="Paste embed code into the box." size="m">
+        </div>
+    </perch:block>
+
+    <perch:block type="socialMediaEmbed" icon="code" label="General Embeds - (can be dragged up or down to reorder)."> <!-- Video Embed  -->
+    <div class="embed blog-general-embed">
+      <perch:blog id="socialEmbedBlock" type="textarea" editor="markitup" html="true" help="For social media type embeds. Paste code into the box." size="m">
+      </div>
+  </perch:block>
+
+
+  </perch:blocks> <!-- Perch blocks end -->
+
+  <div class="blog-post-date-author">
+    <p>
+    	<time class="dt-published" itemprop="dateCreated" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information">">
+    		<perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y">
+    	</time>
+    </p>
+  </div>
+
+  <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" suppress="true">
+          <perch:category id="catTitle" type="text" suppress="true">
+  </perch:categories>
+</div>

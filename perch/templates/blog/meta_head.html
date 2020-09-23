@@ -1,0 +1,23 @@
+<title><perch:blog id="postTitle" /> - <perch:setting id="perch_blog_site_name" /></title>
+<meta name="description" content="<perch:blog id="page-meta-description" />" />
+<meta property="og:site_name" content="<perch:setting id="perch_blog_site_name" />" />
+<meta property="og:url" content="<perch:blog id="domain" type="hidden" /><perch:blog id="postURL" />" />
+<meta property="og:title" content="<perch:blog id="og_title" label="Social title" type="text" escape="true" />" />
+<meta property="og:description" content="<perch:blog id="page-meta-description" />" />
+<perch:if exists="og_image">
+<meta property="og:image" content="<perch:blog id="domain"  /><perch:blog id="og_image" type="image" width="1200" />" />
+</perch:if>
+<perch:if exists="og_type">
+<meta property="og:type" content="<perch:blog id="og_type" />" />
+</perch:if>
+<meta property="article:author" content="<perch:blog id="og_author"/>" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="<perch:blog id="author_twitter" />" />
+<meta name="twitter:creator" content="<perch:blog id="twitterCreator" />" />
+<meta name="twitter:title" content="<perch:blog id="og_title" />" />
+<meta name="twitter:description" content="<perch:blog id="page-meta-description" />" />
+<perch:if exists="og_image">
+<meta property="twitter:image" content="<perch:blog id="domain" type="hidden" /><perch:blog id="og_image"  type="image" width="1200" />" />
+</perch:if>
+<meta name="twitter:url" content="<perch:blog id="domain" /><perch:blog id="postURL"  />" />
+	<link rel="canonical" href="<perch:blog id="domain"  /><perch:blog id="postURL"  />" />

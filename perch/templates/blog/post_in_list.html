@@ -1,0 +1,68 @@
+
+
+<perch:every nth-child="-n+2">
+    <perch:before>
+    <div class="blog-index-featured-wrapper">
+  </perch:before>
+  <perch:template path="blog/featured_post.html" />
+    <perch:after>
+    </div>
+  </perch:after>
+</perch:every>
+
+<perch:every nth-child="n+2">
+  <perch:template path="blog/non_featured_posts.html" />
+</perch:every>
+<perch:every nth-child="-n+2">
+
+<perch:before>
+  <div class="blog-index-featured-wrapper">
+</perch:before>
+  <div class="blog-index-container">
+    <h3 class="blog-index-title">
+      <a href="<perch:blog id="postURL" />">
+        <perch:blog id="postTitle" />
+      </a>
+    </h3>
+    <img class="blog-index-image fade-up-in lazy" data-src="<perch:blog id="blogIndexImage" type="image" width="1350" height="900" label="Blog Index image">" alt="<perch:blog id="alt" type="text" label="Image description">"
+    data-sizes="(max-width:1300) 50vw, 100vw"
+    data-srcset="<perch:blog type="image" id="blogIndexImage" width="1350" height="900" > 1350w,
+    <perch:blog type="image" id="blogIndexImage" width="1100" height="733" > 1100w,
+    <perch:blog type="image" id="blogIndexImage" width="800" height="533" > 800w,
+    <perch:blog type="image" id="blogIndexImage" width="600" height="400" > 600w,
+    <perch:blog type="image" id="blogIndexImage" width="400" height="267" > 400w" >
+      <div class="blog-excerpt-div">
+        <perch:blog id="blog-index-excerpt" html="true">
+        </div>
+  </div>
+<perch:after>
+  </div>
+</perch:after>
+
+<perch:else>
+
+<perch:before>
+  <div class="blog-index-featured-wrapper">
+</perch:before>
+  <div class="blog-index-container">
+    <h3 class="blog-index-title">
+      <a href="<perch:blog id="postURL" />">
+        <perch:blog id="postTitle" />
+      </a>
+    </h3>
+    <img class="blog-index-image fade-up-in lazy" data-src="<perch:blog id="blogIndexImage" type="image" width="1350" height="900" label="Blog Index image">" alt="<perch:blog id="alt" type="text" label="Image description">"
+    data-sizes="(max-width:1300) 50vw, 100vw"
+    data-srcset="<perch:blog type="image" id="blogIndexImage" width="1350" height="900" > 1350w,
+    <perch:blog type="image" id="blogIndexImage" width="1100" height="733" > 1100w,
+    <perch:blog type="image" id="blogIndexImage" width="800" height="533" > 800w,
+    <perch:blog type="image" id="blogIndexImage" width="600" height="400" > 600w,
+    <perch:blog type="image" id="blogIndexImage" width="400" height="267" > 400w" >
+
+  </div>
+<perch:after>
+  </div>
+</perch:after>
+
+</perch:every>
+
+
