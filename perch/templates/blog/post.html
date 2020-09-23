@@ -1,4 +1,9 @@
-  <!--Top  Image -->
+<!-- Article Heading -->
+<h1 class="section-heading blog-post-title" itemprop="headline">
+  <perch:blog id="postTitle" type="text" label="Article Heading" required="true" size="l" order="3" >
+</h1>
+
+<!--Top  Image -->
 <img class="blog-post-main-image blog-post-image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
 sizes="75vw"
 srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
@@ -7,41 +12,30 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
 <perch:blog type="image" id="blogPostMainImage" width="900" > 900w,
 <perch:blog type="image" id="blogPostMainImage" width="600" > 600w" >
 
-  <!-- Article Heading -->
-  <h1 class="section-heading blog-post-title" itemprop="headline">
-    <perch:blog id="postTitle" type="text" label="Article Heading" required="true" size="l" order="3" >
-  </h1>
 
-  <!-- Edit Slug -->
-  <perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address (blossombooks.co/articles/this-bit-is-the-slug). This is generated automatically and incorporates the article title. You won't normally need to change this. If you do need to change this use numbers, letters and hyphens only. If you use spaces the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="4" >
+<!-- Edit Slug -->
+<perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address (blossombooks.co/articles/this-bit-is-the-slug). This is generated automatically and incorporates the article title. You won't normally need to change this. If you do need to change this use numbers, letters and hyphens only. If you use spaces the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="4" >
 
-  <!-- Perch Blocks -->
-  <!-- Full width image -->
-  <perch:blocks>
-  	<perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder).">
-  		<figure class="blog-figure">
-        <img class="blog-post-full-width-image" data-src="<perch:blog id="fullWidthBlogImage" type="image" width="1350">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
-        data-sizes="100vw"
-        data-srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
-                <perch:blog type="image" id="fullWidthBlogImage" width="1500"> 1500w,
-                <perch:blog type="image" id="fullWidthBlogImage" width="1200"> 1200w,
-                <perch:blog type="image" id="fullWidthBlogImage" width="900"> 900w,
-                <perch:blog type="image" id="fullWidthBlogImage" width="600"> 600w">
-  			<perch:if exists="image-caption">
-  				<figcaption class="blog-image-caption">
-            <perch:blog id="image-caption" type="textarea" label="Image Caption" help="Add optional caption below image." size="small">
-  				</figcaption>
-  			</perch:if>
-  		</figure>
-    </perch:block>
+<!-- Perch Blocks -->
+<!-- Full width image -->
+<perch:blocks>
+  <perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder).">
+      <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
+      sizes="100vw"
+      srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
+              <perch:blog type="image" id="fullWidthBlogImage" width="1500"> 1500w,
+              <perch:blog type="image" id="fullWidthBlogImage" width="1200"> 1200w,
+              <perch:blog type="image" id="fullWidthBlogImage" width="900"> 900w,
+              <perch:blog type="image" id="fullWidthBlogImage" width="600"> 600w">
+  </perch:block>
 
-    <!-- General text  -->
-    <!-- Text block  -->
-  	<perch:block type="textarea" icon="edit" label="Blog Post Text - (can be dragged up or down to reorder).">
-      <div class="blog-text-block">
-        <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true" help="Blog post text. Add formatting via the toolbar." count="words">
-      </div>
-  	</perch:block>
+<!-- General text  -->
+<!-- Text block  -->
+<perch:block type="textarea" icon="edit" label="Blog Post Text - (can be dragged up or down to reorder).">
+  <div class="blog-text-block">
+    <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true" help="Blog post text. Add formatting via the toolbar." count="words">
+  </div>
+</perch:block>
 
     <!-- Pull Quote -->
     <perch:block type="pull-quote" icon="quote" label="Pull Quote With Optional Citation - (can be dragged up or down to reorder).">

@@ -4,6 +4,40 @@
 //** General Styles **
 //*==============================================================================
 
+.blog-section {
+  padding: $section-spacing-small $section-spacing-very-large;
+}
+
 //*==============================================================================
 //** Blog Index **
 //*==============================================================================
+
+//*==============================================================================
+//** Blog Post **
+//*==============================================================================
+
+.blog-post-title {
+  color: $font-colour-main;
+  text-align: center;
+  font-size: $h1-size;
+  margin: 0 auto $h1-spacing;
+}
+
+.blog-post-image {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto $section-spacing-small;
+}
+
+.blog-text-block {
+  color: $font-colour-four;
+  width: 100%;
+  margin: 0 auto $section-spacing-small;
+  p {
+    margin: 0 auto $paragraph-spacing-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
