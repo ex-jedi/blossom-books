@@ -1,5 +1,6 @@
 <?php include('../perch/runtime.php'); ?>
-<?php perch_layout('simple-header'); ?>
+<?php perch_layout('main-header'); ?>
+<?php perch_layout("main-header-end"); ?>
 <main class="blog-main-content archive-main-content">
 	<section class="blog-section blog-index-section blog-archive-section">
 			<?php
@@ -9,8 +10,6 @@
 		        $sort_order		= 'DESC';
 		        $sort_by		= 'postDateTime';
 		        $posts_displayed = false;
-
-
 
 		        /* --------------------------- POSTS BY CATEGORY --------------------------- */
 		        if (perch_get('cat')) {
@@ -92,4 +91,5 @@
 				<?php perch_content("General Contact Form"); ?>
 			</section>
 		</main>
-<?php perch_layout('blog-footer'); ?>
+<?php perch_layout('main-footer'); ?>
+<?php perch_layout("main-footer-end-js"); ?>

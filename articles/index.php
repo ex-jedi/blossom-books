@@ -10,9 +10,10 @@
         'template' => 'category_link.html'
       ));
       ?>
-      <?php perch_blog_recent_posts(10); ?>
+    </div>
+      <?php perch_blog_recent_posts(999); ?>
     </div>
   </section>
   </main>
 <?php perch_layout('main-footer'); ?>
-<?php perch_layout('main-footer-end'); ?>
+<?php perch_layout('main-footer-end-js'); ?>

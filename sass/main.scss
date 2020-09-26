@@ -99,7 +99,7 @@ img {
 .main-nav {
   @include flex(row);
   justify-content: flex-end;
-  // height: 800px;
+  min-height: 700px;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   transform: rotate(-180deg);
@@ -410,8 +410,8 @@ body:not(.user-is-tabbing) textarea:focus {
   @include flex(row);
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -423,6 +423,7 @@ body:not(.user-is-tabbing) textarea:focus {
 
 .cookie-warning-paragraph {
   margin: 0 $section-spacing-small 0 0;
+  color: $font-colour-light;
 
   // @include breakpoint(1100) {
   //   margin: 0 0 $section-spacing-small;

@@ -6,6 +6,11 @@
   padding: 20rem 35rem;
 }
 
+.blog-index-category-list {
+  width: 100%;
+  min-height: 20rem;
+}
+
 .blog-post-title {
   color: #756c91;
   text-align: center;
