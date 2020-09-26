@@ -34,6 +34,16 @@
   width: fit-content;
   color: $font-colour-two;
   margin: 0 auto $section-spacing-extra-small;
+
+  // &::after {
+  //   content: url('/images/blog-down-arrow.svg');
+  //   transition: all 0.3s ease;
+  //   display: inline-block;
+  // }
+
+  // &:hover::after {
+  //   transform: rotate(180deg);
+  // }
 }
 
 //*==============================================================================
