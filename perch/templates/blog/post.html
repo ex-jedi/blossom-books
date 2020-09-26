@@ -3,13 +3,6 @@
   <perch:blog id="postTitle" type="text" label="Article Heading" required="true" size="l" order="3" >
 </h1>
 
-<div class="post-category-wrapper">
-  <a class="post-categories-link" href="category/<perch:category id="catSlug">">
-    <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" order="6">
-    <perch:category id="catTitle" type="text">
-    </perch:categories>
-  </a>
-</div>
 
 <!--Top  Image -->
 <img class="blog-post-main-image blog-post-image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
@@ -97,5 +90,9 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
     	<time class="dt-published" itemprop="dateCreated" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information" order="7">">
     		<perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y">
     	</time>
-
   </div>
+
+  <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" suppress="true">
+          <perch:category id="catTitle" type="text" suppress="true">
+  </perch:categories>
+</div>

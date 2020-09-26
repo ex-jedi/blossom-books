@@ -102,6 +102,11 @@
   text-decoration: none;
 }
 
+.blog-post-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .blog-post-title {
   color: #756c91;
   text-align: center;
@@ -127,9 +132,14 @@
   margin-bottom: 0;
 }
 
+.post-wrapper {
+  order: 3;
+}
+
 .post-category-wrapper {
   text-align: center;
   margin: 0 auto 20rem;
+  order: 2;
 }
 
 .post-categories-link {

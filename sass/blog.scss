@@ -120,6 +120,10 @@
 //** Blog Post **
 //*==============================================================================
 
+.blog-post-section {
+  @include flex(column);
+}
+
 .blog-post-title {
   color: $font-colour-main;
   text-align: center;
@@ -146,9 +150,14 @@
   }
 }
 
+.post-wrapper {
+  order: 3;
+}
+
 .post-category-wrapper {
   text-align: center;
   margin: 0 auto $section-spacing-small;
+  order: 2;
 }
 
 .post-categories-link {
