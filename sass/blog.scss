@@ -11,16 +11,6 @@
 //*==============================================================================
 //** Blog Index **
 //*==============================================================================
-.blog-index-category-list {
-  width: 100%;
-  min-height: 20rem;
-}
-
-.blog-index-section {
-  @include flex(column);
-  align-items: center;
-  font-size: $font-size-main;
-}
 
 .blog-page-heading {
   font-size: $h1-size;
@@ -29,12 +19,25 @@
   width: fit-content;
 }
 
+.blog-index-section {
+  @include flex(column);
+  align-items: center;
+  font-size: $font-size-main;
+  padding: $section-spacing-small $section-spacing-large;
+}
+
+.blog-index-category-list {
+  width: 100%;
+  min-height: 20rem;
+}
+
 .blog-index-page-subtitle {
   font-size: $font-size-main;
   width: fit-content;
   color: $font-colour-two;
   margin: 0 auto $section-spacing-extra-small;
 
+  // * For smaller screens
   // &::after {
   //   content: url('/images/blog-down-arrow.svg');
   //   transition: all 0.3s ease;
@@ -50,6 +53,7 @@
   @include flex(row);
   justify-content: space-between;
   padding: 0;
+  margin: 0 auto $section-spacing-small;
 }
 
 .blog-categories-li {
@@ -78,6 +82,12 @@
   color: inherit;
 }
 
+.blog-index-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $section-spacing-small;
+}
+
 .blog-index-item {
   &:nth-of-type(4n + 1) {
     color: $font-colour-two;
@@ -94,6 +104,10 @@
   &:nth-of-type(4n + 4) {
     color: $font-colour-main;
   }
+}
+
+.blog-index-title {
+  text-align: center;
 }
 
 .blog-index-title-link {
