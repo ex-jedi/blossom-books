@@ -12,6 +12,110 @@
 //** Blog Index **
 //*==============================================================================
 
+.blog-page-heading {
+  font-size: $h1-size;
+  color: $background-colour-three;
+  margin: 0 auto $h1-spacing;
+  width: fit-content;
+}
+
+.blog-index-section {
+  @include flex(column);
+  align-items: center;
+  font-size: $font-size-main;
+  padding: $section-spacing-small $section-spacing-large;
+}
+
+.blog-index-category-list {
+  width: 100%;
+  min-height: 20rem;
+}
+
+.blog-index-page-subtitle {
+  font-size: $font-size-main;
+  width: fit-content;
+  color: $font-colour-two;
+  margin: 0 auto $section-spacing-extra-small;
+
+  // * For smaller screens
+  // &::after {
+  //   content: url('/images/blog-down-arrow.svg');
+  //   transition: all 0.3s ease;
+  //   display: inline-block;
+  // }
+
+  // &:hover::after {
+  //   transform: rotate(180deg);
+  // }
+}
+
+.blog-categories-ul {
+  @include flex(row);
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 auto $section-spacing-small;
+}
+
+.blog-categories-li {
+  list-style-type: none;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+
+  &:nth-of-type(3n + 1) {
+    color: $font-colour-three;
+  }
+
+  &:nth-of-type(3n + 2) {
+    color: $font-colour-four;
+  }
+  &:nth-of-type(3n + 3) {
+    color: $font-colour-two;
+  }
+}
+
+.blog-category-link {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  text-align: center;
+  color: inherit;
+}
+
+.blog-index-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $section-spacing-small;
+}
+
+.blog-index-item {
+  &:nth-of-type(4n + 1) {
+    color: $font-colour-two;
+  }
+
+  &:nth-of-type(4n + 2) {
+    color: $font-colour-three;
+  }
+
+  &:nth-of-type(4n + 3) {
+    color: $font-colour-four;
+  }
+
+  &:nth-of-type(4n + 4) {
+    color: $font-colour-main;
+  }
+}
+
+.blog-index-title {
+  text-align: center;
+  margin: 0;
+}
+
+.blog-index-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 //*==============================================================================
 //** Blog Post **
 //*==============================================================================
