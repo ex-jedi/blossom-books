@@ -16,6 +16,26 @@
   min-height: 20rem;
 }
 
+.blog-index-section {
+  @include flex(column);
+  align-items: center;
+  font-size: $font-size-main;
+}
+
+.blog-page-heading {
+  font-size: $h1-size;
+  color: $background-colour-three;
+  margin: 0 auto $h1-spacing;
+  width: fit-content;
+}
+
+.blog-index-page-subtitle {
+  font-size: $font-size-main;
+  width: fit-content;
+  color: $font-colour-two;
+  margin: 0 auto $section-spacing-extra-small;
+}
+
 //*==============================================================================
 //** Blog Post **
 //*==============================================================================

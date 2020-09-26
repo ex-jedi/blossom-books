@@ -11,6 +11,31 @@
   min-height: 20rem;
 }
 
+.blog-index-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.blog-page-heading {
+  font-size: 8rem;
+  color: #756c91;
+  margin: 0 auto 20rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.blog-index-page-subtitle {
+  font-size: 4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #6c9184;
+  margin: 0 auto 10rem;
+}
+
 .blog-post-title {
   color: #756c91;
   text-align: center;
