@@ -46,6 +46,38 @@
   // }
 }
 
+.blog-categories-ul {
+  @include flex(row);
+  justify-content: space-between;
+  padding: 0;
+}
+
+.blog-categories-li {
+  list-style-type: none;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+
+  &:nth-of-type(3n + 1) {
+    color: $font-colour-three;
+  }
+
+  &:nth-of-type(3n + 2) {
+    color: $font-colour-four;
+  }
+  &:nth-of-type(3n + 3) {
+    color: $font-colour-two;
+  }
+}
+
+.blog-category-link {
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  text-align: center;
+  color: inherit;
+}
+
 //*==============================================================================
 //** Blog Post **
 //*==============================================================================
