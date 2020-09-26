@@ -71,6 +71,24 @@
   color: inherit;
 }
 
+.blog-index-item:nth-of-type(4n + 1) {
+  color: #6c9184;
+}
+.blog-index-item:nth-of-type(4n + 2) {
+  color: #91736c;
+}
+.blog-index-item:nth-of-type(4n + 3) {
+  color: #918f73;
+}
+.blog-index-item:nth-of-type(4n + 4) {
+  color: #756c91;
+}
+
+.blog-index-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .blog-post-title {
   color: #756c91;
   text-align: center;

@@ -78,6 +78,29 @@
   color: inherit;
 }
 
+.blog-index-item {
+  &:nth-of-type(4n + 1) {
+    color: $font-colour-two;
+  }
+
+  &:nth-of-type(4n + 2) {
+    color: $font-colour-three;
+  }
+
+  &:nth-of-type(4n + 3) {
+    color: $font-colour-four;
+  }
+
+  &:nth-of-type(4n + 4) {
+    color: $font-colour-main;
+  }
+}
+
+.blog-index-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 //*==============================================================================
 //** Blog Post **
 //*==============================================================================
