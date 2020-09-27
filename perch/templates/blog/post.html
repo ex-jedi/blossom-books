@@ -21,8 +21,14 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
 <!-- Perch Blocks -->
 <!-- Full width image -->
 <perch:blocks order="5">
-  <perch:block type="fullwidthimage" icon="photo" label="Full width image, with optional caption - (can be dragged up or down to reorder)." >
-      <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
+  <perch:block type="textarea" icon="edit" label="Text Block">
+    <div class="blog-text-block">
+      <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true" help="This block can be dragged up or down to reorder" count="words">
+    </div>
+  </perch:block>
+
+  <perch:block type="fullwidthimage" icon="photo" label="Image" >
+      <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350" help="This block can be dragged up or down to reorder">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
       sizes="100vw"
       srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
               <perch:blog type="image" id="fullWidthBlogImage" width="1500"> 1500w,
@@ -31,16 +37,10 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
               <perch:blog type="image" id="fullWidthBlogImage" width="600"> 600w">
   </perch:block>
 
-<!-- General text  -->
-<!-- Text block  -->
-<perch:block type="textarea" icon="edit" label="Blog Post Text - (can be dragged up or down to reorder).">
-  <div class="blog-text-block">
-    <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true" help="Blog post text. Add formatting via the toolbar." count="words">
-  </div>
-</perch:block>
+  <!-- Text block  -->
 
     <!-- Pull Quote -->
-    <perch:block type="pull-quote" icon="quote" label="Pull Quote With Optional Citation - (can be dragged up or down to reorder).">
+    <perch:block type="pull-quote" icon="quote" label="Pull Quote With Optional Citation">
       <!-- With Citation -->
       <perch:if exists="citationLink">
         <!-- And Link -->
@@ -51,7 +51,7 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
       </perch:if>
 
       <div class="pull-quote-text">
-        <perch:blog id="pullQuoteText" type="textarea" editor="redactor" html="true"  help="Pull quote text. Add formatting via the toolbar." count="words" order="1">
+        <perch:blog id="pullQuoteText" type="textarea" editor="redactor" html="true" help="This block can be dragged up or down to reorder" count="words" order="1">
       </div>
 
       <perch:if exists="citationLink AND citationText">
@@ -71,15 +71,15 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
       </blockquote>
   	</perch:block>
 
-    <perch:block type="embed" icon="code" label="Embed video - (can be dragged up or down to reorder)."> <!-- Video Embed  -->
+    <perch:block type="embed" icon="video" label="Embed Videos"> <!-- Video Embed  -->
       <div class=" embed blog-embed">
-        <perch:blog id="videoEmbedBlock" type="textarea" editor="markitup" html="true" help="Paste embed code into the box." size="m">
+        <perch:blog id="videoEmbedBlock" type="textarea" editor="markitup" html="true" help="Paste the embed code into the box. This block can be dragged up or down to reorder" size="m">
         </div>
     </perch:block>
 
-    <perch:block type="socialMediaEmbed" icon="code" label="General Embeds - (can be dragged up or down to reorder)."> <!-- Video Embed  -->
+    <perch:block type="socialMediaEmbed" icon="chat" label="General Embeds"> <!-- Video Embed  -->
     <div class="embed blog-general-embed">
-      <perch:blog id="socialEmbedBlock" type="textarea" editor="markitup" html="true" help="For social media type embeds. Paste code into the box." size="m">
+      <perch:blog id="socialEmbedBlock" type="textarea" editor="markitup" html="true" help="For social media and other embedded content. Paste code into the box. This block can be dragged up or down to reorder" size="m">
       </div>
   </perch:block>
 
