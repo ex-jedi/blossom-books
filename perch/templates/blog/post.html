@@ -3,7 +3,8 @@
   <perch:blog id="postTitle" type="text" label="Article Heading" required="true" size="l" order="3" >
 </h1>
 
-
+<!-- So the title and category order can be changed with flex order  -->
+<div class="post-body-wrapper">
 <!--Top  Image -->
 <img class="blog-post-main-image blog-post-image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
 sizes="75vw"
@@ -95,4 +96,5 @@ srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
   <perch:categories id="categories" set="blog" label="Categories" display-as="checkboxes" suppress="true">
           <perch:category id="catTitle" type="text" suppress="true">
   </perch:categories>
+</div>
 </div>

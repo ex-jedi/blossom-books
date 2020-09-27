@@ -112,6 +112,7 @@
   text-align: center;
   font-size: 8rem;
   margin: 0 auto 20rem;
+  order: 1;
 }
 
 .blog-post-image {
@@ -145,6 +146,12 @@
 .post-categories-link {
   text-decoration: none;
   color: #6c9184;
+}
+
+.post-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  order: 3;
 }
 
 .blog-post-date-author {
