@@ -102,11 +102,17 @@
   text-decoration: none;
 }
 
+.blog-post-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .blog-post-title {
   color: #756c91;
   text-align: center;
   font-size: 8rem;
   margin: 0 auto 20rem;
+  order: 1;
 }
 
 .blog-post-image {
@@ -127,14 +133,25 @@
   margin-bottom: 0;
 }
 
+.post-wrapper {
+  order: 3;
+}
+
 .post-category-wrapper {
   text-align: center;
   margin: 0 auto 20rem;
+  order: 2;
 }
 
 .post-categories-link {
   text-decoration: none;
   color: #6c9184;
+}
+
+.post-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  order: 3;
 }
 
 .blog-post-date-author {

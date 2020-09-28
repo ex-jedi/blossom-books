@@ -120,11 +120,16 @@
 //** Blog Post **
 //*==============================================================================
 
+.blog-post-section {
+  @include flex(column);
+}
+
 .blog-post-title {
   color: $font-colour-main;
   text-align: center;
   font-size: $h1-size;
   margin: 0 auto $h1-spacing;
+  order: 1;
 }
 
 .blog-post-image {
@@ -146,14 +151,24 @@
   }
 }
 
+.post-wrapper {
+  order: 3;
+}
+
 .post-category-wrapper {
   text-align: center;
   margin: 0 auto $section-spacing-small;
+  order: 2;
 }
 
 .post-categories-link {
   text-decoration: none;
   color: $font-colour-two;
+}
+
+.post-body-wrapper {
+  @include flex(column);
+  order: 3;
 }
 
 .blog-post-date-author {

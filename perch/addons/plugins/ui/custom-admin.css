@@ -10,8 +10,8 @@ body {
 
   /* GROUP VARIABLES -- DECORATION -- TEXT
     =================================================== */
-  --font-family-main: "Roboto", Arial, sans-serif;
-  --font-family-headline: "Montserrat", Arial, sans-serif;
+  --font-family-main: 'Roboto', Arial, sans-serif;
+  --font-family-headline: 'Montserrat', Arial, sans-serif;
   /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
     =================================================== */
   --font-family-main-weight-normal: 400;
@@ -21,7 +21,7 @@ body {
 /* Add any brand specific CSS here */
 
 html {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 body {
@@ -63,6 +63,17 @@ header a,
 /* Max font size so text fits  */
 .sidebar-back {
   font-size: 22px;
+}
+
+/* Makes text in text fields a bit larger */
+div.form-entry,
+input.input-simple {
+  font-size: 0.9rem !important;
+}
+
+/* Text is black on black background when redactor source is open. This fixess it */
+textarea.redactor-source-open {
+  color: #fff !important;
 }
 
 /* Adds space above block item title bar */
