@@ -64,6 +64,7 @@
 }
 
 .blog-category-link {
+  font-size: 3rem;
   text-decoration: none;
   display: inline-block;
   width: -webkit-fit-content;
@@ -95,6 +96,7 @@
 .blog-index-title {
   text-align: center;
   margin: 0;
+  font-size: 4rem;
 }
 
 .blog-index-title-link {
