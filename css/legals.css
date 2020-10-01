@@ -1,0 +1,19 @@
+.fade-out {
+  opacity: 0;
+}
+
+.main-header {
+  background-color: #f4f1f0;
+}
+
+.main-logo-wrapper {
+  margin-bottom: 20rem;
+}
+
+.legals-page-heading {
+  font-size: 8rem;
+  margin: 0 0 20rem;
+  width: 100%;
+  text-align: center;
+  color: #756c91;
+}
