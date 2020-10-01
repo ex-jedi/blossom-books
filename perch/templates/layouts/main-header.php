@@ -19,7 +19,7 @@
 	$mainsitename      = "Blossom Books";
 	$pagetitlename = " - Blossom Books";
 	// Needs to be put in images folder
-	$sharing_image = '/images/default-fb-image.png';
+	$sharing_image = '/images/default-facebook-image.png';
 
 	PerchSystem::set_var('domain',$domain);
 	PerchSystem::set_var('mainurl',$mainurl);
