@@ -75,6 +75,7 @@
 }
 
 .blog-category-link {
+  font-size: $font-size-small;
   text-decoration: none;
   display: inline-block;
   width: fit-content;
@@ -109,6 +110,7 @@
 .blog-index-title {
   text-align: center;
   margin: 0;
+  font-size: $font-size-main;
 }
 
 .blog-index-title-link {
