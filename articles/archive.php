@@ -6,43 +6,28 @@
 			<?php
 		        // defaults for all modes
 		        $posts_per_page = 10;
-		        $template 		= 'archived_posts.html';
+		        $template 		= 'post_in_list.html';
 		        $sort_order		= 'DESC';
 		        $sort_by		= 'postDateTime';
 		        $posts_displayed = false;
 
 		        /* --------------------------- POSTS BY CATEGORY --------------------------- */
 		        if (perch_get('cat')) {
-		            echo '<h1 class="blog-index-page-title section-heading">'.perch_blog_category(perch_get('cat'), true).'</h1>';
+		            echo '<h1 class="blog-page-heading archive-page-heading">'.perch_blog_category(perch_get('cat'), true).'</h1>';
 
 						echo '<div class="blog-index-category-list">';
 								$categories = perch_blog_categories(array(
 									'template' => 'category_link.html'
 								));
 						echo '</div>';
-
-							echo '<div class="index-featured-posts">';
-								perch_blog_custom(array(
-									'category'   => perch_get('cat'),
-									'count'      => 2,
-									'template'   => $template,
-									'sort'       => $sort_by,
-									'sort-order' => $sort_order,
-								));
-						echo '</div>';
-						echo '<div class="index-non-featured-posts">';
 						perch_blog_custom(array(
 									'category'   => perch_get('cat'),
 									'template' => $template,
 									'sort'       => $sort_by,
 									'sort-order' => $sort_order,
-									'start' => 3,
-									'count' => 20,
+									'count' => 99,
 									'paginate' => false,
 								));
-
-						echo '</div>';
-
 		            $posts_displayed = true;
 						}
 
