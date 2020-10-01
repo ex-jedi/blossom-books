@@ -19,3 +19,13 @@
   text-align: center;
   color: $font-colour-main;
 }
+
+.legals-section {
+  font-size: $font-size-main;
+  color: $font-colour-three;
+  padding: 0 $section-spacing-large $section-spacing-small;
+
+  p {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
+}
