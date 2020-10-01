@@ -1,0 +1,35 @@
+@use 'bits' as *;
+
+//*=========================================
+//** Heading **
+//*=========================================
+
+.main-header {
+  background-color: $background-colour-main;
+}
+
+.main-logo-wrapper {
+  margin-bottom: $section-spacing-small;
+}
+
+.legals-page-heading {
+  font-size: $h1-size;
+  margin: 0 0 $h1-spacing;
+  width: 100%;
+  text-align: center;
+  color: $font-colour-main;
+}
+
+.legals-section {
+  font-size: $font-size-main;
+  color: $font-colour-three;
+  padding: 0 $section-spacing-large $section-spacing-small;
+
+  p {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
+}
+
+strong {
+  font-weight: 800;
+}
