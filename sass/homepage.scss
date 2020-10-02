@@ -11,8 +11,11 @@
 .header-image-text-wrapper {
   @include flex(row);
   align-items: flex-end;
-  margin: $section-spacing-extra-small auto 0 $section-spacing-medium;
-  padding-right: $section-spacing-medium;
+  padding: $section-spacing-extra-small $section-spacing-medium 0;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-extra-small $section-spacing-small 0;
+  }
 }
 
 .header-intro-text {
@@ -25,6 +28,10 @@
   bottom: 0;
   right: $section-spacing-extra-large;
   width: 400px;
+
+  @include breakpoint(1600) {
+    right: $section-spacing-medium;
+  }
 }
 
 //*=========================================
@@ -58,10 +65,6 @@
 }
 
 //********** Text **********
-
-.homepage-paragraphs {
-  margin: 0 auto $section-spacing-small;
-}
 
 .section-one-paragraph {
   margin: 0 $section-spacing-medium $section-spacing-small;
