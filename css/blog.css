@@ -104,6 +104,10 @@
   text-decoration: none;
 }
 
+.archive-page-heading {
+  text-align: center;
+}
+
 .blog-post-section {
   display: flex;
   flex-direction: column;
