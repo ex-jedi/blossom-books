@@ -198,7 +198,7 @@ $transition-one: 0.3s ease-in-out 0s;
 //********** Width **********
 
 //TODO: Change snippets to match below
-@mixin width-breakpoint($point) {
+@mixin breakpoint($point) {
   @if unitless($point) {
     $point: 1px * $point;
   }
