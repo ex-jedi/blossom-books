@@ -43,7 +43,6 @@
 .homepage-section {
   @include flex(column);
   align-items: center;
-  padding: $section-spacing-small $section-spacing-medium;
   position: relative;
 }
 
@@ -56,6 +55,11 @@
 .homepage-section-two {
   background-color: $background-colour-two;
   color: $font-colour-light;
+  padding: $section-spacing-small $section-spacing-medium;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-small $section-spacing-small;
+  }
 }
 
 //********** Image **********
@@ -68,6 +72,10 @@
 
 .section-one-paragraph {
   margin: 0 $section-spacing-medium $section-spacing-small;
+
+  @include breakpoint(1600) {
+    margin: 0 $section-spacing-small $section-spacing-small;
+  }
 }
 
 .image-paragraph-wrapper {
@@ -75,6 +83,10 @@
   justify-content: space-between;
   align-items: flex-end;
   margin: 0 $section-spacing-medium $section-spacing-small;
+
+  @include breakpoint(1600) {
+    margin: 0 $section-spacing-small $section-spacing-small;
+  }
 
   svg {
     flex: 0 1 auto;
@@ -138,4 +150,12 @@
 
 .contact-call-to-action-paragraph {
   width: 60%;
+}
+
+//********** Contact Form **********
+
+.general-contact-form-section {
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
 }
