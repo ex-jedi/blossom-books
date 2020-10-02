@@ -105,7 +105,8 @@ img {
   transform: rotate(-180deg);
   top: 0;
   left: $paragraph-spacing-medium;
-  position: absolute;
+  position: sticky;
+  z-index: 4;
 
   @include breakpoint(2000) {
     position: fixed;
@@ -114,6 +115,7 @@ img {
 
 .main-nav-link {
   text-decoration: none;
+  font-size: $font-size-main;
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
