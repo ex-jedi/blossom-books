@@ -128,6 +128,12 @@
   margin: 0;
   flex: 0 1 auto;
   width: 50%;
+  @include breakpoint(1700) {
+    width: 70%;
+  }
+  @include breakpoint(1400) {
+    width: 75%;
+  }
 }
 
 .box-paragraph {
