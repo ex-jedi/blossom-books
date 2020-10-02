@@ -14,13 +14,26 @@
   padding: $section-spacing-extra-small $section-spacing-medium 0;
 
   @include breakpoint(1600) {
+    position: relative;
     padding: $section-spacing-extra-small $section-spacing-small 0;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-extra-small $section-spacing-smaller 0;
   }
 }
 
 .header-intro-text {
   color: $font-colour-main;
-  margin: 0;
+  margin: 1rem;
+  flex: 1 1 auto;
+}
+
+.header-main-image {
+  flex: 1 1 auto;
+  @include breakpoint(1600) {
+    width: 40%;
+  }
 }
 
 .header-plant-image-wrapper {
@@ -29,8 +42,13 @@
   right: $section-spacing-extra-large;
   width: 400px;
 
-  @include breakpoint(1600) {
-    right: $section-spacing-medium;
+  @include breakpoint(1700) {
+    width: 300px;
+  }
+
+  @include breakpoint(1500) {
+    right: $section-spacing-large;
+    width: 250px;
   }
 }
 
@@ -60,6 +78,10 @@
   @include breakpoint(1600) {
     padding: $section-spacing-small $section-spacing-small;
   }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
 }
 
 //********** Image **********
@@ -76,6 +98,10 @@
   @include breakpoint(1600) {
     margin: 0 $section-spacing-small $section-spacing-small;
   }
+
+  @include breakpoint(1400) {
+    margin: 0 $section-spacing-smaller $section-spacing-small;
+  }
 }
 
 .image-paragraph-wrapper {
@@ -86,6 +112,10 @@
 
   @include breakpoint(1600) {
     margin: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    margin: 0 $section-spacing-smaller $section-spacing-small;
   }
 
   svg {
@@ -157,5 +187,9 @@
 .general-contact-form-section {
   @include breakpoint(1600) {
     padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
   }
 }
