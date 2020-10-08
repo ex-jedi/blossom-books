@@ -41,6 +41,7 @@ body {
   position: relative;
   min-width: 320px;
   max-width: 2000px;
+  overflow-x: hidden;
   @include main-font-stack;
 }
 
@@ -258,6 +259,12 @@ img {
   @include flex(row);
   width: 100%;
   justify-content: space-evenly;
+
+  @include breakpoint(700) {
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .radio-input-wrapper {
@@ -365,7 +372,15 @@ select {
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller $section-spacing-small;
+    padding: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 
   a {
@@ -377,6 +392,14 @@ select {
 .footer-social-media-icon {
   width: 50px;
   margin: 0 auto $section-spacing-medium;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-small;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 auto $section-spacing-smaller;
+  }
 }
 
 .footer-privacy,

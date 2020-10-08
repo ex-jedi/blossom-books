@@ -31,6 +31,10 @@
   @include breakpoint(800) {
     padding: $section-spacing-extra-small $section-spacing-extra-small 0;
   }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-smaller 0;
+  }
 }
 
 .header-intro-text {
@@ -115,7 +119,8 @@
   }
 
   @include breakpoint(700) {
-    width: 250px;
+    width: 100%;
+    max-width: 300px;
     margin-bottom: $section-spacing-extra-small;
   }
 
@@ -144,6 +149,10 @@
   @include breakpoint(1100) {
     padding: $section-spacing-smaller 0;
   }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small 0;
+  }
 }
 
 .homepage-section-two {
@@ -166,6 +175,10 @@
   @include breakpoint(800) {
     padding: $section-spacing-small $section-spacing-extra-small;
   }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
 
 //********** Image **********
@@ -175,6 +188,10 @@
 
   @include breakpoint(1300) {
     margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
   }
 }
 
@@ -197,6 +214,10 @@
 
   @include breakpoint(800) {
     margin: 0 $section-spacing-extra-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 $paragraph-spacing-small $section-spacing-extra-small;
   }
 }
 
@@ -222,6 +243,10 @@
 
   @include breakpoint(800) {
     margin: 0 $section-spacing-extra-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 $paragraph-spacing-small $section-spacing-extra-small;
   }
 
   svg {
@@ -251,6 +276,10 @@
   @include breakpoint(1300) {
     margin-bottom: $section-spacing-smaller;
     width: 100%;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
   }
 }
 
@@ -284,6 +313,10 @@
     align-items: center;
     margin-bottom: $section-spacing-smaller;
   }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .flex-inner-wrapper {
@@ -307,6 +340,10 @@
   width: 300px;
   border: 4px solid $font-colour-light;
   margin-top: $section-spacing-small;
+
+  @include breakpoint(700) {
+    margin-top: $section-spacing-extra-small;
+  }
 }
 
 .left-aligned-paragraphs {
@@ -318,6 +355,10 @@
 
   @include breakpoint(1300) {
     margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
   }
 }
 
@@ -331,6 +372,10 @@
 
   @include breakpoint(1300) {
     margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 auto $section-spacing-extra-small;
   }
 }
 
@@ -350,7 +395,7 @@
     padding: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
-    padding: $section-spacing-small $section-spacing-extra-small;
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 }
