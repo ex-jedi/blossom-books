@@ -38,6 +38,7 @@
     order: 1;
     width: 100%;
     margin: 0 0 $section-spacing-smaller;
+    text-align: center;
   }
 }
 
@@ -165,9 +166,19 @@
     margin: 0 $section-spacing-smaller $section-spacing-small;
   }
 
+  @include breakpoint(1300) {
+    @include flex(column);
+    align-items: center;
+  }
+
   svg {
     flex: 0 1 auto;
     width: 20%;
+
+    @include breakpoint(1300) {
+      width: 100%;
+      max-width: 500px;
+    }
   }
 }
 
@@ -180,6 +191,10 @@
   }
   @include breakpoint(1400) {
     width: 75%;
+  }
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-small;
   }
 }
 

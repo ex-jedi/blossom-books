@@ -111,6 +111,10 @@ img {
   @include breakpoint(2000) {
     position: fixed;
   }
+
+  @include breakpoint(1300) {
+    left: $paragraph-spacing-small;
+  }
 }
 
 .main-nav-link {
