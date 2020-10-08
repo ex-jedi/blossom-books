@@ -45,6 +45,10 @@
     margin: 0 0 $section-spacing-smaller;
     text-align: center;
   }
+
+  @include breakpoint(700) {
+    margin: 0 0 $section-spacing-extra-small;
+  }
 }
 
 .header-image-text-wrapper {
@@ -55,6 +59,12 @@
     order: 2;
     width: 100%;
   }
+
+  @include breakpoint(700) {
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .header-main-image {
@@ -64,6 +74,10 @@
     flex: 0 1 auto;
     width: 56%;
     height: auto;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
   }
 }
 
@@ -98,6 +112,11 @@
     right: 0;
     top: 0;
     bottom: 0;
+  }
+
+  @include breakpoint(700) {
+    width: 250px;
+    margin-bottom: $section-spacing-extra-small;
   }
 
   svg {
