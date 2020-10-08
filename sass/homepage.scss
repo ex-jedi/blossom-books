@@ -26,6 +26,10 @@
   @include breakpoint(1300) {
     @include flex(column);
   }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $section-spacing-extra-small 0;
+  }
 }
 
 .header-intro-text {
@@ -130,6 +134,10 @@
   @include breakpoint(1400) {
     padding: $section-spacing-small $section-spacing-smaller;
   }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-small $section-spacing-extra-small;
+  }
 }
 
 //********** Image **********
@@ -158,6 +166,10 @@
   @include breakpoint(1300) {
     margin: 0 $section-spacing-smaller $section-spacing-smaller;
   }
+
+  @include breakpoint(800) {
+    margin: 0 $section-spacing-extra-small $section-spacing-smaller;
+  }
 }
 
 .image-paragraph-wrapper {
@@ -178,6 +190,10 @@
     @include flex(column);
     align-items: center;
     margin: 0 $section-spacing-smaller $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 $section-spacing-extra-small $section-spacing-smaller;
   }
 
   svg {
@@ -292,6 +308,7 @@
 
 //********** Contact Form **********
 
+//? TODO: Move to main?
 .general-contact-form-section {
   @include breakpoint(1600) {
     padding: $section-spacing-small;
@@ -299,5 +316,9 @@
 
   @include breakpoint(1400) {
     padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-small $section-spacing-extra-small;
   }
 }
