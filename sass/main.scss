@@ -115,6 +115,9 @@ img {
   @include breakpoint(1300) {
     left: $paragraph-spacing-small;
   }
+  @include breakpoint(800) {
+    display: none;
+  }
 }
 
 .main-nav-link {
@@ -125,8 +128,28 @@ img {
   margin: 0 0 $paragraph-spacing-medium;
 }
 
-#main-nav-trigger {
+.main-nav-trigger-wrapper {
   display: none;
+
+  @include breakpoint(800) {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    background-color: $background-colour-two;
+    font-size: $font-size-small;
+  }
+}
+
+.main-nav-trigger {
+  display: block;
+  color: $font-colour-light;
+  text-decoration: none;
+  padding: $paragraph-spacing-smaller;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 // *=========================================
@@ -156,6 +179,7 @@ img {
   @include flex(column);
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 .general-contact-form-input-wrapper {
   @include flex(row);
@@ -166,6 +190,7 @@ img {
 
 .contact-form-title {
   margin: 0 0 $h2-spacing;
+  text-align: center;
 }
 
 .general-contact-form-label {
@@ -331,6 +356,10 @@ select {
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
   color: $font-colour-light;
+
+  @include breakpoint(1300) {
+    padding: $section-spacing-medium 20%;
+  }
 
   a {
     text-decoration: none;

@@ -186,7 +186,9 @@
 
     @include breakpoint(1300) {
       width: 100%;
-      max-width: 500px;
+      max-width: 350px;
+      position: relative;
+      left: $paragraph-spacing-medium;
     }
   }
 }
@@ -245,6 +247,14 @@
   align-items: flex-start;
   flex: 0 1 auto;
   width: 60%;
+
+  @include breakpoint(1300) {
+    width: 80%;
+  }
+
+  @include breakpoint(1100) {
+    width: 100%;
+  }
 }
 
 .section-two-box-paragraph {
