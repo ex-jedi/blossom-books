@@ -8,24 +8,125 @@
   min-height: 85vh;
 }
 
-.header-image-text-wrapper {
+.header-main-content-wrapper {
   @include flex(row);
   align-items: flex-end;
-  margin: $section-spacing-extra-small auto 0 $section-spacing-medium;
-  padding-right: $section-spacing-medium;
+  justify-content: center;
+  padding: $section-spacing-extra-small $section-spacing-medium 0;
+
+  @include breakpoint(1600) {
+    position: relative;
+    padding: $section-spacing-extra-small $section-spacing-small 0;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-extra-small $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(1300) {
+    @include flex(column);
+    padding: $section-spacing-smaller $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $section-spacing-extra-small 0;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-smaller 0;
+  }
 }
 
 .header-intro-text {
   color: $font-colour-main;
-  margin: 0;
+  margin: 1rem;
+  flex: 1 1 auto;
+  width: 70%;
+
+  @include breakpoint(1300) {
+    order: 1;
+    width: 100%;
+    margin: 0 0 $section-spacing-smaller;
+    text-align: center;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 0 $section-spacing-extra-small;
+  }
+}
+
+.header-image-text-wrapper {
+  @include breakpoint(1300) {
+    @include flex(row);
+    justify-content: space-between;
+    align-items: flex-start;
+    order: 2;
+    width: 100%;
+  }
+
+  @include breakpoint(700) {
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.header-main-image {
+  flex: 1 1 auto;
+
+  @include breakpoint(1300) {
+    flex: 0 1 auto;
+    width: 56%;
+    height: auto;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
+  }
 }
 
 .header-plant-image-wrapper {
   position: absolute;
   bottom: 0;
   right: $section-spacing-extra-large;
-  z-index: 1;
   width: 400px;
+
+  @include breakpoint(1700) {
+    width: 300px;
+  }
+
+  @include breakpoint(1600) {
+    bottom: -$paragraph-spacing-large;
+  }
+
+  @include breakpoint(1500) {
+    width: 250px;
+  }
+
+  @include breakpoint(1400) {
+    right: $section-spacing-large;
+  }
+
+  @include breakpoint(1300) {
+    flex: 0 1 auto;
+    position: relative;
+    width: 30%;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: $section-spacing-extra-small;
+  }
+
+  svg {
+    width: 100%;
+  }
 }
 
 //*=========================================
@@ -37,7 +138,6 @@
 .homepage-section {
   @include flex(column);
   align-items: center;
-  padding: $section-spacing-small $section-spacing-medium;
   position: relative;
 }
 
@@ -45,27 +145,80 @@
   background-color: $background-colour-main;
   color: $font-colour-main;
   padding: $section-spacing-small 0;
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small 0;
+  }
 }
 
 .homepage-section-two {
   background-color: $background-colour-two;
   color: $font-colour-light;
+  padding: $section-spacing-small $section-spacing-medium;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-small $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
 
 //********** Image **********
 
 .homepage-main-image {
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 //********** Text **********
 
-.homepage-paragraphs {
-  margin: 0 auto $section-spacing-small;
-}
-
 .section-one-paragraph {
   margin: 0 $section-spacing-medium $section-spacing-small;
+
+  @include breakpoint(1600) {
+    margin: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    margin: 0 $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(1300) {
+    margin: 0 $section-spacing-smaller $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 $section-spacing-extra-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 $paragraph-spacing-small $section-spacing-extra-small;
+  }
 }
 
 .image-paragraph-wrapper {
@@ -74,9 +227,38 @@
   align-items: flex-end;
   margin: 0 $section-spacing-medium $section-spacing-small;
 
+  @include breakpoint(1600) {
+    margin: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    margin: 0 $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(1300) {
+    @include flex(column);
+    align-items: center;
+    margin: 0 $section-spacing-smaller $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 $section-spacing-extra-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 $paragraph-spacing-small $section-spacing-extra-small;
+  }
+
   svg {
     flex: 0 1 auto;
     width: 20%;
+
+    @include breakpoint(1300) {
+      width: 100%;
+      max-width: 350px;
+      position: relative;
+      left: $paragraph-spacing-medium;
+    }
   }
 }
 
@@ -84,6 +266,21 @@
   margin: 0;
   flex: 0 1 auto;
   width: 50%;
+  @include breakpoint(1700) {
+    width: 70%;
+  }
+  @include breakpoint(1400) {
+    width: 75%;
+  }
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-smaller;
+    width: 100%;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .box-paragraph {
@@ -103,12 +300,23 @@
   color: inherit;
 }
 
-//* Section Two Left aligned paragraph, to make room for absolutely positioned find out more box
-//? TODO: Is there a better way set this box to the right of the adjacent paragraphs?
+//* Section Two
 
 .section-two-flex-wrapper {
   @include flex(row);
   justify-content: space-between;
+  margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1300) {
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .flex-inner-wrapper {
@@ -116,6 +324,14 @@
   align-items: flex-start;
   flex: 0 1 auto;
   width: 60%;
+
+  @include breakpoint(1300) {
+    width: 80%;
+  }
+
+  @include breakpoint(1100) {
+    width: 100%;
+  }
 }
 
 .section-two-box-paragraph {
@@ -124,10 +340,26 @@
   width: 300px;
   border: 4px solid $font-colour-light;
   margin-top: $section-spacing-small;
+
+  @include breakpoint(700) {
+    margin-top: $section-spacing-extra-small;
+  }
 }
 
 .left-aligned-paragraphs {
-  margin: 0 0 $section-spacing-medium;
+  margin: 0 0 $section-spacing-extra-small;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .section-two-paragraphs {
@@ -136,4 +368,34 @@
 
 .contact-call-to-action-paragraph {
   width: 60%;
+  margin: 0 auto $section-spacing-small;
+
+  @include breakpoint(1300) {
+    margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
+}
+
+//********** Contact Form **********
+
+//? TODO: Move to main?
+.general-contact-form-section {
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }

@@ -51,6 +51,7 @@ $section-spacing-very-large: 35rem;
 $section-spacing-large: 30rem;
 $section-spacing-medium: 25rem;
 $section-spacing-small: 20rem;
+$section-spacing-smaller: 15rem;
 $section-spacing-extra-small: 10rem;
 
 //* Paragraphs
@@ -66,6 +67,7 @@ $font-size-tiny: 1rem;
 $paragraph-spacing-large: 10rem;
 $paragraph-spacing-medium: 5rem;
 $paragraph-spacing-small: 2.5rem;
+$paragraph-spacing-smaller: 2rem;
 
 //* Forms
 
@@ -198,7 +200,7 @@ $transition-one: 0.3s ease-in-out 0s;
 //********** Width **********
 
 //TODO: Change snippets to match below
-@mixin width-breakpoint($point) {
+@mixin breakpoint($point) {
   @if unitless($point) {
     $point: 1px * $point;
   }
