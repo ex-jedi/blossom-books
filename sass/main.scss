@@ -275,6 +275,12 @@ img {
   label {
     margin-left: 4rem;
   }
+
+  &:first-of-type {
+    @include breakpoint(800) {
+      margin-bottom: $paragraph-spacing-small;
+    }
+  }
 }
 
 //* Custom radio button styling
