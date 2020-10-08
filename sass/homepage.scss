@@ -215,12 +215,18 @@
   color: inherit;
 }
 
-//* Section Two Left aligned paragraph, to make room for absolutely positioned find out more box
-//? TODO: Is there a better way set this box to the right of the adjacent paragraphs?
+//* Section Two
 
 .section-two-flex-wrapper {
   @include flex(row);
   justify-content: space-between;
+  margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1300) {
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .flex-inner-wrapper {
@@ -239,7 +245,11 @@
 }
 
 .left-aligned-paragraphs {
-  margin: 0 0 $section-spacing-medium;
+  margin: 0 0 $section-spacing-extra-small;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .section-two-paragraphs {
@@ -248,6 +258,7 @@
 
 .contact-call-to-action-paragraph {
   width: 60%;
+  margin: 0 auto $section-spacing-small;
 }
 
 //********** Contact Form **********
