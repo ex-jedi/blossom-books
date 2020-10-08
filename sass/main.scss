@@ -321,6 +321,9 @@ input[type='radio']:checked {
   border: 4px solid $font-colour-main;
   text-transform: uppercase;
   transition: $transition-one;
+  // Removes IOS button styles
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   &:hover {
     color: $font-colour-light;
@@ -359,6 +362,10 @@ select {
 
   @include breakpoint(1300) {
     padding: $section-spacing-medium 20%;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-small;
   }
 
   a {
