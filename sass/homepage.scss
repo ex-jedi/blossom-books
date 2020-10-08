@@ -136,6 +136,10 @@
 
 .homepage-main-image {
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-smaller;
+  }
 }
 
 //********** Text **********
@@ -149,6 +153,10 @@
 
   @include breakpoint(1400) {
     margin: 0 $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(1300) {
+    margin: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 }
 
@@ -169,6 +177,7 @@
   @include breakpoint(1300) {
     @include flex(column);
     align-items: center;
+    margin: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 
   svg {
@@ -194,7 +203,8 @@
   }
 
   @include breakpoint(1300) {
-    margin-bottom: $section-spacing-small;
+    margin-bottom: $section-spacing-smaller;
+    width: 100%;
   }
 }
 
@@ -226,6 +236,7 @@
     @include flex(column);
     justify-content: center;
     align-items: center;
+    margin-bottom: $section-spacing-smaller;
   }
 }
 
@@ -250,6 +261,10 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  @include breakpoint(1300) {
+    margin-bottom: $section-spacing-smaller;
+  }
 }
 
 .section-two-paragraphs {
@@ -259,6 +274,10 @@
 .contact-call-to-action-paragraph {
   width: 60%;
   margin: 0 auto $section-spacing-small;
+
+  @include breakpoint(1300) {
+    margin: 0 auto $section-spacing-smaller;
+  }
 }
 
 //********** Contact Form **********
