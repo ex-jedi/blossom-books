@@ -41,7 +41,7 @@ body {
   position: relative;
   min-width: 320px;
   max-width: 2000px;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   @include main-font-stack;
 }
 
@@ -80,6 +80,7 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
+  overflow-x: hidden;
 }
 
 .main-logo-wrapper {
@@ -161,6 +162,7 @@ img {
   margin: 0;
   z-index: 5;
   position: relative;
+  overflow-x: hidden;
 }
 
 // *=========================================
@@ -379,6 +381,7 @@ select {
   left: 0;
   right: 0;
   z-index: 1;
+  overflow-x: hidden;
 
   @include breakpoint(1300) {
     padding: $section-spacing-medium 20%;
