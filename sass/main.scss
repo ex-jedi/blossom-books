@@ -41,7 +41,7 @@ body {
   position: relative;
   min-width: 320px;
   max-width: 2000px;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   @include main-font-stack;
 }
 
@@ -80,6 +80,8 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
+  overflow-x: hidden;
+  z-index: 3;
 }
 
 .main-logo-wrapper {
@@ -107,7 +109,7 @@ img {
   top: 0;
   left: $paragraph-spacing-medium;
   position: absolute;
-  z-index: 6;
+  z-index: 2;
 
   @include breakpoint(2000) {
     position: fixed;
@@ -130,15 +132,15 @@ img {
 }
 
 .main-nav-trigger-wrapper {
+  position: fixed;
   display: none;
+  z-index: 6;
 
   @include breakpoint(800) {
     display: block;
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    z-index: 6;
     background-color: $background-colour-two;
     font-size: $font-size-small;
   }
@@ -156,11 +158,16 @@ img {
 // *=========================================
 // ** Main **
 // *=========================================
+
+main {
+  overflow-x: hidden;
+}
+
 .main-content {
+  position: relative;
+  z-index: 2;
   font-size: $font-size-main;
   margin: 0;
-  z-index: 5;
-  position: relative;
 }
 
 // *=========================================
@@ -374,6 +381,20 @@ select {
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
   color: $font-colour-light;
+  /*
+
+  Sticky doesn't work if the parent has overflow hidden, scroll or auto set.
+  Help at link below...
+  https://www.designcise.com/web/tutorial/how-to-fix-issues-with-css-position-sticky-not-working#:~:text=How%20to%20Make%20position%3A%20sticky%20Work%20With%20the,If%20height%20Property%20Is%20Not%20Set%20on%20Parent
+
+  */
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   @include breakpoint(1300) {
     padding: $section-spacing-medium 20%;
@@ -388,7 +409,9 @@ select {
   }
 
   @include breakpoint(700) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
+    padding: $paragraph-spacing-large $paragraph-spacing-small;
+    max-height: 100vh;
+    font-size: $font-size-small;
   }
 
   a {
@@ -408,6 +431,10 @@ select {
   @include breakpoint(800) {
     margin: 0 auto $section-spacing-smaller;
   }
+
+  @include breakpoint(700) {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
 }
 
 .footer-privacy,
@@ -415,6 +442,10 @@ select {
 .footer-copyright {
   margin: 0 auto $section-spacing-extra-small;
   text-align: center;
+
+  @include breakpoint(700) {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
 }
 
 .footer-credit {
@@ -533,10 +564,6 @@ body:not(.user-is-tabbing) textarea:focus {
   width: fit-content;
   flex: 0 0 auto;
   text-align: center;
-
-  // @include breakpoint(500) {
-  //   width: 80%;
-  // }
 }
 
 .cookie-warning-wrapper.show-cookie-warning {
