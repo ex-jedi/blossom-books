@@ -492,17 +492,29 @@ body:not(.user-is-tabbing) textarea:focus {
   font-size: $font-size-small;
   background-color: $background-colour-two;
   opacity: 0;
-  z-index: 5;
+  z-index: 6;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-extra-small;
+  }
+
+  @include breakpoint(800) {
+    @include flex(column);
+  }
 }
 
 .cookie-warning-paragraph {
   margin: 0 $section-spacing-small 0 0;
   color: $font-colour-light;
 
-  // @include breakpoint(1100) {
-  //   margin: 0 0 $section-spacing-small;
-  //   text-align: center;
-  // }
+  @include breakpoint(1300) {
+    margin: 0 $paragraph-spacing-small 0 0;
+  }
+
+  @include breakpoint(800) {
+    text-align: center;
+    margin: 0 0 $paragraph-spacing-small;
+  }
 }
 
 .cookie-warning-link {
