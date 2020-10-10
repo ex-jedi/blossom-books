@@ -398,8 +398,9 @@ select {
   }
 
   @include breakpoint(700) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
+    padding: $paragraph-spacing-large $paragraph-spacing-small;
     max-height: 100vh;
+    font-size: $font-size-small;
   }
 
   a {
@@ -419,6 +420,10 @@ select {
   @include breakpoint(800) {
     margin: 0 auto $section-spacing-smaller;
   }
+
+  @include breakpoint(700) {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
 }
 
 .footer-privacy,
@@ -426,6 +431,10 @@ select {
 .footer-copyright {
   margin: 0 auto $section-spacing-extra-small;
   text-align: center;
+
+  @include breakpoint(700) {
+    margin: 0 auto $paragraph-spacing-medium;
+  }
 }
 
 .footer-credit {
