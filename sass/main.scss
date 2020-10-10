@@ -158,12 +158,16 @@ img {
 // *=========================================
 // ** Main **
 // *=========================================
+
+main {
+  overflow-x: hidden;
+}
+
 .main-content {
+  position: relative;
+  z-index: 2;
   font-size: $font-size-main;
   margin: 0;
-  z-index: 2;
-  position: relative;
-  overflow-x: hidden;
 }
 
 // *=========================================
