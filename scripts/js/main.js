@@ -37,7 +37,6 @@ function textAreaScrollHandler() {
   } else {
     textAreaLabel.classList.remove('fade-out');
   }
-  // textAreaLabel.style.display = 'none';
 }
 
 textAreaInput.addEventListener('scroll', textAreaScrollHandler);

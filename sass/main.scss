@@ -107,7 +107,7 @@ img {
   top: 0;
   left: $paragraph-spacing-medium;
   position: absolute;
-  z-index: 4;
+  z-index: 6;
 
   @include breakpoint(2000) {
     position: fixed;
@@ -138,7 +138,7 @@ img {
     bottom: 0;
     width: 100%;
     text-align: center;
-    z-index: 5;
+    z-index: 6;
     background-color: $background-colour-two;
     font-size: $font-size-small;
   }
@@ -159,6 +159,8 @@ img {
 .main-content {
   font-size: $font-size-main;
   margin: 0;
+  z-index: 5;
+  position: relative;
 }
 
 // *=========================================
@@ -260,7 +262,7 @@ img {
   width: 100%;
   justify-content: space-evenly;
 
-  @include breakpoint(700) {
+  @include breakpoint(1100) {
     @include flex(column);
     justify-content: center;
     align-items: center;
@@ -274,6 +276,12 @@ img {
 
   label {
     margin-left: 4rem;
+  }
+
+  &:first-of-type {
+    @include breakpoint(1100) {
+      margin-bottom: $paragraph-spacing-small;
+    }
   }
 }
 
@@ -486,17 +494,29 @@ body:not(.user-is-tabbing) textarea:focus {
   font-size: $font-size-small;
   background-color: $background-colour-two;
   opacity: 0;
-  z-index: 5;
+  z-index: 10;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-extra-small;
+  }
+
+  @include breakpoint(800) {
+    @include flex(column);
+  }
 }
 
 .cookie-warning-paragraph {
   margin: 0 $section-spacing-small 0 0;
   color: $font-colour-light;
 
-  // @include breakpoint(1100) {
-  //   margin: 0 0 $section-spacing-small;
-  //   text-align: center;
-  // }
+  @include breakpoint(1300) {
+    margin: 0 $paragraph-spacing-small 0 0;
+  }
+
+  @include breakpoint(800) {
+    text-align: center;
+    margin: 0 0 $paragraph-spacing-small;
+  }
 }
 
 .cookie-warning-link {
