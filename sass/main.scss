@@ -377,6 +377,13 @@ select {
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
   color: $font-colour-light;
+  /*
+
+  Sticky doesn't work if the parent has overflow hidden, scroll or auto set.
+  Help at link below...
+  https://www.designcise.com/web/tutorial/how-to-fix-issues-with-css-position-sticky-not-working#:~:text=How%20to%20Make%20position%3A%20sticky%20Work%20With%20the,If%20height%20Property%20Is%20Not%20Set%20on%20Parent
+
+  */
   position: sticky;
   bottom: 0;
   left: 0;
@@ -553,10 +560,6 @@ body:not(.user-is-tabbing) textarea:focus {
   width: fit-content;
   flex: 0 0 auto;
   text-align: center;
-
-  // @include breakpoint(500) {
-  //   width: 80%;
-  // }
 }
 
 .cookie-warning-wrapper.show-cookie-warning {
