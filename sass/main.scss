@@ -260,7 +260,7 @@ img {
   width: 100%;
   justify-content: space-evenly;
 
-  @include breakpoint(700) {
+  @include breakpoint(1100) {
     @include flex(column);
     justify-content: center;
     align-items: center;
@@ -277,7 +277,7 @@ img {
   }
 
   &:first-of-type {
-    @include breakpoint(800) {
+    @include breakpoint(1100) {
       margin-bottom: $paragraph-spacing-small;
     }
   }
