@@ -81,6 +81,7 @@ img {
   position: relative;
   font-size: $font-size-main;
   overflow-x: hidden;
+  z-index: 3;
 }
 
 .main-logo-wrapper {
@@ -108,7 +109,7 @@ img {
   top: 0;
   left: $paragraph-spacing-medium;
   position: absolute;
-  z-index: 6;
+  z-index: 2;
 
   @include breakpoint(2000) {
     position: fixed;
@@ -131,15 +132,15 @@ img {
 }
 
 .main-nav-trigger-wrapper {
+  position: fixed;
   display: none;
+  z-index: 6;
 
   @include breakpoint(800) {
     display: block;
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    z-index: 6;
     background-color: $background-colour-two;
     font-size: $font-size-small;
   }
@@ -160,7 +161,7 @@ img {
 .main-content {
   font-size: $font-size-main;
   margin: 0;
-  z-index: 5;
+  z-index: 2;
   position: relative;
   overflow-x: hidden;
 }
@@ -382,6 +383,7 @@ select {
   right: 0;
   z-index: 1;
   overflow-x: hidden;
+  overflow-y: scroll;
 
   @include breakpoint(1300) {
     padding: $section-spacing-medium 20%;
@@ -397,6 +399,7 @@ select {
 
   @include breakpoint(700) {
     padding: $section-spacing-extra-small $paragraph-spacing-small;
+    max-height: 100vh;
   }
 
   a {
