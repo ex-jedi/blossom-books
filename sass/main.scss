@@ -374,6 +374,11 @@ select {
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
   color: $font-colour-light;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 
   @include breakpoint(1300) {
     padding: $section-spacing-medium 20%;
