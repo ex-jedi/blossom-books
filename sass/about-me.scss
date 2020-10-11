@@ -102,7 +102,15 @@
 .arrow-wrapper {
   @include flex(row);
   justify-content: center;
-  margin: $section-spacing-small 0;
+  padding: $section-spacing-small 0 0;
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller 0 0;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small 0 0;
+  }
 
   svg .a {
     stroke: $background-colour-three;
