@@ -48,9 +48,15 @@ body {
 // *=========================================
 
 //********** Headings**********
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
 h2 {
   font-size: $h2-size;
-  font-weight: 700;
 }
 
 //********** Containers **********
