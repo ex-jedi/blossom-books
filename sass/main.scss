@@ -216,6 +216,14 @@ main {
 .contact-form-title {
   margin: 0 0 $h2-spacing;
   text-align: center;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .general-contact-form-label {
