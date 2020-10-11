@@ -382,20 +382,20 @@
 //********** Contact Form **********
 
 //? TODO: Move to main?
-.general-contact-form-section {
-  @include breakpoint(1600) {
-    padding: $section-spacing-small;
-  }
+// .general-contact-form-section {
+//   @include breakpoint(1600) {
+//     padding: $section-spacing-small;
+//   }
 
-  @include breakpoint(1400) {
-    padding: $section-spacing-small $section-spacing-smaller;
-  }
+//   @include breakpoint(1400) {
+//     padding: $section-spacing-small $section-spacing-smaller;
+//   }
 
-  @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
-  }
+//   @include breakpoint(1100) {
+//     padding: $section-spacing-smaller;
+//   }
 
-  @include breakpoint(700) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
-  }
-}
+//   @include breakpoint(700) {
+//     padding: $section-spacing-extra-small $paragraph-spacing-small;
+//   }
+// }

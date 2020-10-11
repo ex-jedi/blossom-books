@@ -19,6 +19,10 @@
   padding: $section-spacing-small $section-spacing-extra-large;
   background-color: $background-colour-main;
 
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
+
   p {
     margin: 0 auto $paragraph-spacing-medium;
     font-family: futura-pt, sans-serif;
