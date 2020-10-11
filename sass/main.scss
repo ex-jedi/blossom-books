@@ -184,6 +184,7 @@ main {
   position: relative;
   background-color: $background-colour-main;
   color: $font-colour-main;
+  overflow: hidden;
 
   @include breakpoint(1600) {
     padding: $section-spacing-small;
@@ -241,6 +242,7 @@ main {
   background-color: $background-colour-main;
   border: 0;
   border-bottom: 4px solid $font-colour-main;
+  width: 100%;
 }
 
 .text-area-input-wrapper {
