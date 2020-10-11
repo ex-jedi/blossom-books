@@ -9,6 +9,26 @@
 }
 .main-header {
   padding: 0 $section-spacing-very-large;
+
+  @include breakpoint(1600) {
+    padding: 0 $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: 0 $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: 0 $paragraph-spacing-small;
+  }
 }
 
 .about-me-page-heading {
@@ -19,6 +39,7 @@
 
 .about-me-header-image {
   margin: 0 auto;
+  width: 100%;
 }
 
 //*=========================================
@@ -29,6 +50,26 @@
   color: $font-colour-two;
   padding: $section-spacing-small $section-spacing-very-large;
   background-color: $background-colour-main;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 
   p {
     margin: 0 auto $paragraph-spacing-medium;
