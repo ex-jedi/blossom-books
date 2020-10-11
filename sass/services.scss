@@ -23,6 +23,18 @@
     padding: $section-spacing-small;
   }
 
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-smaller $paragraph-spacing-medium;
+  }
+
   p {
     margin: 0 auto $paragraph-spacing-medium;
     font-family: futura-pt, sans-serif;
@@ -58,4 +70,16 @@
 .services-image {
   width: 100%;
   margin: 0;
+}
+
+//* Contact form is narrower on this page to match the main content styled
+
+.general-contact-form-section {
+  @include breakpoint(800) {
+    padding: $section-spacing-smaller $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
