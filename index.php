@@ -10,4 +10,3 @@
 <?php perch_layout('main-footer-end-js'); ?>
 <!-- TODO: Remove debug -->
 <!-- <?php PerchUtil::output_debug(); ?> -->
-
