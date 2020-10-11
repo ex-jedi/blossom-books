@@ -36,11 +36,15 @@
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
+    padding: $section-spacing-smaller $section-spacing-smaller 0;
   }
 
   @include breakpoint(800) {
     padding: $section-spacing-extra-small $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 
   p {
@@ -69,6 +73,14 @@
   @include flex(row);
   justify-content: center;
   margin: $section-spacing-small 0;
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(800) {
+    margin: $section-spacing-extra-small 0;
+  }
 
   svg .a {
     stroke: $background-colour-three;
