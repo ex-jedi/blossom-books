@@ -161,11 +161,11 @@ img {
 
 main {
   overflow-x: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .main-content {
-  position: relative;
-  z-index: 2;
   font-size: $font-size-main;
   margin: 0;
 }
