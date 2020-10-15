@@ -5,8 +5,24 @@
 //*==============================================================================
 
 .blog-section {
-  padding: $section-spacing-small $section-spacing-very-large;
+  padding: $section-spacing-small $section-spacing-large;
   background-color: $background-colour-main;
+
+  @include breakpoint(1700) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-extra-small;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-extra-small;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
 
 //*==============================================================================
@@ -32,23 +48,6 @@
   @include flex(column);
   align-items: center;
   font-size: $font-size-main;
-  padding: $section-spacing-small $section-spacing-large;
-
-  @include breakpoint(1700) {
-    padding: $section-spacing-small;
-  }
-
-  @include breakpoint(1400) {
-    padding: $section-spacing-small $section-spacing-extra-small;
-  }
-
-  @include breakpoint(1100) {
-    padding: $section-spacing-smaller $section-spacing-extra-small;
-  }
-
-  @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
-  }
 }
 
 .blog-index-category-list {
