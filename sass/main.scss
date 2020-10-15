@@ -411,11 +411,12 @@ select {
 .main-footer {
   @include flex(column);
   align-items: center;
+  justify-content: space-evenly;
   font-size: $font-size-main;
   background-color: $background-colour-three;
-  padding: $section-spacing-medium 30%;
+  padding: 0 30%;
   color: $font-colour-light;
-  max-height: 100vh;
+  height: 100vh;
   /*
 
   Sticky doesn't work if the parent has overflow hidden, scroll or auto set.
@@ -433,21 +434,25 @@ select {
   overflow-y: scroll;
 
   @include breakpoint(1300) {
-    padding: $section-spacing-medium 20%;
+    padding: 0 20%;
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
+    padding: 0 $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small;
+    padding: 0 $section-spacing-extra-small;
   }
 
   @include breakpoint(700) {
-    padding: $paragraph-spacing-large $paragraph-spacing-small;
-    max-height: 100vh;
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
     font-size: $font-size-small;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
+    font-size: $font-size-extra-small;
   }
 
   a {
@@ -458,30 +463,26 @@ select {
 
 .footer-social-media-icon {
   width: 50px;
-  margin: 0 auto $section-spacing-medium;
+  margin: 0 auto;
 
   @include breakpoint(1100) {
-    margin: 0 auto $section-spacing-small;
+    margin: 0 auto;
   }
 
   @include breakpoint(800) {
-    margin: 0 auto $section-spacing-smaller;
+    margin: 0 auto;
   }
 
   @include breakpoint(700) {
-    margin: 0 auto $paragraph-spacing-medium;
+    margin: 0 auto;
   }
 }
 
 .footer-privacy,
 .footer-terms,
 .footer-copyright {
-  margin: 0 auto $section-spacing-extra-small;
+  margin: 0 auto;
   text-align: center;
-
-  @include breakpoint(700) {
-    margin: 0 auto $paragraph-spacing-medium;
-  }
 }
 
 .footer-credit {
