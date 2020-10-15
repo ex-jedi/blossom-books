@@ -415,6 +415,7 @@ select {
   background-color: $background-colour-three;
   padding: $section-spacing-medium 30%;
   color: $font-colour-light;
+  max-height: 100vh;
   /*
 
   Sticky doesn't work if the parent has overflow hidden, scroll or auto set.
@@ -427,7 +428,7 @@ select {
   left: 0;
   right: 0;
   //? TODO: Footer is acting up in IOs unless z-index is -1 here.
-  z-index: -1;
+  z-index: 0;
   overflow-x: hidden;
   overflow-y: scroll;
 
