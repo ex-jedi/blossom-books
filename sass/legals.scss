@@ -10,6 +10,14 @@
 
 .main-logo-wrapper {
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .legals-page-heading {
@@ -18,6 +26,16 @@
   width: 100%;
   text-align: center;
   color: $font-colour-main;
+  padding: 0 $section-spacing-extra-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+    padding: 0;
+  }
 }
 
 .legals-section {
@@ -25,6 +43,26 @@
   color: $font-colour-three;
   padding: 0 $section-spacing-large $section-spacing-small;
   background-color: $background-colour-main;
+
+  @include breakpoint(1600) {
+    padding: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: 0 $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: 0 $section-spacing-smaller $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: 0 $section-spacing-extra-small $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 
   p {
     margin: 0 auto $paragraph-spacing-medium;
