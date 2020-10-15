@@ -90,6 +90,7 @@ img {
 .main-logo-wrapper {
   @include flex(row);
   justify-content: center;
+  background-color: $background-colour-main;
 }
 
 .main-logo {
