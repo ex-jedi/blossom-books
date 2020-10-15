@@ -13,7 +13,7 @@
 
 		        /* --------------------------- POSTS BY CATEGORY --------------------------- */
 		        if (perch_get('cat')) {
-		            echo '<h1 class="blog-page-heading archive-page-heading">'.perch_blog_category(perch_get('cat'), true).'</h1>';
+		            echo '<h1 class="blog-heading blog-page-heading archive-page-heading">'.perch_blog_category(perch_get('cat'), true).'</h1>';
 
 						echo '<div class="blog-index-category-list">';
 								$categories = perch_blog_categories(array(

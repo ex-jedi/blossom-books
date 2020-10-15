@@ -25,11 +25,7 @@
   }
 }
 
-//*==============================================================================
-//** Blog Index **
-//*==============================================================================
-
-.blog-page-heading {
+.blog-heading {
   font-size: $h1-size;
   color: $background-colour-three;
   margin: 0 auto $h1-spacing;
@@ -43,6 +39,10 @@
     margin-bottom: $section-spacing-extra-small;
   }
 }
+
+//*==============================================================================
+//** Blog Index **
+//*==============================================================================
 
 .blog-index-section {
   @include flex(column);
@@ -230,10 +230,6 @@
 }
 
 .blog-post-title {
-  color: $font-colour-main;
-  text-align: center;
-  font-size: $h1-size;
-  margin: 0 auto $h1-spacing;
   order: 1;
 }
 
