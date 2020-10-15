@@ -237,12 +237,29 @@
   width: 100%;
   padding: 0;
   margin: 0 auto $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
 }
 
 .blog-text-block {
   color: $font-colour-four;
   width: 100%;
   margin: 0 auto $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
+
   p {
     margin: 0 auto $paragraph-spacing-medium;
 
@@ -260,6 +277,14 @@
   text-align: center;
   margin: 0 auto $section-spacing-small;
   order: 2;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
 }
 
 .post-categories-link {
