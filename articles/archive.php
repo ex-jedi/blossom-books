@@ -77,4 +77,4 @@
 			</section>
 		</main>
 <?php perch_layout('main-footer'); ?>
-<?php perch_layout("main-footer-end-js"); ?>
+<?php perch_layout("blog-footer-end-js"); ?>
