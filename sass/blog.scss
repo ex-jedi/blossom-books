@@ -106,6 +106,7 @@
     justify-content: flex-start;
     align-items: center;
     clip-path: inset(0 0 100% 0);
+    transform: translateY(-1rem);
     transition: $transition-one;
   }
 
@@ -117,7 +118,7 @@
 .blog-categories-ul-reveal {
   clip-path: inset(0 0 0 0);
   opacity: 1;
-  transform: translateY(0.5rem);
+  transform: translateY(0);
 }
 
 .blog-categories-li {

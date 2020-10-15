@@ -158,7 +158,8 @@ $link-visited: #8608fb;
 //* Timings
 $timing-duration-fast: 0.2s;
 $timing-duration-medium: 0.4s;
-$timing-duration-slow: 0.6s;
+$timing-duration-slower: 0.6s;
+$timing-duration-slow: 0.8s;
 
 //* Timing Function
 $cubic-one: cubic-bezier(0.8, -0.72, 0.37, 1.71);
@@ -166,7 +167,7 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 
 //* Combined
 
-$transition-one: $timing-duration-slow $cubic-one 0s;
+$transition-one: $timing-duration-slower $cubic-one 0s;
 
 //********** Simple Fade Out **********
 .fade-out {
