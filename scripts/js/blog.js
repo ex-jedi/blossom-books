@@ -1,7 +1,11 @@
 const catTitle = document.querySelector('.blog-index-page-subtitle');
+const catList = document.querySelector('.blog-categories-ul');
+const indexWrapper = document.querySelector('.blog-index-wrapper');
 
 function categoryClickHandler() {
-  console.log('Click!');
+  catTitle.classList.toggle('blog-index-page-subtitle-reveal');
+  catList.classList.toggle('blog-categories-ul-reveal');
+  indexWrapper.classList.toggle('category-push-down');
 }
 
 catTitle.addEventListener('click', categoryClickHandler);

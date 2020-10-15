@@ -18,6 +18,14 @@
   color: $background-colour-three;
   margin: 0 auto $h1-spacing;
   width: fit-content;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .blog-index-section {
@@ -46,6 +54,11 @@
 .blog-index-category-list {
   width: 100%;
   min-height: 20rem;
+
+  @include breakpoint(1100) {
+    min-height: auto;
+    overflow: hidden;
+  }
 }
 
 .blog-index-page-subtitle {
@@ -61,11 +74,17 @@
 
     &::after {
       content: url('/images/blog-down-arrow.svg');
-      transition: all 0.3s ease;
+      transition: $transition-one;
       display: inline-block;
       margin-left: $paragraph-spacing-small;
       transform: rotate(180deg);
     }
+  }
+}
+
+.blog-index-page-subtitle-reveal {
+  &::after {
+    transform: rotate(0);
   }
 }
 
@@ -77,15 +96,18 @@
 
   @include breakpoint(1100) {
     @include flex(column);
+    margin: 0 auto $section-spacing-extra-small;
     justify-content: flex-start;
     align-items: center;
+    clip-path: inset(0 0 100% 0);
+    transition: $transition-one;
   }
 }
 
 .blog-categories-ul-reveal {
   clip-path: inset(0 0 0 0);
   opacity: 1;
-  // transform: translateY(0.5rem);
+  transform: translateY(0.5rem);
 }
 
 .blog-categories-li {
@@ -102,11 +124,15 @@
     color: $font-colour-four;
   }
   &:nth-of-type(3n + 3) {
-    color: $font-colour-two;
+    color: $font-colour-main;
   }
 
   @include breakpoint(1100) {
     margin: 0 auto $paragraph-spacing-medium;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -123,6 +149,21 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    transform: translateY(-40rem);
+    transition: $transition-one;
+    grid-template-columns: repeat(1, 1fr);
+    gap: $section-spacing-extra-small;
+  }
+
+  @include breakpoint(500) {
+    transform: translateY(-45rem);
+  }
+}
+
+.category-push-down {
+  transform: translateY(0);
 }
 
 .blog-index-item {
