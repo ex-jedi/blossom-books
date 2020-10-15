@@ -46,7 +46,7 @@
     padding: $section-spacing-smaller $section-spacing-extra-small;
   }
 
-  @include breakpoint(700) {
+  @include breakpoint(800) {
     padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 }
@@ -80,6 +80,12 @@
       transform: rotate(180deg);
     }
   }
+
+  @include breakpoint(400) {
+    &::after {
+      margin-left: 0;
+    }
+  }
 }
 
 .blog-index-page-subtitle-reveal {
@@ -96,11 +102,15 @@
 
   @include breakpoint(1100) {
     @include flex(column);
-    margin: 0 auto $section-spacing-extra-small;
+    margin: 0 auto $section-spacing-smaller;
     justify-content: flex-start;
     align-items: center;
     clip-path: inset(0 0 100% 0);
     transition: $transition-one;
+  }
+
+  @include breakpoint(800) {
+    margin: 0 auto $section-spacing-extra-small;
   }
 }
 
@@ -157,8 +167,16 @@
     gap: $section-spacing-extra-small;
   }
 
+  @include breakpoint(800) {
+    transform: translateY(-35rem);
+  }
+
   @include breakpoint(500) {
-    transform: translateY(-45rem);
+    transform: translateY(-39rem);
+  }
+
+  @include breakpoint(350) {
+    transform: translateY(-42rem);
   }
 }
 
