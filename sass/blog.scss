@@ -25,6 +25,22 @@
   align-items: center;
   font-size: $font-size-main;
   padding: $section-spacing-small $section-spacing-large;
+
+  @include breakpoint(1700) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-extra-small;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
 
 .blog-index-category-list {
@@ -60,7 +76,7 @@
 .blog-categories-li {
   list-style-type: none;
   width: fit-content;
-  margin: 0;
+  margin: 0 $paragraph-spacing-small;
   padding: 0;
 
   &:nth-of-type(3n + 1) {
