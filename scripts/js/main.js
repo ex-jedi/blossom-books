@@ -23,13 +23,7 @@ ScrollTrigger.create({
   end: 'bottom center',
   markers: true,
   id: 'Homepage Section',
-  toggleClass: 'active',
-  onEnter: () => console.log('Enter'),
-  onLeave: () => console.log('Leave'),
-  onEnterBack: () => console.log('Enter again'),
-  onLeaveBack: () => console.log('Leave again'),
-  onUpdate: (self) => console.log('update', self.progress.toFixed(3)),
-  onToggle: (self) => console.log('toggled', self.isActive),
+  toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
 });
 
 // *=========================================
