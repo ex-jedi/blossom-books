@@ -169,9 +169,15 @@
 }
 
 .homepage-section-two {
-  background-color: $background-colour-two;
+  background-color: $background-colour-three;
   color: $font-colour-light;
   padding: $section-spacing-small $section-spacing-medium;
+  transition: $transition-one;
+
+  &.active {
+    background-color: $background-colour-two;
+    color: $font-colour-light;
+  }
 
   @include breakpoint(1600) {
     padding: $section-spacing-small $section-spacing-small;

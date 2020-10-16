@@ -17,6 +17,7 @@ ScrollTrigger.defaults({
   markers: true,
 });
 
+// * Homepage section one change colour on scroll
 ScrollTrigger.create({
   trigger: '.homepage-section-one',
   start: 'top center',
@@ -24,6 +25,16 @@ ScrollTrigger.create({
   markers: true,
   id: 'Homepage Section',
   toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
+});
+
+// * Homepage section two change colour on scroll
+ScrollTrigger.create({
+  trigger: '.homepage-section-two',
+  start: 'top center',
+  end: 'bottom center',
+  markers: true,
+  id: 'Homepage Section',
+  toggleClass: { targets: '.homepage-section-two', className: 'active' },
 });
 
 // *=========================================
