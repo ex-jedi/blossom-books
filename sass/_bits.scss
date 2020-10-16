@@ -81,7 +81,7 @@ $input-spacing: 1rem;
 
 //* Fancy Link Underline
 @mixin link-underline($colour) {
-  transition: all $transition-one;
+  transition: all $transition-one-cubic;
   border-bottom: 3px solid transparent;
   padding-bottom: 5px;
 
@@ -100,7 +100,7 @@ $input-spacing: 1rem;
 
 //* Fancy Link Underline With Visited styles
 @mixin link-underline-visited($colour) {
-  transition: all $transition-one;
+  transition: all $transition-one-cubic;
   border-bottom: 3px solid transparent;
   padding-bottom: 5px;
 
@@ -167,7 +167,8 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 
 //* Combined
 
-$transition-one: $timing-duration-slower $cubic-one 0s;
+$transition-one: $timing-duration-slower ease-in 0s;
+$transition-one-cubic: $timing-duration-medium $cubic-one 0s;
 
 //********** Simple Fade Out **********
 .fade-out {

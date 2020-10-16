@@ -73,7 +73,7 @@
 
     &::after {
       content: url('/images/blog-down-arrow.svg');
-      transition: $transition-one;
+      transition: $transition-one-cubic;
       display: inline-block;
       margin-left: $paragraph-spacing-small;
       transform: rotate(180deg);
@@ -106,7 +106,7 @@
     align-items: center;
     clip-path: inset(0 0 100% 0);
     transform: translateY(-1rem);
-    transition: $transition-one;
+    transition: $transition-one-cubic;
   }
 
   @include breakpoint(800) {
@@ -162,7 +162,7 @@
 
   @include breakpoint(1100) {
     transform: translateY(-40rem);
-    transition: $transition-one;
+    transition: $transition-one-cubic;
     grid-template-columns: repeat(1, 1fr);
     gap: $section-spacing-extra-small;
   }
