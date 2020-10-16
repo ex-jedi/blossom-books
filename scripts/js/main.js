@@ -1,4 +1,21 @@
 // *=========================================
+// ** GSAP  **
+// *=========================================
+
+// ********** Import & Register **********
+
+import { gsap } from 'gsap';
+import { ExpoScaleEase, RoughEase, SlowMo } from 'gsap/EasePack';
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ExpoScaleEase, RoughEase, SlowMo);
+
+// ********** GSAP Timelines **********
+
+// gsap.to('.main-logo', { duration: 1, x: 100 });
+
+// *=========================================
 // ** Cookie Warning  **
 // *=========================================
 
