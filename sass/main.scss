@@ -189,9 +189,15 @@ main {
   align-items: center;
   padding: $section-spacing-small $section-spacing-medium;
   position: relative;
-  background-color: $background-colour-main;
-  color: $font-colour-main;
+  background-color: $background-colour-three;
+  color: $font-colour-light;
   overflow: hidden;
+  transition: $transition-one;
+
+  &.active {
+    background-color: $background-colour-main;
+    color: $font-colour-main;
+  }
 
   @include breakpoint(1600) {
     padding: $section-spacing-small;
@@ -246,10 +252,15 @@ main {
 
 .general-contact-form-input {
   flex: 1 1 auto;
-  background-color: $background-colour-main;
+  background-color: $background-colour-three;
   border: 0;
-  border-bottom: 4px solid $font-colour-main;
+  border-bottom: 4px solid $font-colour-light;
   width: 100%;
+
+  &.active {
+    background-color: $background-colour-main;
+    border-bottom-color: $font-colour-main;
+  }
 }
 
 .text-area-input-wrapper {
@@ -375,8 +386,9 @@ input[type='radio']:checked {
   padding: 2rem;
   background-color: $background-colour-main;
   border: 4px solid $font-colour-main;
+  color: $font-colour-main;
   text-transform: uppercase;
-  transition: $transition-one-cubic;
+  transition: $transition-one;
   // Removes IOS button styles
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -384,6 +396,17 @@ input[type='radio']:checked {
   &:hover {
     color: $font-colour-light;
     background-color: $background-colour-three;
+    border-color: $background-colour-main;
+  }
+
+  &.active {
+    background-color: $background-colour-main;
+    border-color: $font-colour-main;
+
+    &:hover {
+      color: $font-colour-light;
+      background-color: $background-colour-three;
+    }
   }
 }
 

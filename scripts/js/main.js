@@ -2,39 +2,26 @@
 // ** GSAP  **
 // *=========================================
 
-// ********** Import & Register **********
-
 import { gsap } from 'gsap';
-import { ExpoScaleEase, RoughEase, SlowMo } from 'gsap/EasePack';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ExpoScaleEase, RoughEase, SlowMo);
-
-// ********** GSAP Scroll Trigger Animations **********
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 ScrollTrigger.defaults({
-  markers: true,
+  // markers: true,
 });
 
-// * Homepage section one change colour on scroll
+// * Contact form color change
 ScrollTrigger.create({
-  trigger: '.homepage-section-one',
+  trigger: '.general-contact-form-section',
   start: 'top center',
   end: 'bottom center',
-  markers: true,
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
-});
-
-// * Homepage section two change colour on scroll
-ScrollTrigger.create({
-  trigger: '.homepage-section-two',
-  start: 'top center',
-  end: 'bottom center',
-  markers: true,
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-two', className: 'active' },
+  id: 'Contact Form',
+  toggleClass: {
+    targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
+    className: 'active',
+  },
 });
 
 // *=========================================
