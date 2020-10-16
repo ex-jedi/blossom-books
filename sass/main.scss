@@ -429,6 +429,7 @@ select {
   left: 0;
   right: 0;
   //? TODO: Footer is acting up in IOs unless z-index is -1 here.
+  //? TODO: Seems okay atm with 0. Keep an eye on it
   z-index: 0;
   overflow-x: hidden;
   overflow-y: scroll;
