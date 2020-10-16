@@ -13,7 +13,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, ExpoScaleEase, RoughEase, Slow
 
 // ********** GSAP Timelines **********
 
-// gsap.to('.main-logo', { duration: 1, x: 100 });
+// gsap.to('.main-logo', { duration: 2, x: 500 });
 
 // *=========================================
 // ** Cookie Warning  **
