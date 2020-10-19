@@ -6,19 +6,59 @@
 
 .main-logo {
   margin-bottom: $h2-spacing;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
+
 .main-header {
   padding: 0 $section-spacing-very-large;
+
+  @include breakpoint(1600) {
+    padding: 0 $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: 0 $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: 0 $paragraph-spacing-small;
+  }
 }
 
 .about-me-page-heading {
   color: $background-colour-three;
   margin: 0 auto $h2-spacing;
   width: fit-content;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .about-me-header-image {
   margin: 0 auto;
+  width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
 }
 
 //*=========================================
@@ -28,6 +68,27 @@
 .about-me-section {
   color: $font-colour-two;
   padding: $section-spacing-small $section-spacing-very-large;
+  background-color: $background-colour-main;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller $section-spacing-smaller 0;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 
   p {
     margin: 0 auto $paragraph-spacing-medium;
@@ -41,7 +102,15 @@
 .arrow-wrapper {
   @include flex(row);
   justify-content: center;
-  margin: $section-spacing-small 0;
+  padding: $section-spacing-small 0 0;
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller 0 0;
+  }
+
+  @include breakpoint(800) {
+    padding: $section-spacing-extra-small 0 0;
+  }
 
   svg .a {
     stroke: $background-colour-three;

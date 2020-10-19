@@ -6,6 +6,14 @@
 
 .main-header {
   min-height: 85vh;
+  transition: $transition-one;
+  color: $font-colour-main;
+  padding-bottom: $section-spacing-small;
+
+  &.active {
+    background-color: $background-colour-three;
+    color: $font-colour-light;
+  }
 }
 
 .header-main-content-wrapper {
@@ -38,7 +46,6 @@
 }
 
 .header-intro-text {
-  color: $font-colour-main;
   margin: 1rem;
   flex: 1 1 auto;
   width: 70%;
@@ -142,9 +149,15 @@
 }
 
 .homepage-section-one {
-  background-color: $background-colour-main;
-  color: $font-colour-main;
+  background-color: $background-colour-three;
+  color: $font-colour-light;
   padding: $section-spacing-small 0;
+  transition: $transition-one;
+
+  &.active {
+    background-color: $background-colour-main;
+    color: $font-colour-main;
+  }
 
   @include breakpoint(1100) {
     padding: $section-spacing-smaller 0;
@@ -156,9 +169,15 @@
 }
 
 .homepage-section-two {
-  background-color: $background-colour-two;
+  background-color: $background-colour-three;
   color: $font-colour-light;
   padding: $section-spacing-small $section-spacing-medium;
+  transition: $transition-one;
+
+  &.active {
+    background-color: $background-colour-two;
+    color: $font-colour-light;
+  }
 
   @include breakpoint(1600) {
     padding: $section-spacing-small $section-spacing-small;
@@ -292,7 +311,11 @@
 .section-one-box-paragraph {
   height: 280px;
   width: 280px;
-  border: 4px solid $font-colour-main;
+  border: 4px solid $background-colour-main;
+
+  &.active {
+    border-color: $background-colour-three;
+  }
 }
 
 .find-out-more-link {
@@ -382,20 +405,20 @@
 //********** Contact Form **********
 
 //? TODO: Move to main?
-.general-contact-form-section {
-  @include breakpoint(1600) {
-    padding: $section-spacing-small;
-  }
+// .general-contact-form-section {
+//   @include breakpoint(1600) {
+//     padding: $section-spacing-small;
+//   }
 
-  @include breakpoint(1400) {
-    padding: $section-spacing-small $section-spacing-smaller;
-  }
+//   @include breakpoint(1400) {
+//     padding: $section-spacing-small $section-spacing-smaller;
+//   }
 
-  @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
-  }
+//   @include breakpoint(1100) {
+//     padding: $section-spacing-smaller;
+//   }
 
-  @include breakpoint(700) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
-  }
-}
+//   @include breakpoint(700) {
+//     padding: $section-spacing-extra-small $paragraph-spacing-small;
+//   }
+// }

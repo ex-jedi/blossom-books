@@ -18,7 +18,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   font-size: 10px;
-  overflow-x: hidden;
 
   @include styled-scrollbar(
     1rem,
@@ -40,8 +39,7 @@ body {
   background-color: $background-colour-main;
   position: relative;
   min-width: 320px;
-  max-width: 2000px;
-  // overflow-x: hidden;
+  max-width: 1920px;
   @include main-font-stack;
 }
 
@@ -50,9 +48,15 @@ body {
 // *=========================================
 
 //********** Headings**********
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: 700;
+}
+
 h2 {
   font-size: $h2-size;
-  font-weight: 700;
 }
 
 //********** Containers **********
@@ -80,13 +84,14 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
-  overflow-x: hidden;
-  z-index: 3;
+  //TODO: Header z-index: might be causing the footer to peek through on iOS;
+  z-index: 4;
 }
 
 .main-logo-wrapper {
   @include flex(row);
   justify-content: center;
+  background-color: inherit;
 }
 
 .main-logo {
@@ -134,11 +139,13 @@ img {
 .main-nav-trigger-wrapper {
   position: fixed;
   display: none;
-  z-index: 6;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   @include breakpoint(800) {
     display: block;
-    bottom: 0;
     width: 100%;
     text-align: center;
     background-color: $background-colour-two;
@@ -160,12 +167,14 @@ img {
 // *=========================================
 
 main {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+  height: auto;
+  width: 100%;
 }
 
 .main-content {
-  position: relative;
-  z-index: 2;
   font-size: $font-size-main;
   margin: 0;
 }
@@ -181,8 +190,31 @@ main {
   align-items: center;
   padding: $section-spacing-small $section-spacing-medium;
   position: relative;
-  background-color: $background-colour-main;
-  color: $font-colour-main;
+  background-color: $background-colour-three;
+  color: $font-colour-light;
+  overflow: hidden;
+  transition: $transition-one;
+
+  &.active {
+    background-color: $background-colour-main;
+    color: $font-colour-main;
+  }
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-small $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-extra-small $paragraph-spacing-small;
+  }
 }
 
 .general-contact-form {
@@ -201,6 +233,14 @@ main {
 .contact-form-title {
   margin: 0 0 $h2-spacing;
   text-align: center;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .general-contact-form-label {
@@ -213,9 +253,15 @@ main {
 
 .general-contact-form-input {
   flex: 1 1 auto;
-  background-color: $background-colour-main;
+  background-color: $background-colour-three;
   border: 0;
-  border-bottom: 4px solid $font-colour-main;
+  border-bottom: 4px solid $font-colour-light;
+  width: 100%;
+
+  &.active {
+    background-color: $background-colour-main;
+    border-bottom-color: $font-colour-main;
+  }
 }
 
 .text-area-input-wrapper {
@@ -224,7 +270,7 @@ main {
 
 .text-area-label {
   position: absolute;
-  transition: $transition-one;
+  transition: $transition-one-cubic;
 }
 
 //* Text area with underlines
@@ -307,7 +353,7 @@ input[type='radio'] {
     top: -8px;
     left: -4px;
     z-index: 5;
-    transition: $transition-one;
+    transition: $transition-one-cubic;
   }
 
   &:after {
@@ -320,7 +366,7 @@ input[type='radio'] {
     top: -3px;
     left: 1px;
     margin: 0;
-    transition: $transition-one;
+    transition: $transition-one-cubic;
     z-index: 6;
   }
 }
@@ -341,6 +387,7 @@ input[type='radio']:checked {
   padding: 2rem;
   background-color: $background-colour-main;
   border: 4px solid $font-colour-main;
+  color: $font-colour-main;
   text-transform: uppercase;
   transition: $transition-one;
   // Removes IOS button styles
@@ -350,6 +397,17 @@ input[type='radio']:checked {
   &:hover {
     color: $font-colour-light;
     background-color: $background-colour-three;
+    border-color: $background-colour-main;
+  }
+
+  &.active {
+    background-color: $background-colour-main;
+    border-color: $font-colour-main;
+
+    &:hover {
+      color: $font-colour-light;
+      background-color: $background-colour-three;
+    }
   }
 }
 
@@ -377,10 +435,12 @@ select {
 .main-footer {
   @include flex(column);
   align-items: center;
+  justify-content: space-evenly;
   font-size: $font-size-main;
   background-color: $background-colour-three;
-  padding: $section-spacing-medium 30%;
+  padding: 0 30%;
   color: $font-colour-light;
+  height: 100vh;
   /*
 
   Sticky doesn't work if the parent has overflow hidden, scroll or auto set.
@@ -392,26 +452,30 @@ select {
   bottom: 0;
   left: 0;
   right: 0;
+  //? TODO: Footer is acting up in IOs unless z-index is -1 here.
+  //? TODO: Seems okay atm with 0. Keep an eye on it
   z-index: 1;
-  overflow-x: hidden;
-  overflow-y: scroll;
 
   @include breakpoint(1300) {
-    padding: $section-spacing-medium 20%;
+    padding: 0 20%;
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
+    padding: 0 $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small;
+    padding: 0 $section-spacing-extra-small;
   }
 
   @include breakpoint(700) {
-    padding: $paragraph-spacing-large $paragraph-spacing-small;
-    max-height: 100vh;
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
     font-size: $font-size-small;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
+    font-size: $font-size-extra-small;
   }
 
   a {
@@ -422,30 +486,26 @@ select {
 
 .footer-social-media-icon {
   width: 50px;
-  margin: 0 auto $section-spacing-medium;
+  margin: 0 auto;
 
   @include breakpoint(1100) {
-    margin: 0 auto $section-spacing-small;
+    margin: 0 auto;
   }
 
   @include breakpoint(800) {
-    margin: 0 auto $section-spacing-smaller;
+    margin: 0 auto;
   }
 
   @include breakpoint(700) {
-    margin: 0 auto $paragraph-spacing-medium;
+    margin: 0 auto;
   }
 }
 
 .footer-privacy,
 .footer-terms,
 .footer-copyright {
-  margin: 0 auto $section-spacing-extra-small;
+  margin: 0 auto;
   text-align: center;
-
-  @include breakpoint(700) {
-    margin: 0 auto $paragraph-spacing-medium;
-  }
 }
 
 .footer-credit {
@@ -493,20 +553,15 @@ select {
 
 //* Hides outline unless tab key is pressed
 
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
-  outline: none;
+/* Hide focus styles if they're not needed, for example,
+when an element receives focus via the mouse. */
+:focus:not(:focus-visible) {
+  outline: 0;
 }
 
-.user-is-tabbing {
-  a:focus,
-  button:focus,
-  input:focus,
-  textarea:focus {
-    outline: 3px dashed #ff5e00;
-  }
+/* Show focus styles on keyboard focus. */
+:focus-visible {
+  outline: 5px dotted #f00;
 }
 
 //*=========================================

@@ -34,5 +34,5 @@
 					<?php perch_pages_navigation(array(
 							'hide-extensions' => true,
 					)); ?>
-<?php perch_content("Main Logo"); ?>
-
+					<?php perch_content("Main Logo"); ?>
+			</header>
