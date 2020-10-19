@@ -84,7 +84,8 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
-  z-index: 3;
+  //TODO: Header z-index: might be causing the footer to peek through on iOS;
+  z-index: 4;
 }
 
 .main-logo-wrapper {
