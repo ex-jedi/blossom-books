@@ -29,3 +29,11 @@ ScrollTrigger.create({
   id: 'Homepage Section',
   toggleClass: { targets: '.homepage-section-two', className: 'active' },
 });
+
+// *=========================================
+// ** Header Image Switcher  **
+// *=========================================
+
+const headerImgWidth = document.querySelector('.header-main-image').style.width;
+console.log(headerImgWidth);
+const headerImgWrapper = document.querySelector('.header-main-image-wrapper');
