@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 ScrollTrigger.defaults({
-  // markers: true,
+  markers: true,
 });
 
 // * Contact form color change
@@ -22,6 +22,15 @@ ScrollTrigger.create({
     targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
     className: 'active',
   },
+});
+
+// ********** Fading in text **********
+
+ScrollTrigger.create({
+  trigger: '.fade-in-rotate',
+  end: '50px top',
+  start: '-50px 90%',
+  toggleClass: 'fade-in-rotate-reveal',
 });
 
 // *=========================================

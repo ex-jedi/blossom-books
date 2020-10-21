@@ -514,6 +514,21 @@ select {
 }
 
 //*=========================================
+//** Animations **
+//*=========================================
+
+.fade-in-rotate {
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: $transition-one;
+}
+
+.fade-in-rotate-reveal {
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+//*=========================================
 //** Utility & Accessibility  **
 //*=========================================
 
