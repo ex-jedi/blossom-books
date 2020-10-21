@@ -223,6 +223,7 @@ main {
   width: 100%;
   overflow: hidden;
 }
+
 .general-contact-form-input-wrapper {
   @include flex(row);
   width: 100%;
@@ -258,7 +259,8 @@ main {
   border-bottom: 4px solid $font-colour-light;
   width: 100%;
 
-  &.active {
+  &.active,
+  &.focus {
     background-color: $background-colour-main;
     border-bottom-color: $font-colour-main;
   }
@@ -568,15 +570,20 @@ select {
 
 //* Hides outline unless tab key is pressed
 
-/* Hide focus styles if they're not needed, for example,
-when an element receives focus via the mouse. */
-:focus:not(:focus-visible) {
-  outline: 0;
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
 }
 
-/* Show focus styles on keyboard focus. */
-:focus-visible {
-  outline: 5px dotted #f00;
+.user-is-tabbing {
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 5px dotted #ff5e00;
+  }
 }
 
 //*=========================================

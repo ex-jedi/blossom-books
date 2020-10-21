@@ -137,3 +137,27 @@ ScrollTrigger.defaults({
 //   onUpdate: (self) => console.log('update', self.progress.toFixed(3)),
 //   onToggle: (self) => console.log('toggled', self.isActive),
 // });
+
+
+// *=========================================
+// ** Accessibility  **
+// *=========================================
+
+// * Adding focus outline class when tab key is used
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    document.body.classList.add('user-is-tabbing');
+
+    window.removeEventListener('keydown', handleFirstTab);
+    window.addEventListener('mousedown', handleMouseDownOnce);
+  }
+}
+
+function handleMouseDownOnce() {
+  document.body.classList.remove('user-is-tabbing');
+
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+}
+
+window.addEventListener('keydown', handleFirstTab);
