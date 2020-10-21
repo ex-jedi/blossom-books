@@ -26,7 +26,7 @@ ScrollTrigger.create({
 
 // ********** Fading in text **********
 
-const fadeInParagraphs = document.querySelectorAll('.fade-in-rotate');
+const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
 fadeInParagraphs.forEach((paragraph) => {
   ScrollTrigger.create({
