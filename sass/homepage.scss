@@ -80,6 +80,8 @@
 
 .header-main-image-wrapper {
   flex: 1 1 auto;
+  position: relative;
+  width: 100%;
 
   @include breakpoint(1300) {
     flex: 0 1 auto;
@@ -88,12 +90,19 @@
   }
 
   @include breakpoint(700) {
+    width: 500px;
+    height: 500px;
+  }
+
+  @include breakpoint(550) {
     width: 100%;
   }
 }
 
 .header-main-image {
-  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .header-plant-image-wrapper {
