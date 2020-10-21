@@ -90,12 +90,23 @@
   }
 
   @include breakpoint(700) {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
   }
 
-  @include breakpoint(550) {
+  @include breakpoint(450) {
     width: 100%;
+    height: 250px;
+  }
+
+  @include breakpoint(380) {
+    width: 100%;
+    height: 200px;
+  }
+
+  @include breakpoint(350) {
+    width: 100%;
+    height: 150px;
   }
 }
 
