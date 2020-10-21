@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 ScrollTrigger.defaults({
-  // markers: true,
+  markers: true,
 });
 
 // * Contact form color change
@@ -31,8 +31,8 @@ const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 fadeInParagraphs.forEach((paragraph) => {
   ScrollTrigger.create({
     trigger: paragraph,
-    end: '50px top',
-    start: '-50px 90%',
+    end: '50px 5%',
+    start: '-50px 85%',
     toggleClass: 'fade-in-rotate-reveal',
   });
 });
@@ -117,7 +117,7 @@ textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 
 // * ScrollTrigger defaults example
 ScrollTrigger.defaults({
-  markers: true,
+  // markers: true,
 });
 
 // * ScrollTrigger instance example

@@ -81,7 +81,8 @@
 .header-main-image-wrapper {
   flex: 1 1 auto;
   position: relative;
-  width: 100%;
+  width: 500px;
+  height: 500px;
 
   @include breakpoint(1300) {
     flex: 0 1 auto;
@@ -112,8 +113,17 @@
 
 .header-main-image {
   position: absolute;
+  width: 100%;
   left: 0px;
   top: 0px;
+  opacity: 0;
+  z-index: 0;
+  transition: $transition-three;
+}
+
+.header-main-image-showing {
+  opacity: 1;
+  z-index: 1;
 }
 
 .header-plant-image-wrapper {
@@ -458,22 +468,3 @@
 }
 
 //********** Contact Form **********
-
-//? TODO: Move to main?
-// .general-contact-form-section {
-//   @include breakpoint(1600) {
-//     padding: $section-spacing-small;
-//   }
-
-//   @include breakpoint(1400) {
-//     padding: $section-spacing-small $section-spacing-smaller;
-//   }
-
-//   @include breakpoint(1100) {
-//     padding: $section-spacing-smaller;
-//   }
-
-//   @include breakpoint(700) {
-//     padding: $section-spacing-extra-small $paragraph-spacing-small;
-//   }
-// }

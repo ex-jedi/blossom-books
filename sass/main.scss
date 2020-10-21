@@ -273,6 +273,7 @@ main {
 .text-area-label {
   position: absolute;
   transition: $transition-one-cubic;
+  color: inherit;
 }
 
 //* Text area with underlines
@@ -486,6 +487,27 @@ select {
   }
 }
 
+@keyframes icon-bounce {
+  0% {
+      transform: translateY(0);
+  }
+  20% {
+      transform: translateY(-1.5rem);
+  }
+  40% {
+      transform: translateY(0);
+  }
+  60% {
+      transform: translateY(-1.5rem);
+  }
+  80% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
 .footer-social-media-icon {
   width: 50px;
   margin: 0 auto;
@@ -500,6 +522,11 @@ select {
 
   @include breakpoint(700) {
     margin: 0 auto;
+  }
+
+  &:hover {
+    animation: icon-bounce 1s linear 3 forwards;
+
   }
 }
 
