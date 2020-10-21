@@ -26,11 +26,15 @@ ScrollTrigger.create({
 
 // ********** Fading in text **********
 
-ScrollTrigger.create({
-  trigger: '.fade-in-rotate',
-  end: '50px top',
-  start: '-50px 90%',
-  toggleClass: 'fade-in-rotate-reveal',
+const fadeInParagraphs = document.querySelectorAll('.fade-in-rotate');
+
+fadeInParagraphs.forEach((paragraph) => {
+  ScrollTrigger.create({
+    trigger: paragraph,
+    end: '50px top',
+    start: '-50px 90%',
+    toggleClass: 'fade-in-rotate-reveal',
+  });
 });
 
 // *=========================================
