@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 ScrollTrigger.defaults({
-  markers: true,
+  // markers: true,
 });
 
 // * Contact form color change
