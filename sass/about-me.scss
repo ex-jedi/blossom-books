@@ -101,11 +101,7 @@
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-medium;
-  }
-
-  @include breakpoint(800) {
-    padding: $paragraph-spacing-medium $paragraph-spacing-medium $paragraph-spacing-small;
+    padding: $section-spacing-extra-small $paragraph-spacing-medium $section-spacing-extra-small;
   }
 
   @include breakpoint(500) {

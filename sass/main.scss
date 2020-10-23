@@ -209,7 +209,7 @@ main {
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
+    padding: $section-spacing-smaller $section-spacing-extra-small;
   }
 
   @include breakpoint(700) {
