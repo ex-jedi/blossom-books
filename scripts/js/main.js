@@ -1,3 +1,5 @@
+// TODO: Module all the things so each page just has one js file
+
 // *=========================================
 // ** GSAP  **
 // *=========================================
@@ -26,6 +28,11 @@ ScrollTrigger.create({
 
 // ********** Fading in paragraphs **********
 
+// * Adding class to paragraphs created by Perch to set them up for fading in.
+const fadeInParagraph = document.querySelectorAll('.about-me-section p');
+fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
+
+// * Grabbing all paragraphs to fade in
 const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
 fadeInParagraphs.forEach((paragraph) => {
@@ -37,7 +44,6 @@ fadeInParagraphs.forEach((paragraph) => {
         toggleClass: 'fade-in-rotate-reveal',
         start: 'top 95%',
         end: 'bottom top',
-        markers: true,
       });
     },
 
@@ -48,7 +54,6 @@ fadeInParagraphs.forEach((paragraph) => {
         toggleClass: 'fade-in-rotate-reveal',
         start: 'top bottom',
         end: 'bottom -100px',
-        markers: true,
       });
     },
 
@@ -59,7 +64,6 @@ fadeInParagraphs.forEach((paragraph) => {
         toggleClass: 'fade-in-rotate-reveal',
         start: 'top bottom',
         end: 'bottom -300px',
-        markers: true,
       });
     },
   });

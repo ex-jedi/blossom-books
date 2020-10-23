@@ -1,4 +1,14 @@
 // *=========================================
+// ** GSAP  **
+// *=========================================
+
+import { gsap } from 'gsap';
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+
+// *=========================================
 // ** Header Image Switcher  **
 // *=========================================
 
@@ -16,7 +26,6 @@ function headerImageChange() {
 
 (function loop(min = 1000, max = 6000, randomNumber = Math.random()) {
   const rand = Math.floor(randomNumber * (max - min) + min);
-  console.log(rand);
   setTimeout(() => {
     headerImageChange();
     loop();
@@ -24,8 +33,14 @@ function headerImageChange() {
 })();
 
 // *=========================================
-// ** Fade In Paragraphs  **
+// ** Section Colour Change  **
 // *=========================================
 
-const fadeInParagraph = document.querySelectorAll('.about-me-section p');
-fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
+ScrollTrigger.create({
+  trigger: '.about-me-section',
+  start: 'top center',
+  end: 'bottom center',
+  id: 'About me section',
+  toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
+  markers: true,
+});

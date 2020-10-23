@@ -82,9 +82,15 @@
 //*=========================================
 
 .about-me-section {
-  color: $font-colour-two;
+  background-color: $background-colour-three;
+  color: $font-colour-light;
   padding: $section-spacing-small $section-spacing-very-large;
-  background-color: $background-colour-main;
+  transition: $transition-one;
+
+  &.active {
+    color: $font-colour-two;
+    background-color: $background-colour-main;
+  }
 
   @include breakpoint(1600) {
     padding: $section-spacing-small;
@@ -115,11 +121,14 @@
   }
 }
 
+
+
 .arrow-wrapper {
   @include flex(row);
   justify-content: center;
   padding: $section-spacing-small 0 0;
   animation: arrow-bounce 2s linear infinite forwards;
+
 
   @include breakpoint(1100) {
     padding: $section-spacing-smaller 0 0;
@@ -129,7 +138,17 @@
     padding: $section-spacing-extra-small 0 0;
   }
 
-  svg .a {
-    stroke: $background-colour-three;
+  &.active {
+    svg {
+      .a {
+        stroke: $background-colour-three;
+      }
+    }
+  }
+
+  svg {
+    .a {
+      stroke: $background-colour-main;
+    }
   }
 }
