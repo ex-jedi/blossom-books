@@ -58,12 +58,22 @@ fadeInParagraphs.forEach((paragraph) => {
     },
 
     // Mobile
-    '(max-width: 699px)': function () {
+    '(max-width: 699px) and (min-width: 450px)': function () {
       ScrollTrigger.create({
         trigger: paragraph,
         toggleClass: 'fade-in-rotate-reveal',
         start: 'top bottom',
         end: 'bottom -300px',
+      });
+    },
+
+    // Small Mobile
+    '(max-width: 449px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -450px',
       });
     },
   });

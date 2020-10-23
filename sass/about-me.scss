@@ -17,26 +17,22 @@
 }
 
 .main-header {
-  padding: 0 $section-spacing-very-large;
+  padding: 0 $section-spacing-very-large $section-spacing-extra-small;
 
   @include breakpoint(1600) {
-    padding: 0 $section-spacing-small;
+    padding: 0 $section-spacing-small $section-spacing-extra-small;
   }
 
   @include breakpoint(1400) {
-    padding: 0 $section-spacing-smaller;
+    padding: 0 $section-spacing-smaller $section-spacing-extra-small;
   }
 
   @include breakpoint(1100) {
-    padding: 0 $section-spacing-smaller;
+    padding: 0 $section-spacing-smaller calc(#{$section-spacing-smaller} / 2);
   }
 
   @include breakpoint(800) {
-    padding: 0 $paragraph-spacing-medium;
-  }
-
-  @include breakpoint(800) {
-    padding: 0 $paragraph-spacing-small;
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
   }
 }
 
@@ -84,7 +80,7 @@
 .about-me-section {
   background-color: $background-colour-three;
   color: $font-colour-light;
-  padding: $section-spacing-small $section-spacing-very-large;
+  padding: $section-spacing-extra-small $section-spacing-very-large $section-spacing-small ;
   transition: $transition-one;
 
   &.active {
@@ -93,15 +89,15 @@
   }
 
   @include breakpoint(1600) {
-    padding: $section-spacing-small;
+    padding: $section-spacing-extra-small $section-spacing-small $section-spacing-small;
   }
 
   @include breakpoint(1400) {
-    padding: $section-spacing-small $section-spacing-smaller;
+    padding: $section-spacing-extra-small $section-spacing-smaller $section-spacing-small;
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller $section-spacing-smaller 0;
+    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
@@ -109,7 +105,11 @@
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
+    padding: $paragraph-spacing-medium $paragraph-spacing-medium $paragraph-spacing-small;
+  }
+
+  @include breakpoint(500) {
+    padding: $paragraph-spacing-medium $paragraph-spacing-small $paragraph-spacing-small;
   }
 
   p {

@@ -42,5 +42,4 @@ ScrollTrigger.create({
   end: 'bottom center',
   id: 'About me section',
   toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
-  markers: true,
 });
