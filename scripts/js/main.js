@@ -24,16 +24,44 @@ ScrollTrigger.create({
   },
 });
 
-// ********** Fading in text **********
+// ********** Fading in paragraphs **********
 
 const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
 fadeInParagraphs.forEach((paragraph) => {
-  ScrollTrigger.create({
-    trigger: paragraph,
-    end: '50px 5%',
-    start: '-50px 85%',
-    toggleClass: 'fade-in-rotate-reveal',
+  ScrollTrigger.matchMedia({
+    // desktop
+    '(min-width: 1100px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: '-50px 95%',
+        end: '50px 5%',
+        markers: true,
+      });
+    },
+
+    // Tablet
+    '(max-width: 1099px) and (min-width: 700px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -100px',
+        markers: true,
+      });
+    },
+
+    // Mobile
+    '(max-width: 699px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -300px',
+        markers: true,
+      });
+    },
   });
 });
 
@@ -107,12 +135,6 @@ textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 //     markers: true,
 //     toggleActions: 'resume pause reverse resume',
 //   },
-// });
-
-// tl.to('.animation-test', {
-//   y: -200,
-//   rotation: 360,
-//   ease: 'none',
 // });
 
 // * ScrollTrigger defaults example

@@ -46,7 +46,7 @@ function headerImageChange() {
   });
 }
 
-(function loop(min = 1000, max = 5000, randomNumber = Math.random()) {
+(function loop(min = 1000, max = 6000, randomNumber = Math.random()) {
   const rand = Math.floor(randomNumber * (max - min) + min);
   console.log(rand);
   setTimeout(() => {
