@@ -114,7 +114,7 @@ img {
   top: 0;
   left: $paragraph-spacing-medium;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 
   @include breakpoint(2000) {
     position: fixed;

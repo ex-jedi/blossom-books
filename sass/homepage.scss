@@ -106,7 +106,6 @@
 .header-main-image {
   width: 100%;
   opacity: 0;
-  z-index: 0;
   transition: $transition-three;
 }
 
@@ -118,7 +117,6 @@
 
 .header-main-image-showing {
   opacity: 1;
-  z-index: 1;
 }
 
 .header-plant-image-wrapper {
