@@ -119,6 +119,7 @@
   @include flex(row);
   justify-content: center;
   padding: $section-spacing-small 0 0;
+  animation: arrow-bounce 2s linear infinite forwards;
 
   @include breakpoint(1100) {
     padding: $section-spacing-smaller 0 0;
