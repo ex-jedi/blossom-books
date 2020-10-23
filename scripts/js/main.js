@@ -35,8 +35,8 @@ fadeInParagraphs.forEach((paragraph) => {
       ScrollTrigger.create({
         trigger: paragraph,
         toggleClass: 'fade-in-rotate-reveal',
-        start: '-50px 95%',
-        end: '50px 5%',
+        start: 'top 95%',
+        end: 'bottom top',
         markers: true,
       });
     },
