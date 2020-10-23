@@ -1,2 +1,2 @@
-const fadeInParagraph=document.querySelectorAll(".about-me-section p");fadeInParagraph.forEach(a=>a.classList.add("fade-in-rotate"));
+const aboutMeHeaderImage=document.querySelectorAll(".about-me-header-image");function headerImageChange(){aboutMeHeaderImage.forEach(e=>{e.classList.contains("about-me-header-image-showing")?e.classList.remove("about-me-header-image-showing"):e.classList.add("about-me-header-image-showing")})}!function e(a=1e3,o=6e3,t=Math.random()){const n=Math.floor(t*(o-a)+a);console.log(n),setTimeout(()=>{headerImageChange(),e()},n)}();const fadeInParagraph=document.querySelectorAll(".about-me-section p");fadeInParagraph.forEach(e=>e.classList.add("fade-in-rotate"));
 //# sourceMappingURL=about-min.js.map
