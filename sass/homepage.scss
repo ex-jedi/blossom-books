@@ -14,6 +14,14 @@
     background-color: $background-colour-three;
     color: $font-colour-light;
   }
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding-bottom: $section-spacing-extra-small;
+  }
 }
 
 .header-main-content-wrapper {
@@ -78,8 +86,11 @@
   }
 }
 
-.header-main-image {
+.header-main-image-wrapper {
   flex: 1 1 auto;
+  position: relative;
+  width: 500px;
+  height: 500px;
 
   @include breakpoint(1300) {
     flex: 0 1 auto;
@@ -88,8 +99,24 @@
   }
 
   @include breakpoint(700) {
-    width: 100%;
+    width: 90%;
   }
+}
+
+.header-main-image {
+  width: 100%;
+  opacity: 0;
+  transition: $transition-three;
+}
+
+.header-main-image-two {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.header-main-image-showing {
+  opacity: 1;
 }
 
 .header-plant-image-wrapper {
@@ -97,6 +124,7 @@
   bottom: 0;
   right: $section-spacing-extra-large;
   width: 400px;
+  opacity: 0.5;
 
   @include breakpoint(1700) {
     width: 300px;
@@ -402,23 +430,8 @@
   }
 }
 
+.section-two-arrow-wrapper {
+  animation: arrow-bounce 2s linear infinite forwards;
+}
+
 //********** Contact Form **********
-
-//? TODO: Move to main?
-// .general-contact-form-section {
-//   @include breakpoint(1600) {
-//     padding: $section-spacing-small;
-//   }
-
-//   @include breakpoint(1400) {
-//     padding: $section-spacing-small $section-spacing-smaller;
-//   }
-
-//   @include breakpoint(1100) {
-//     padding: $section-spacing-smaller;
-//   }
-
-//   @include breakpoint(700) {
-//     padding: $section-spacing-extra-small $paragraph-spacing-small;
-//   }
-// }

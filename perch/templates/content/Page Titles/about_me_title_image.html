@@ -1,11 +1,22 @@
 <h1 class="about-me-page-heading">
   <perch:content id="aboutPageHeading" type="text" label="About Me Page Heading" size="m"  required>
 </h1>
-<img class="about-me-header-image" src="<perch:content id="aboutHeaderImage" type="image" width="2000" label="Header Image" quality="80">" alt="<perch:content id="alt" type="text" label="Image description">"
-sizes="75vw"
-srcset="<perch:content type="image" id="aboutHeaderImage" width="2000" > 2000w,
-<perch:content type="image" id="aboutHeaderImage" width="1500" > 1500w,
-<perch:content type="image" id="aboutHeaderImage" width="1000" > 1000w,
-<perch:content type="image" id="aboutHeaderImage" width="800" > 800w,
-<perch:content type="image" id="aboutHeaderImage" width="600" > 600w" >
+
+<div class="about-me-header-image-wrapper">
+  <img class="about-me-header-image about-me-header-image-showing" src="<perch:content id="aboutHeaderImage" type="image" width="1600" label="Header Image" quality="75">" alt="<perch:content id="alt" type="text" label="Image description">"
+  sizes="75vw"
+  srcset="<perch:content type="image" id="aboutHeaderImage" width="1600" > 1600w,
+  <perch:content type="image" id="aboutHeaderImage" width="1300" > 1300w,
+  <perch:content type="image" id="aboutHeaderImage" width="1000" > 1000w,
+  <perch:content type="image" id="aboutHeaderImage" width="800" > 800w,
+  <perch:content type="image" id="aboutHeaderImage" width="600" > 600w" >
+
+  <img class="about-me-header-image about-me-header-image-two" src="<perch:content id="aboutHeaderImageTwo" type="image" width="1600" label="Header Image Two" help="For profile picture illustration"  quality="75">" alt="<perch:content id="altTwo" type="text" label="Image description">"
+  sizes="75vw"
+  srcset="<perch:content type="image" id="aboutHeaderImageTwo" width="1600" >  1600w,
+  <perch:content type="image" id="aboutHeaderImageTwo" width="1300" > 1300w,
+  <perch:content type="image" id="aboutHeaderImageTwo" width="1000" > 1000w,
+  <perch:content type="image" id="aboutHeaderImageTwo" width="800" > 800w,
+  <perch:content type="image" id="aboutHeaderImageTwo" width="600" > 600w" >
+</div>
 

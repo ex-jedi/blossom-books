@@ -1,3 +1,5 @@
+// TODO: Module all the things so each page just has one js file
+
 // *=========================================
 // ** GSAP  **
 // *=========================================
@@ -22,6 +24,59 @@ ScrollTrigger.create({
     targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
     className: 'active',
   },
+});
+
+// ********** Fading in paragraphs **********
+
+// * Adding class to paragraphs created by Perch to set them up for fading in.
+const fadeInParagraph = document.querySelectorAll('.about-me-section p');
+fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
+
+// * Grabbing all paragraphs to fade in
+const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
+
+fadeInParagraphs.forEach((paragraph) => {
+  ScrollTrigger.matchMedia({
+    // desktop
+    '(min-width: 1100px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top 95%',
+        end: 'bottom top',
+      });
+    },
+
+    // Tablet
+    '(max-width: 1099px) and (min-width: 700px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -100px',
+      });
+    },
+
+    // Mobile
+    '(max-width: 699px) and (min-width: 450px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -300px',
+      });
+    },
+
+    // Small Mobile
+    '(max-width: 449px)': function () {
+      ScrollTrigger.create({
+        trigger: paragraph,
+        toggleClass: 'fade-in-rotate-reveal',
+        start: 'top bottom',
+        end: 'bottom -450px',
+      });
+    },
+  });
 });
 
 // *=========================================
@@ -96,15 +151,9 @@ textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 //   },
 // });
 
-// tl.to('.animation-test', {
-//   y: -200,
-//   rotation: 360,
-//   ease: 'none',
-// });
-
 // * ScrollTrigger defaults example
 ScrollTrigger.defaults({
-  markers: true,
+  // markers: true,
 });
 
 // * ScrollTrigger instance example
@@ -124,3 +173,26 @@ ScrollTrigger.defaults({
 //   onUpdate: (self) => console.log('update', self.progress.toFixed(3)),
 //   onToggle: (self) => console.log('toggled', self.isActive),
 // });
+
+// *=========================================
+// ** Accessibility  **
+// *=========================================
+
+// * Adding focus outline class when tab key is used
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    document.body.classList.add('user-is-tabbing');
+
+    window.removeEventListener('keydown', handleFirstTab);
+    window.addEventListener('mousedown', handleMouseDownOnce);
+  }
+}
+
+function handleMouseDownOnce() {
+  document.body.classList.remove('user-is-tabbing');
+
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+}
+
+window.addEventListener('keydown', handleFirstTab);

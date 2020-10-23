@@ -114,7 +114,7 @@ img {
   top: 0;
   left: $paragraph-spacing-medium;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 
   @include breakpoint(2000) {
     position: fixed;
@@ -209,7 +209,7 @@ main {
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller;
+    padding: $section-spacing-smaller $section-spacing-extra-small;
   }
 
   @include breakpoint(700) {
@@ -223,6 +223,7 @@ main {
   width: 100%;
   overflow: hidden;
 }
+
 .general-contact-form-input-wrapper {
   @include flex(row);
   width: 100%;
@@ -258,7 +259,8 @@ main {
   border-bottom: 4px solid $font-colour-light;
   width: 100%;
 
-  &.active {
+  &.active,
+  &.focus {
     background-color: $background-colour-main;
     border-bottom-color: $font-colour-main;
   }
@@ -271,6 +273,7 @@ main {
 .text-area-label {
   position: absolute;
   transition: $transition-one-cubic;
+  color: inherit;
 }
 
 //* Text area with underlines
@@ -484,6 +487,27 @@ select {
   }
 }
 
+@keyframes icon-bounce {
+  0% {
+      transform: translateY(0);
+  }
+  20% {
+      transform: translateY(-1.5rem);
+  }
+  40% {
+      transform: translateY(0);
+  }
+  60% {
+      transform: translateY(-1.5rem);
+  }
+  80% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
 .footer-social-media-icon {
   width: 50px;
   margin: 0 auto;
@@ -499,6 +523,11 @@ select {
   @include breakpoint(700) {
     margin: 0 auto;
   }
+
+  &:hover {
+    animation: icon-bounce 1s linear 3 forwards;
+
+  }
 }
 
 .footer-privacy,
@@ -511,6 +540,21 @@ select {
 .footer-credit {
   margin: 0 auto;
   text-align: center;
+}
+
+//*=========================================
+//** Animations **
+//*=========================================
+
+.fade-in-rotate {
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: $transition-one;
+}
+
+.fade-in-rotate-reveal {
+  transform: rotateX(0);
+  opacity: 1;
 }
 
 //*=========================================
@@ -553,15 +597,20 @@ select {
 
 //* Hides outline unless tab key is pressed
 
-/* Hide focus styles if they're not needed, for example,
-when an element receives focus via the mouse. */
-:focus:not(:focus-visible) {
-  outline: 0;
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
 }
 
-/* Show focus styles on keyboard focus. */
-:focus-visible {
-  outline: 5px dotted #f00;
+.user-is-tabbing {
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 5px dotted #ff5e00;
+  }
 }
 
 //*=========================================

@@ -29,3 +29,28 @@ ScrollTrigger.create({
   id: 'Homepage Section',
   toggleClass: { targets: '.homepage-section-two', className: 'active' },
 });
+
+// *=========================================
+// ** Header Image Switcher  **
+// *=========================================
+
+const headerImage = document.querySelectorAll('.header-main-image');
+function headerImageChange() {
+  headerImage.forEach((image) => {
+    // console.log(image);
+    if (image.classList.contains('header-main-image-showing')) {
+      image.classList.remove('header-main-image-showing');
+    } else {
+      image.classList.add('header-main-image-showing');
+    }
+  });
+}
+
+(function loop(min = 1000, max = 6000, randomNumber = Math.random()) {
+  const rand = Math.floor(randomNumber * (max - min) + min);
+  console.log(rand);
+  setTimeout(() => {
+    headerImageChange();
+    loop();
+  }, rand);
+})();
