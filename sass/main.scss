@@ -272,9 +272,14 @@ main {
 
 .text-area-label {
   position: absolute;
-  transition: $transition-one-cubic;
+  transition: $transition-two;
   color: inherit;
+
+  &.fade-out {
+    opacity: 0;
+  }
 }
+
 
 //* Text area with underlines
 .text-area-input {
@@ -356,7 +361,7 @@ input[type='radio'] {
     top: -8px;
     left: -4px;
     z-index: 5;
-    transition: $transition-one-cubic;
+    transition: $transition-two;
   }
 
   &:after {
@@ -369,7 +374,7 @@ input[type='radio'] {
     top: -3px;
     left: 1px;
     margin: 0;
-    transition: $transition-one-cubic;
+    transition: $transition-two;
     z-index: 6;
   }
 }
