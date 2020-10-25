@@ -4,6 +4,18 @@
 //** Header **
 //*=========================================
 
+.main-header {
+  padding-bottom: $section-spacing-extra-small;
+
+  @include breakpoint(1100) {
+    padding-bottom: calc(#{$section-spacing-smaller} / 2);
+  }
+
+  @include breakpoint(800) {
+    padding-bottom: calc(#{$section-spacing-extra-small} / 2);
+  }
+}
+
 .main-logo {
   margin-bottom: $h2-spacing;
 
@@ -25,7 +37,8 @@
 
 .services-section {
   background-color: $background-colour-three;
-  padding: $section-spacing-small $section-spacing-extra-large;
+  padding: $section-spacing-extra-small $section-spacing-extra-large
+    $section-spacing-small;
   transition: $transition-one;
 
   &.active {
@@ -42,23 +55,21 @@
   }
 
   @include breakpoint(1600) {
-    padding: $section-spacing-small;
+    padding: $section-spacing-extra-small $section-spacing-small
+      $section-spacing-small;
   }
 
   @include breakpoint(1400) {
-    padding: $section-spacing-small $section-spacing-smaller;
+    padding: $section-spacing-extra-small $section-spacing-smaller
+      $section-spacing-small;
   }
 
   @include breakpoint(1100) {
-    padding: $section-spacing-smaller $section-spacing-smaller 0;
+    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-medium;
-  }
-
-  @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
+    padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium;
   }
 
   p {
@@ -118,11 +129,17 @@
 //* Contact form is narrower on this page to match the main content styled
 
 .general-contact-form-section {
+  @include breakpoint(1100) {
+    padding-top: calc(#{$section-spacing-smaller} / 2);
+  }
+
   @include breakpoint(800) {
-    padding: $section-spacing-smaller $paragraph-spacing-medium;
+    padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium
+      $section-spacing-extra-small;
   }
 
   @include breakpoint(700) {
-    padding: $section-spacing-extra-small $paragraph-spacing-small;
+    padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-small
+      $section-spacing-extra-small;
   }
 }
