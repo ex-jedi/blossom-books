@@ -80,7 +80,8 @@
 .about-me-section {
   background-color: $background-colour-three;
   color: $font-colour-light;
-  padding: $section-spacing-extra-small $section-spacing-very-large $section-spacing-small ;
+  padding: $section-spacing-extra-small $section-spacing-very-large
+    $section-spacing-small;
   transition: $transition-one;
 
   &.active {
@@ -89,23 +90,28 @@
   }
 
   @include breakpoint(1600) {
-    padding: $section-spacing-extra-small $section-spacing-small $section-spacing-small;
+    padding: $section-spacing-extra-small $section-spacing-small
+      $section-spacing-small;
   }
 
   @include breakpoint(1400) {
-    padding: $section-spacing-extra-small $section-spacing-smaller $section-spacing-small;
+    padding: $section-spacing-extra-small $section-spacing-smaller
+      $section-spacing-small;
   }
 
   @include breakpoint(1100) {
-    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller $section-spacing-smaller;
+    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller
+      $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
-    padding: $section-spacing-extra-small $paragraph-spacing-medium $section-spacing-extra-small;
+    padding: $section-spacing-extra-small $paragraph-spacing-medium
+      $section-spacing-extra-small;
   }
 
   @include breakpoint(500) {
-    padding: $paragraph-spacing-medium $paragraph-spacing-small $section-spacing-extra-small;
+    padding: $paragraph-spacing-medium $paragraph-spacing-small
+      $section-spacing-extra-small;
   }
 
   p {
@@ -117,14 +123,11 @@
   }
 }
 
-
-
 .arrow-wrapper {
   @include flex(row);
   justify-content: center;
   padding: $section-spacing-small 0 0;
   animation: arrow-bounce 2s linear infinite forwards;
-
 
   @include breakpoint(1100) {
     padding: $section-spacing-smaller 0 0;
