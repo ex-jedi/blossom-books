@@ -29,10 +29,15 @@ ScrollTrigger.create({
 // ********** Fading in paragraphs **********
 
 // * Adding class to paragraphs created by Perch to set them up for fading in.
-const fadeInParagraph = document.querySelectorAll('.about-me-section p');
+// Grabbing paragraphs from multiple pages
+const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
+const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
+// Merge the paragraphs into one array
+const fadeInParagraph = [...aboutMeParagraphs, ...servicesParagraphs];
+// Add class to paragraphs
 fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
 
-// * Grabbing all paragraphs to fade in
+// Grabbing all paragraphs to fade in
 const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
 fadeInParagraphs.forEach((paragraph) => {

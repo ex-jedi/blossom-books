@@ -24,8 +24,15 @@
 }
 
 .services-section {
+  background-color: $background-colour-three;
+  color: $font-colour-light;
   padding: $section-spacing-small $section-spacing-extra-large;
-  background-color: $background-colour-main;
+   transition: $transition-one;
+
+  &.active {
+    color: $font-colour-two;
+    background-color: $background-colour-main;
+  }
 
   @include breakpoint(1600) {
     padding: $section-spacing-small;
