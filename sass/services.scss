@@ -25,13 +25,20 @@
 
 .services-section {
   background-color: $background-colour-three;
-  color: $font-colour-light;
   padding: $section-spacing-small $section-spacing-extra-large;
-   transition: $transition-one;
+  transition: $transition-one;
 
   &.active {
     color: $font-colour-two;
     background-color: $background-colour-main;
+
+    p {
+      color: $font-colour-two;
+    }
+
+    strong {
+      color: $font-colour-main;
+    }
   }
 
   @include breakpoint(1600) {
@@ -59,7 +66,7 @@
     font-family: futura-pt, sans-serif;
     font-weight: 500;
     font-style: normal;
-    color: $font-colour-two;
+    color: $font-colour-light;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -72,7 +79,7 @@
 
   strong {
     font-weight: 800;
-    color: $font-colour-main;
+    color: $font-colour-light;
   }
 }
 
@@ -80,6 +87,7 @@
   @include flex(row);
   justify-content: center;
   margin: $section-spacing-small 0;
+  animation: arrow-bounce 2s linear infinite forwards;
 
   @include breakpoint(1100) {
     margin: $section-spacing-smaller 0;
@@ -90,7 +98,15 @@
   }
 
   svg .a {
-    stroke: $background-colour-three;
+    stroke: $background-colour-main;
+  }
+
+  &.active {
+    svg {
+      .a {
+        stroke: $background-colour-three;
+      }
+    }
   }
 }
 
