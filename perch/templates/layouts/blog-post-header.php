@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/css/main.css">
-		<link rel="stylesheet" href="/css/blog.css">
+		<link rel="stylesheet" href="/css/main.css?v=<?= filemtime(__DIR__.'/../../../css/main.css');?>">
+		<link rel="stylesheet" href="/css/blog.css?v=<?= filemtime(__DIR__.'/../../../css/blog.css');?>">
 
 		<!-- Typekit -->
 		<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
