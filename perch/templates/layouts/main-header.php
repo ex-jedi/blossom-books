@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/main.css?v=<?= filemtime(__DIR__.'/../../../css/main.css');?>">
-	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.0">
+	<link rel="stylesheet" href="/css/main.css?v=<?= filemtime(__DIR__.'../../../../css/main.css');?>">
+	<?php $page_css_file	=  perch_page_attribute('css', array('template' => 'bits.html'), true); ?>
+	<link rel="stylesheet" href="<?php echo $page_css_file ?>?v=<?= filemtime(__DIR__.'../../../../'.$page_css_file);?>">
 	<!-- Typekit  -->
 	<link rel="stylesheet" href="https://use.typekit.net/ytg3fuz.css">
 	<!-- Perch Meta -->
