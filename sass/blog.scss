@@ -45,9 +45,6 @@
 //*==============================================================================
 
 .blog-index-section {
-  @include flex(column);
-  justify-content: center;
-  align-items: center;
   font-size: $font-size-main;
 }
 
@@ -167,23 +164,28 @@
     transition: $transition-two-cubic;
     grid-template-columns: repeat(1, 1fr);
     gap: $section-spacing-extra-small;
+    margin-bottom: -40rem;
   }
 
   @include breakpoint(800) {
     transform: translateY(-35rem);
+    margin-bottom: -35rem;
   }
 
   @include breakpoint(500) {
     transform: translateY(-39rem);
+    margin-bottom: -39rem;
   }
 
   @include breakpoint(350) {
     transform: translateY(-42rem);
+    margin-bottom: -42rem;
   }
 }
 
 .category-push-down {
   transform: translateY(0);
+  margin-bottom: 0rem;
 }
 
 .blog-index-item {
