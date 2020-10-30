@@ -245,10 +245,11 @@
   order: 1;
 }
 
-.blog-post-image {
+.blog-post-image-wrapper {
   width: 100%;
   padding: 0;
   margin: 0 auto $section-spacing-small;
+  overflow: hidden;
 
   @include breakpoint(1100) {
     margin: 0 auto $section-spacing-smaller;
@@ -257,6 +258,10 @@
   @include breakpoint(800) {
     margin: 0 auto $section-spacing-extra-small;
   }
+}
+
+.blog-post-image {
+  width: 100%;
 }
 
 .blog-text-block {
