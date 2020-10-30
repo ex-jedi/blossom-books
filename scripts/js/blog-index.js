@@ -1,3 +1,7 @@
+// *==============================================================================
+// ** Blog Index JS  **
+// *==============================================================================
+
 // *=========================================
 // ** GSAP  **
 // *=========================================
@@ -24,7 +28,7 @@ catTitle.addEventListener('click', categoryClickHandler);
 
 // ********** Fading in article titles **********
 
-// Grabbing all paragraphs to fade in
+// Grabbing blog index titles
 const fadeInParagraphs = gsap.utils.toArray('.blog-index-title');
 
 fadeInParagraphs.forEach((title) => {

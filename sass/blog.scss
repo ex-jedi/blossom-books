@@ -274,11 +274,19 @@
 
   p {
     margin: 0 auto $paragraph-spacing-medium;
+    opacity: 0;
+    transform: translateY($paragraph-spacing-large);
+    transition: $transition-one;
 
     &:last-of-type {
       margin-bottom: 0;
     }
   }
+}
+
+p.paragraph-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .post-wrapper {
