@@ -125,7 +125,7 @@ function textAreaScrollHandler() {
   }
 }
 
-textAreaInput.addEventListener('scroll', textAreaScrollHandler);
+if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 
 // ********** Scroll Trigger Examples **********
 

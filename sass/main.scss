@@ -280,7 +280,6 @@ main {
   }
 }
 
-
 //* Text area with underlines
 .text-area-input {
   // Custom Scrollbar
@@ -494,22 +493,22 @@ select {
 
 @keyframes icon-bounce {
   0% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   20% {
-      transform: translateY(-1.5rem);
+    transform: translateY(-1.5rem);
   }
   40% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   60% {
-      transform: translateY(-1.5rem);
+    transform: translateY(-1.5rem);
   }
   80% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -530,8 +529,7 @@ select {
   }
 
   &:hover {
-    animation: icon-bounce 1s linear 3 forwards;
-
+    animation: icon-bounce $timing-duration-slow linear 3 forwards;
   }
 }
 

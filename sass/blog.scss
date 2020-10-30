@@ -45,8 +45,6 @@
 //*==============================================================================
 
 .blog-index-section {
-  @include flex(column);
-  align-items: center;
   font-size: $font-size-main;
 }
 
@@ -68,12 +66,13 @@
 
   //  * For smaller screens
   @include breakpoint(1100) {
+    cursor: pointer;
     margin: 0 auto
       calc(#{$paragraph-spacing-medium} + #{$paragraph-spacing-small});
 
     &::after {
       content: url('/images/blog-down-arrow.svg');
-      transition: $transition-one-cubic;
+      transition: $transition-two-cubic;
       display: inline-block;
       margin-left: $paragraph-spacing-small;
       transform: rotate(180deg);
@@ -106,7 +105,7 @@
     align-items: center;
     clip-path: inset(0 0 100% 0);
     transform: translateY(-1rem);
-    transition: $transition-one-cubic;
+    transition: $transition-two-cubic;
   }
 
   @include breakpoint(800) {
@@ -162,26 +161,31 @@
 
   @include breakpoint(1100) {
     transform: translateY(-40rem);
-    transition: $transition-one-cubic;
+    transition: $transition-two-cubic;
     grid-template-columns: repeat(1, 1fr);
     gap: $section-spacing-extra-small;
+    margin-bottom: -40rem;
   }
 
   @include breakpoint(800) {
     transform: translateY(-35rem);
+    margin-bottom: -35rem;
   }
 
   @include breakpoint(500) {
     transform: translateY(-39rem);
+    margin-bottom: -39rem;
   }
 
   @include breakpoint(350) {
     transform: translateY(-42rem);
+    margin-bottom: -42rem;
   }
 }
 
 .category-push-down {
   transform: translateY(0);
+  margin-bottom: 0rem;
 }
 
 .blog-index-item {
@@ -206,6 +210,14 @@
   text-align: center;
   margin: 0;
   font-size: $font-size-main;
+  opacity: 0;
+  transform: rotateX(90deg);
+  transition: $transition-one;
+}
+
+.title-reveal {
+  opacity: 1;
+  transform: rotateX(0);
 }
 
 .blog-index-title-link {
@@ -233,10 +245,11 @@
   order: 1;
 }
 
-.blog-post-image {
+.blog-post-image-wrapper {
   width: 100%;
   padding: 0;
   margin: 0 auto $section-spacing-small;
+  overflow: hidden;
 
   @include breakpoint(1100) {
     margin: 0 auto $section-spacing-smaller;
@@ -245,6 +258,10 @@
   @include breakpoint(800) {
     margin: 0 auto $section-spacing-extra-small;
   }
+}
+
+.blog-post-image {
+  width: 100%;
 }
 
 .blog-text-block {
@@ -262,11 +279,19 @@
 
   p {
     margin: 0 auto $paragraph-spacing-medium;
+    opacity: 0;
+    transform: translateY($paragraph-spacing-large);
+    transition: $transition-one;
 
     &:last-of-type {
       margin-bottom: 0;
     }
   }
+}
+
+p.paragraph-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .post-wrapper {

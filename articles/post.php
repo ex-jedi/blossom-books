@@ -9,5 +9,5 @@
 		</article>
 	</main>
 <?php perch_layout('main-footer'); ?>
-<?php perch_layout("blog-footer-end"); ?>
+<?php perch_layout('blog-post-end-js'); ?>
 
