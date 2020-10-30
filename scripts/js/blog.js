@@ -31,8 +31,7 @@ fadeInParagraphs.forEach((title) => {
   ScrollTrigger.create({
     trigger: title,
     toggleClass: 'title-reveal',
-    start: 'top bottom',
+    start: 'top 98%',
     end: 'bottom top',
-    markers: true,
   });
 });
