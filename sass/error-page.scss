@@ -1,1 +1,87 @@
 @use 'bits' as *;
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.main-header {
+  padding-bottom: $section-spacing-extra-small;
+
+  @include breakpoint(1100) {
+    padding-bottom: calc(#{$section-spacing-smaller} / 2);
+  }
+
+  @include breakpoint(800) {
+    padding-bottom: calc(#{$section-spacing-extra-small} / 2);
+  }
+}
+
+.main-logo {
+  margin-bottom: $h2-spacing;
+
+  @include breakpoint(1100) {
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    margin-bottom: $section-spacing-extra-small;
+  }
+}
+
+.error-page-heading {
+  font-size: $h1-size;
+  color: $background-colour-three;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+//*=========================================
+//** Main **
+//*=========================================
+
+.error-page-main-content {
+  background-color: $background-colour-main;
+}
+
+.error-content-section {
+  padding: $section-spacing-extra-small $section-spacing-extra-large
+    $section-spacing-small;
+
+  @include breakpoint(1600) {
+    padding: $section-spacing-extra-small $section-spacing-small
+      $section-spacing-small;
+  }
+
+  @include breakpoint(1400) {
+    padding: $section-spacing-extra-small $section-spacing-smaller
+      $section-spacing-small;
+  }
+
+  @include breakpoint(1100) {
+    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller;
+  }
+
+  @include breakpoint(800) {
+    padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium;
+  }
+}
+
+//********** Image Switcher **********
+
+.error-page-image-wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+.error-page-main-image {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.error-page-image-showing {
+  opacity: 1;
+  z-index: 10;
+}
