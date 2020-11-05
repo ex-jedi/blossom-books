@@ -36,25 +36,23 @@
 }
 
 .error-content-section {
-  padding: $section-spacing-extra-small $section-spacing-medium
-    $section-spacing-small;
+  padding: 0 $section-spacing-medium $section-spacing-small;
 
   @include breakpoint(1600) {
-    padding: $section-spacing-extra-small $section-spacing-small
-      $section-spacing-small;
+    padding: 0 $section-spacing-small $section-spacing-small;
   }
 
   @include breakpoint(1400) {
-    padding: $section-spacing-extra-small $section-spacing-smaller
-      $section-spacing-small;
+    padding: 0 $section-spacing-smaller $section-spacing-small;
   }
 
   @include breakpoint(1100) {
-    padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller;
+    padding: 0 $section-spacing-smaller calc(#{$section-spacing-smaller} / 2);
   }
 
   @include breakpoint(800) {
-    padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium;
+    padding: 0 $paragraph-spacing-medium
+      calc(#{$section-spacing-extra-small} / 2);
   }
 }
 
