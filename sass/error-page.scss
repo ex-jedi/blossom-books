@@ -85,3 +85,27 @@
   opacity: 1;
   z-index: 10;
 }
+
+//********** Error Page Text **********
+
+.error-section-text-wrapper {
+  color: $font-colour-main;
+  font-size: $h2-size;
+  text-align: center;
+
+  @include breakpoint(1600) {
+    font-size: $font-size-large;
+  }
+
+  @include breakpoint(1300) {
+    font-size: $font-size-larger;
+  }
+
+  @include breakpoint(800) {
+    font-size: $font-size-medium;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-main;
+  }
+}

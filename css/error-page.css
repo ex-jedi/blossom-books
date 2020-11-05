@@ -106,3 +106,29 @@
   opacity: 1;
   z-index: 10;
 }
+
+.error-section-text-wrapper {
+  color: #756c91;
+  font-size: 8rem;
+  text-align: center;
+}
+@media (max-width: 1600px) {
+  .error-section-text-wrapper {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 1300px) {
+  .error-section-text-wrapper {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 800px) {
+  .error-section-text-wrapper {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 400px) {
+  .error-section-text-wrapper {
+    font-size: 4rem;
+  }
+}
