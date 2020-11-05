@@ -41,6 +41,11 @@
     margin-bottom: 10rem;
   }
 }
+@media (max-width: 450px) {
+  .main-logo {
+    margin-bottom: 5rem;
+  }
+}
 
 .error-page-heading {
   font-size: 8rem;
@@ -70,12 +75,17 @@
 }
 @media (max-width: 1100px) {
   .error-content-section {
-    padding: 0 15rem calc(15rem / 2);
+    padding: 0 15rem 15rem;
   }
 }
 @media (max-width: 800px) {
   .error-content-section {
-    padding: 0 5rem calc(10rem / 2);
+    padding: 0 5rem 10rem;
+  }
+}
+@media (max-width: 450px) {
+  .error-content-section {
+    padding: 0 2.5rem 5rem;
   }
 }
 
@@ -143,7 +153,7 @@
     margin-bottom: 2.5rem;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .error-section-text-wrapper {
     font-size: 4rem;
   }

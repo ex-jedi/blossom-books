@@ -18,6 +18,10 @@
   @include breakpoint(800) {
     margin-bottom: $section-spacing-extra-small;
   }
+
+  @include breakpoint(450) {
+    margin-bottom: $paragraph-spacing-medium;
+  }
 }
 
 .error-page-heading {
@@ -47,12 +51,15 @@
   }
 
   @include breakpoint(1100) {
-    padding: 0 $section-spacing-smaller calc(#{$section-spacing-smaller} / 2);
+    padding: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 
   @include breakpoint(800) {
-    padding: 0 $paragraph-spacing-medium
-      calc(#{$section-spacing-extra-small} / 2);
+    padding: 0 $paragraph-spacing-medium $section-spacing-extra-small;
+  }
+
+  @include breakpoint(450) {
+    padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
   }
 }
 
@@ -124,7 +131,7 @@
     }
   }
 
-  @include breakpoint(400) {
+  @include breakpoint(450) {
     font-size: $font-size-main;
   }
 }
