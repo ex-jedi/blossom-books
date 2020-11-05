@@ -1,6 +1,6 @@
 <?php include('perch/runtime.php'); ?>
 <?php perch_layout('main-header'); ?>
-<?php perch_layout("main-header-end"); ?>
+<?php perch_layout("empty-header-end"); ?>
 <main class="main-content error-page-main-content" id="main-content">
 	<?php perch_content("404 Page Content"); ?>
 </main>
