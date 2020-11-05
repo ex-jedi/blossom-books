@@ -164,6 +164,30 @@
   }
 }
 
+// @keyframes dash {
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+
+// @keyframes svg-fill {
+//   to {
+//     fill: red !important;
+//   }
+// }
+
+// [data-name='Leaf 1'] {
+//   stroke-dasharray: 1800;
+//   stroke-dashoffset: 1800;
+//   animation: dash 5s 1s linear forwards;
+//   stroke: red;
+
+//   path {
+//     // fill: $background-colour-main !important;
+//     animation: svg-fill 5s linear forwards;
+//   }
+// }
+
 //*=========================================
 //** Main **
 //*=========================================
