@@ -124,7 +124,22 @@ img {
     left: $paragraph-spacing-small;
   }
   @include breakpoint(800) {
-    display: none;
+    @include flex(column);
+    position: fixed;
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    width: 100%;
+    background-color: $background-colour-two;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    // display: none;
+
+    a {
+      color: $font-colour-light;
+    }
   }
 }
 

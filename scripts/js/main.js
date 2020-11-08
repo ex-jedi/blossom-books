@@ -180,6 +180,15 @@ ScrollTrigger.defaults({
 // });
 
 // *=========================================
+// ** Main Nav  **
+// *=========================================
+const mainNav = document.querySelector('.main-nav');
+const mainNavTrigger = document.querySelector('.main-nav-trigger-wrapper');
+console.log(`${mainNavTrigger.clientHeight * 2}px`);
+mainNav.style.marginBottom = `${mainNavTrigger.clientHeight * 2}px`;
+mainNav.style.height = `calc(100% - ${mainNavTrigger.clientHeight}px)`;
+
+// *=========================================
 // ** Accessibility  **
 // *=========================================
 
