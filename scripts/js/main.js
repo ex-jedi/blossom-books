@@ -130,8 +130,9 @@ if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandle
 // *=========================================
 // ** Main Nav  **
 // *=========================================
-const mainNav = document.querySelector('.main-nav');
 const mainNavTrigger = document.querySelector('.main-nav-trigger');
+const mainNav = document.querySelector('.main-nav');
+const navLink = document.querySelectorAll('.main-nav-link');
 
 // Add aria-expanded false to responsive menu
 let menuOpen = false;
@@ -143,7 +144,9 @@ const openMenuTl = gsap.timeline({
   defaults: { ease: 'power3.in', duration: 1 },
 });
 
-openMenuTl.to(mainNav, { y: '0%' });
+openMenuTl
+  .to(mainNav, { y: '0%' })
+  .fromTo(navLink, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, '-=0.5');
 
 // * Close menu
 
@@ -152,7 +155,9 @@ const closeMenuTl = gsap.timeline({
   defaults: { ease: 'power3.in', duration: 1 },
 });
 
-closeMenuTl.to(mainNav, { y: '120%' });
+closeMenuTl
+  .fromTo(navLink, { y: 0, opacity: 1 }, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
+  .to(mainNav, { y: '120%' }, '-=0.5');
 
 function menuOpenerHandler() {
   if (!menuOpen) {
