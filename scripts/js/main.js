@@ -130,12 +130,18 @@ if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandle
 // *=========================================
 // ** Main Nav  **
 // *=========================================
+const mainNavTriggerWrapper = document.querySelector('.main-nav-trigger-wrapper');
 const mainNavTrigger = document.querySelector('.main-nav-trigger');
 const mainNav = document.querySelector('.main-nav');
 const navLink = document.querySelectorAll('.main-nav-link');
 
 // Add aria-expanded false to responsive menu
 let menuOpen = false;
+
+// Restore pointerevents
+function pointerEventsRestore() {
+  mainNavTrigger.style.pointerEvents = 'auto';
+}
 
 // * Open menu
 
@@ -146,7 +152,10 @@ const openMenuTl = gsap.timeline({
 
 openMenuTl
   .to(mainNav, { y: '0%' })
-  .fromTo(navLink, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, '-=0.5');
+  .addLabel('colorChange', '-=0.5')
+  .fromTo(navLink, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
 
 // * Close menu
 
@@ -157,15 +166,18 @@ const closeMenuTl = gsap.timeline({
 
 closeMenuTl
   .fromTo(navLink, { y: 0, opacity: 1 }, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
-  .to(mainNav, { y: '120%' }, '-=0.5');
+  .addLabel('colorChange', '-=0.5')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')
+  .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
 
 function menuOpenerHandler() {
   if (!menuOpen) {
-    console.log('Open Menu');
+    mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = true;
     openMenuTl.restart();
   } else {
-    console.log('Close Menu');
+    mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = false;
     closeMenuTl.restart();
   }
