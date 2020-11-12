@@ -133,15 +133,37 @@ if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandle
 const mainNav = document.querySelector('.main-nav');
 const mainNavTrigger = document.querySelector('.main-nav-trigger');
 
-// ********** Open Menu **********
+// Add aria-expanded false to responsive menu
+let menuOpen = false;
+
+// * Open menu
 
 const openMenuTl = gsap.timeline({
   paused: true,
   defaults: { ease: 'power3.in', duration: 1 },
 });
 
+openMenuTl.to(mainNav, { y: '0%' });
+
+// * Close menu
+
+const closeMenuTl = gsap.timeline({
+  paused: true,
+  defaults: { ease: 'power3.in', duration: 1 },
+});
+
+closeMenuTl.to(mainNav, { y: '120%' });
+
 function menuOpenerHandler() {
-  console.log('Click!');
+  if (!menuOpen) {
+    console.log('Open Menu');
+    menuOpen = true;
+    openMenuTl.restart();
+  } else {
+    console.log('Close Menu');
+    menuOpen = false;
+    closeMenuTl.restart();
+  }
 }
 
 mainNavTrigger.addEventListener('click', menuOpenerHandler);
