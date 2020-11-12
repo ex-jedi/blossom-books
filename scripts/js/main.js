@@ -127,66 +127,18 @@ function textAreaScrollHandler() {
 
 if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 
-// ********** Scroll Trigger Examples **********
-
-// TODO: Delete ScrollTrigger examples
-
-//* Scrolltrigger in tween example
-// gsap.to('.animation-test', {
-//   scrollTrigger: {
-//     trigger: '.animation-test',
-//     start: 'top 90%',
-//     end: 'top 10%',
-//     scrub: 2,
-//     markers: true,
-//     toggleActions: 'resume pause reverse resume',
-//   },
-//   y: -200,
-// });
-
-// * Scroll Trigger Timeline
-// const tl = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: '.animation-test',
-//     start: 'top 70%',
-//     end: 'top 30%',
-//     scrub: 2,
-//     markers: true,
-//     toggleActions: 'resume pause reverse resume',
-//   },
-// });
-
-// * ScrollTrigger defaults example
-ScrollTrigger.defaults({
-  // markers: true,
-});
-
-// * ScrollTrigger instance example
-// ScrollTrigger.create({
-//   trigger: '.homepage-section-two',
-//   start: 'top 90%',
-//   end: 'bottom 10%',
-//   // scroller: '#main-content',
-//   // horizontal: true,
-//   markers: true,
-//   id: 'Test',
-//   toggleClass: 'active',
-//   onEnter: () => console.log('Enter'),
-//   onLeave: () => console.log('Leave'),
-//   onEnterBack: () => console.log('Enter again'),
-//   onLeaveBack: () => console.log('Leave again'),
-//   onUpdate: (self) => console.log('update', self.progress.toFixed(3)),
-//   onToggle: (self) => console.log('toggled', self.isActive),
-// });
-
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 const mainNav = document.querySelector('.main-nav');
-const mainNavTrigger = document.querySelector('.main-nav-trigger-wrapper');
-// console.log(`${mainNavTrigger.clientHeight * 2}px`);
-// mainNav.style.marginBottom = `${mainNavTrigger.clientHeight * 2}px`;
-// mainNav.style.height = `calc(100% - ${mainNavTrigger.clientHeight}px)`;
+const mainNavTrigger = document.querySelector('.main-nav-trigger');
+
+// ********** Open Menu **********
+
+const openMenuTl = gsap.timeline({
+  paused: true,
+  defaults: { ease: 'power3.in', duration: 1 },
+});
 
 // *=========================================
 // ** Accessibility  **
