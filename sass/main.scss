@@ -126,6 +126,8 @@ img {
 
   @include breakpoint(800) {
     @include flex(column);
+    justify-content: center;
+    align-items: center;
     position: fixed;
     writing-mode: horizontal-tb;
     transform: rotate(0);
@@ -133,15 +135,18 @@ img {
     background-color: $background-colour-two;
     left: 0;
     top: 0;
-    justify-content: center;
-    align-items: center;
     height: 90vh;
+    min-height: auto;
     margin-bottom: 10vh;
     // display: none;
 
     a {
       color: $font-colour-light;
     }
+  }
+
+  @include breakpoint(500) {
+    justify-content: space-around;
   }
 }
 
@@ -151,6 +156,22 @@ img {
   text-transform: lowercase;
   color: $font-colour-main;
   margin: 0 0 $paragraph-spacing-medium;
+
+  @include breakpoint(800) {
+    margin: 0 0 $section-spacing-small;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  @include breakpoint(700) {
+    margin: 0 0 $paragraph-spacing-large;
+  }
+
+  @include breakpoint(500) {
+    margin: 0;
+  }
 }
 
 .main-nav-trigger-wrapper {
