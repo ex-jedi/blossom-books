@@ -140,6 +140,12 @@ const openMenuTl = gsap.timeline({
   defaults: { ease: 'power3.in', duration: 1 },
 });
 
+function menuOpenerHandler() {
+  console.log('Click!');
+}
+
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
+
 // *=========================================
 // ** Accessibility  **
 // *=========================================
