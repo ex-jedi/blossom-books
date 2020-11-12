@@ -152,8 +152,8 @@ const openMenuTl = gsap.timeline({
 
 openMenuTl
   .to(mainNav, { y: '0%' })
-  .addLabel('colorChange', '-=0.5')
-  .fromTo(navLink, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
+  .addLabel('colorChange', '-=0.3')
+  .to(navLink, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
   .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
   .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
 
@@ -165,7 +165,7 @@ const closeMenuTl = gsap.timeline({
 });
 
 closeMenuTl
-  .fromTo(navLink, { y: 0, opacity: 1 }, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
+  .to(navLink, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
   .addLabel('colorChange', '-=0.5')
   .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
   .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')

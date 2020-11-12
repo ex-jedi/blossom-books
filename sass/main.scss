@@ -159,6 +159,8 @@ img {
 
   @include breakpoint(800) {
     margin: 0 0 $section-spacing-small;
+    opacity: 0;
+    transform: translateY(30px);
 
     &:last-of-type {
       margin: 0;
