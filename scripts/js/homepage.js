@@ -57,18 +57,37 @@ function headerImageChange() {
 
 // ********** Plant Animation **********
 
-const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
-console.log(plantIllustration);
+// All in a function for export
+function headerPlantAnimation() {
+  // Responsive trigger hooks for ScrollTrigger
+  // MatchMedia media queries
+  const mediaNineHundred = window.matchMedia('(max-width: 800px)');
 
-const plantDrawTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.header-plant-image-wrapper',
-    start: 'top 45%',
-    end: 'bottom 65%',
-    id: 'Plant',
-    markers: true,
-    scrub: 1,
-  },
-});
+  // Change trigger points on screen size
+  let plantAnimationStart = 'top 45%';
+  let plantAnimationEnd = 'bottom 65%';
+  if (mediaNineHundred.matches) {
+    plantAnimationStart = 'top 70%';
+    plantAnimationEnd = 'bottom 70%';
+  }
 
-plantDrawTimeline.fromTo(plantIllustration, { drawSVG: 0 }, { duration: 30, drawSVG: '100%' });
+  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
+
+  gsap.fromTo(
+    plantIllustration,
+    { drawSVG: 0 },
+    {
+      duration: 3,
+      drawSVG: '100%',
+      scrollTrigger: {
+        trigger: '.header-plant-image-wrapper',
+        start: plantAnimationStart,
+        end: plantAnimationEnd,
+        id: 'Plant',
+        scrub: 1,
+      },
+    }
+  );
+}
+
+headerPlantAnimation();
