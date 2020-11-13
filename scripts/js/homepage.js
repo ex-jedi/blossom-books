@@ -61,14 +61,14 @@ const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper
 console.log(plantIllustration);
 
 const plantDrawTimeline = gsap.timeline({
-  repeat: -1,
-  ScrollTrigger: {
+  scrollTrigger: {
     trigger: '.header-plant-image-wrapper',
-    start: 'top center',
-    end: 'bottom center',
-    id: 'Homepage Section',
+    start: 'top 45%',
+    end: 'bottom 65%',
+    id: 'Plant',
     markers: true,
+    scrub: 1,
   },
 });
 
-plantDrawTimeline.fromTo(plantIllustration, { drawSVG: 0 }, { duration: 3, drawSVG: '100%' }, 0.5);
+plantDrawTimeline.fromTo(plantIllustration, { drawSVG: 0 }, { duration: 30, drawSVG: '100%' });
