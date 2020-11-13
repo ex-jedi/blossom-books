@@ -141,6 +141,13 @@ let menuOpen = false;
 // Restore pointerevents
 function pointerEventsRestore() {
   mainNavTrigger.style.pointerEvents = 'auto';
+  if (!menuOpen) {
+    mainNavTrigger.textContent = 'MENU';
+    mainNavTrigger.style.padding = '0 5rem';
+  } else {
+    mainNavTrigger.textContent = 'CLOSE MENU';
+    mainNavTrigger.style.padding = '0';
+  }
 }
 
 // * Open menu
@@ -177,9 +184,9 @@ function menuOpenerHandler() {
     mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = true;
   } else {
+    closeMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = false;
-    closeMenuTl.restart();
   }
 }
 

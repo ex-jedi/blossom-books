@@ -154,6 +154,7 @@ img {
     color: $font-colour-light;
     opacity: 0;
     transform: translateY(30px);
+    font-size: $font-size-medium;
 
     &:last-of-type {
       margin: 0;
@@ -189,9 +190,10 @@ img {
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: $paragraph-spacing-smaller $paragraph-spacing-medium;
+  padding: 0 $paragraph-spacing-medium;
   width: fit-content;
   margin: 0;
+  font-size: $font-size-main;
 }
 
 // *=========================================
