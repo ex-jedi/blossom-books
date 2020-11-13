@@ -94,7 +94,7 @@
 
   @include breakpoint(1300) {
     flex: 0 1 auto;
-    width: 56%;
+    width: 55%;
     height: auto;
   }
 
@@ -145,7 +145,7 @@
   @include breakpoint(1300) {
     flex: 0 1 auto;
     position: relative;
-    width: 30%;
+    width: 40%;
     height: auto;
     left: 0;
     right: 0;
@@ -163,30 +163,6 @@
     width: 100%;
   }
 }
-
-// @keyframes dash {
-//   to {
-//     stroke-dashoffset: 0;
-//   }
-// }
-
-// @keyframes svg-fill {
-//   to {
-//     fill: red !important;
-//   }
-// }
-
-// [data-name='Leaf 1'] {
-//   stroke-dasharray: 1800;
-//   stroke-dashoffset: 1800;
-//   animation: dash 5s 1s linear forwards;
-//   stroke: red;
-
-//   path {
-//     // fill: $background-colour-main !important;
-//     animation: svg-fill 5s linear forwards;
-//   }
-// }
 
 //*=========================================
 //** Main **
@@ -322,13 +298,13 @@
 
   svg {
     flex: 0 1 auto;
-    width: 20%;
+    width: 30%;
 
     @include breakpoint(1300) {
       width: 100%;
-      max-width: 350px;
+      max-width: 500px;
       position: relative;
-      left: $paragraph-spacing-medium;
+      left: $paragraph-spacing-small;
     }
   }
 }

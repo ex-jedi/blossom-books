@@ -31,6 +31,6 @@
     "prettier": "^2.1.1"
   },
   "dependencies": {
-    "gsap": "file:gsap-bonus.tgz"
+    "gsap": "npm:@gsap/simply@^3.5.1"
   }
 }

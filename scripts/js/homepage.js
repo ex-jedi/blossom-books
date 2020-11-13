@@ -7,8 +7,9 @@
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
 
 // ********** GSAP Scroll Trigger Animations **********
 
@@ -53,3 +54,55 @@ function headerImageChange() {
     loop();
   }, rand);
 })();
+
+// ********** Plant Animation **********
+
+// All in a function for export
+function headerPlantAnimation() {
+  // Responsive trigger hooks for ScrollTrigger
+  // MatchMedia media queries
+  const mediaNineHundred = window.matchMedia('(max-width: 800px)');
+
+  // Change trigger points on screen size
+  let plantAnimationStart = 'top 45%';
+  let plantAnimationEnd = 'bottom 65%';
+  if (mediaNineHundred.matches) {
+    plantAnimationStart = 'top 70%';
+    plantAnimationEnd = 'bottom 70%';
+  }
+
+  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
+
+  gsap.fromTo(
+    plantIllustration,
+    { drawSVG: 0 },
+    {
+      duration: 3,
+      drawSVG: '100%',
+      scrollTrigger: {
+        trigger: '.header-plant-image-wrapper',
+        start: plantAnimationStart,
+        end: plantAnimationEnd,
+        id: 'Plant',
+        scrub: 1,
+      },
+    }
+  );
+}
+
+headerPlantAnimation();
+
+// ********** Mug Animation **********
+
+function steamingCup() {
+  const mugSteam = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0,
+  });
+
+  mugSteam
+    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '20% 100%', duration: 2.5, ease: 'power1.in' })
+    .to('.st1', { drawSVG: '100% 100%', duration: 2.5, ease: 'power1.out' });
+}
+
+steamingCup();

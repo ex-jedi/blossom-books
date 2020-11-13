@@ -123,8 +123,22 @@ img {
   @include breakpoint(1300) {
     left: $paragraph-spacing-small;
   }
+
   @include breakpoint(800) {
-    display: none;
+    @include flex(column);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    width: 100%;
+    background-color: $background-colour-two;
+    left: 0;
+    top: 0;
+    height: 90vh;
+    min-height: auto;
+    margin-bottom: 10vh;
+    transform: translateY(120%);
   }
 }
 
@@ -134,32 +148,52 @@ img {
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
+
+  @include breakpoint(800) {
+    margin: 0 0 $section-spacing-small;
+    color: $font-colour-light;
+    opacity: 0;
+    transform: translateY(30px);
+    font-size: $font-size-medium;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+  @include breakpoint(700) {
+    margin: 0 0 $paragraph-spacing-large;
+  }
 }
 
 .main-nav-trigger-wrapper {
   position: fixed;
   display: none;
-  z-index: 1;
+  z-index: 4;
   bottom: 0;
   left: 0;
   right: 0;
 
   @include breakpoint(800) {
-    display: block;
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
-    background-color: $background-colour-two;
     font-size: $font-size-small;
+    background-color: $background-colour-two;
+    color: $font-colour-light;
+    height: 10vh;
   }
 }
 
 .main-nav-trigger {
   display: block;
-  color: $font-colour-light;
+  color: inherit;
   text-decoration: none;
-  padding: $paragraph-spacing-smaller;
+  padding: 0 $paragraph-spacing-medium;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0;
+  font-size: $font-size-main;
 }
 
 // *=========================================

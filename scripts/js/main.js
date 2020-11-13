@@ -7,8 +7,9 @@
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
 
 ScrollTrigger.defaults({
   // markers: true,
@@ -127,57 +128,70 @@ function textAreaScrollHandler() {
 
 if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 
-// ********** Scroll Trigger Examples **********
+// *=========================================
+// ** Main Nav  **
+// *=========================================
+const mainNavTriggerWrapper = document.querySelector('.main-nav-trigger-wrapper');
+const mainNavTrigger = document.querySelector('.main-nav-trigger');
+const mainNav = document.querySelector('.main-nav');
+const navLink = document.querySelectorAll('.main-nav-link');
 
-// TODO: Delete ScrollTrigger examples
+// Add aria-expanded false to responsive menu
+let menuOpen = false;
 
-//* Scrolltrigger in tween example
-// gsap.to('.animation-test', {
-//   scrollTrigger: {
-//     trigger: '.animation-test',
-//     start: 'top 90%',
-//     end: 'top 10%',
-//     scrub: 2,
-//     markers: true,
-//     toggleActions: 'resume pause reverse resume',
-//   },
-//   y: -200,
-// });
+// Restore pointerevents
+function pointerEventsRestore() {
+  mainNavTrigger.style.pointerEvents = 'auto';
+  if (!menuOpen) {
+    mainNavTrigger.textContent = 'MENU';
+    mainNavTrigger.style.padding = '0 5rem';
+  } else {
+    mainNavTrigger.textContent = 'CLOSE MENU';
+    mainNavTrigger.style.padding = '0';
+  }
+}
 
-// * Scroll Trigger Timeline
-// const tl = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: '.animation-test',
-//     start: 'top 70%',
-//     end: 'top 30%',
-//     scrub: 2,
-//     markers: true,
-//     toggleActions: 'resume pause reverse resume',
-//   },
-// });
+// * Open menu
 
-// * ScrollTrigger defaults example
-ScrollTrigger.defaults({
-  // markers: true,
+const openMenuTl = gsap.timeline({
+  paused: true,
+  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
 });
 
-// * ScrollTrigger instance example
-// ScrollTrigger.create({
-//   trigger: '.homepage-section-two',
-//   start: 'top 90%',
-//   end: 'bottom 10%',
-//   // scroller: '#main-content',
-//   // horizontal: true,
-//   markers: true,
-//   id: 'Test',
-//   toggleClass: 'active',
-//   onEnter: () => console.log('Enter'),
-//   onLeave: () => console.log('Leave'),
-//   onEnterBack: () => console.log('Enter again'),
-//   onLeaveBack: () => console.log('Leave again'),
-//   onUpdate: (self) => console.log('update', self.progress.toFixed(3)),
-//   onToggle: (self) => console.log('toggled', self.isActive),
-// });
+openMenuTl
+  .to(mainNav, { y: '0%' })
+  .addLabel('colorChange', '-=0.3')
+  .to(navLink, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
+
+// * Close menu
+
+const closeMenuTl = gsap.timeline({
+  paused: true,
+  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
+});
+
+closeMenuTl
+  .to(navLink, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
+  .addLabel('colorChange', '-=0.5')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')
+  .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
+
+function menuOpenerHandler() {
+  if (!menuOpen) {
+    openMenuTl.restart();
+    mainNavTrigger.style.pointerEvents = 'none';
+    menuOpen = true;
+  } else {
+    closeMenuTl.restart();
+    mainNavTrigger.style.pointerEvents = 'none';
+    menuOpen = false;
+  }
+}
+
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // *=========================================
 // ** Accessibility  **
