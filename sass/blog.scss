@@ -38,6 +38,14 @@
   @include breakpoint(800) {
     margin-bottom: $section-spacing-extra-small;
   }
+
+  @include breakpoint(700) {
+    font-size: $h1-size-medium;
+  }
+
+  @include breakpoint(450) {
+    font-size: $h1-size-small;
+  }
 }
 
 //*==============================================================================
