@@ -298,13 +298,13 @@
 
   svg {
     flex: 0 1 auto;
-    width: 20%;
+    width: 30%;
 
     @include breakpoint(1300) {
       width: 100%;
-      max-width: 350px;
+      max-width: 500px;
       position: relative;
-      left: $paragraph-spacing-medium;
+      left: $paragraph-spacing-small;
     }
   }
 }
