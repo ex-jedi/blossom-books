@@ -52,7 +52,6 @@ blogPostImage.forEach((image) => {
           end: 'bottom 90%',
           scrub: 1,
           toggleActions: 'resume',
-          markers: true,
         },
         scale: 1.3,
       });
@@ -66,7 +65,6 @@ blogPostImage.forEach((image) => {
           end: 'bottom 60%',
           scrub: 1,
           toggleActions: 'resume',
-          markers: true,
         },
         scale: 1.3,
       });
