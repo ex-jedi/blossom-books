@@ -140,10 +140,6 @@ img {
     margin-bottom: 10vh;
     transform: translateY(120%);
   }
-
-  @include breakpoint(500) {
-    justify-content: space-around;
-  }
 }
 
 .main-nav-link {
@@ -165,10 +161,6 @@ img {
   }
   @include breakpoint(700) {
     margin: 0 0 $paragraph-spacing-large;
-  }
-
-  @include breakpoint(500) {
-    margin: 0;
   }
 }
 

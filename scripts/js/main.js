@@ -147,7 +147,7 @@ function pointerEventsRestore() {
 
 const openMenuTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power3.in', duration: 1 },
+  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
 });
 
 openMenuTl
@@ -161,7 +161,7 @@ openMenuTl
 
 const closeMenuTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power3.in', duration: 1 },
+  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
 });
 
 closeMenuTl
@@ -173,9 +173,9 @@ closeMenuTl
 
 function menuOpenerHandler() {
   if (!menuOpen) {
+    openMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = true;
-    openMenuTl.restart();
   } else {
     mainNavTrigger.style.pointerEvents = 'none';
     menuOpen = false;
