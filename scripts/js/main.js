@@ -136,7 +136,7 @@ const mainNavTrigger = document.querySelector('.main-nav-trigger');
 const mainNav = document.querySelector('.main-nav');
 const navLink = document.querySelectorAll('.main-nav-link');
 
-// Add aria-expanded false to responsive menu
+// Variable for checking if menu is open
 let menuOpen = false;
 
 // Restore pointerevents
@@ -145,6 +145,9 @@ function pointerEventsRestore() {
   if (!menuOpen) {
     mainNavTrigger.textContent = 'MENU';
     mainNavTrigger.style.padding = '0 5rem';
+    // Stripping out styles injected by GreenSock to show normal menu if screen is resized
+    mainNav.removeAttribute('style');
+    navLink.forEach((link) => link.removeAttribute('style'));
   } else {
     mainNavTrigger.textContent = 'CLOSE MENU';
     mainNavTrigger.style.padding = '0';
