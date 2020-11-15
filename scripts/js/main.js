@@ -136,21 +136,18 @@ const mainNavTrigger = document.querySelector('.main-nav-trigger');
 const mainNav = document.querySelector('.main-nav');
 const navLink = document.querySelectorAll('.main-nav-link');
 
-// Variable for checking if menu is open
-let menuOpen = false;
-
 // Restore pointerevents
 function pointerEventsRestore() {
   mainNavTrigger.style.pointerEvents = 'auto';
-  if (!menuOpen) {
+  if (mainNav.dataset.state === 'open') {
+    mainNavTrigger.textContent = 'CLOSE MENU';
+    mainNavTrigger.style.padding = '0';
+  } else {
     mainNavTrigger.textContent = 'MENU';
     mainNavTrigger.style.padding = '0 5rem';
     // Stripping out styles injected by GreenSock to show normal menu if screen is resized
     mainNav.removeAttribute('style');
     navLink.forEach((link) => link.removeAttribute('style'));
-  } else {
-    mainNavTrigger.textContent = 'CLOSE MENU';
-    mainNavTrigger.style.padding = '0';
   }
 }
 
@@ -183,14 +180,14 @@ closeMenuTl
   .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
 
 function menuOpenerHandler() {
-  if (!menuOpen) {
+  if (mainNav.dataset.state === 'closed') {
     openMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
-    menuOpen = true;
+    mainNav.dataset.state = 'open';
   } else {
     closeMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
-    menuOpen = false;
+    mainNav.dataset.state = 'closed';
   }
 }
 
