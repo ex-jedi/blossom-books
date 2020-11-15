@@ -140,6 +140,12 @@ img {
     margin-bottom: 10vh;
     transform: translateY(120%);
   }
+
+  @include height-breakpoint(450) {
+    justify-content: space-evenly;
+    height: 80vh;
+    margin-bottom: 20vh;
+  }
 }
 
 .main-nav-link {
@@ -163,6 +169,10 @@ img {
   @include breakpoint(500) {
     margin: 0 0 $paragraph-spacing-large;
   }
+
+  @include height-breakpoint(450) {
+    margin: 0;
+  }
 }
 
 .main-nav-trigger-wrapper {
@@ -183,6 +193,10 @@ img {
     background-color: $background-colour-two;
     color: $font-colour-light;
     height: 10vh;
+  }
+
+  @include height-breakpoint(450) {
+    height: 20vh;
   }
 }
 

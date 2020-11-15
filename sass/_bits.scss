@@ -242,12 +242,19 @@ $transition-two-cubic: $timing-duration-slow $cubic-one 0s;
 
 //********** Width **********
 
-//TODO: Change snippets to match below
 @mixin breakpoint($point) {
   @if unitless($point) {
     $point: 1px * $point;
   }
   @media (max-width: $point) {
+    @content;
+  }
+}
+@mixin height-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) {
     @content;
   }
 }
