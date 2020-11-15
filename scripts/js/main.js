@@ -104,7 +104,6 @@ cookieWarningButton.addEventListener(
     localStorage.setItem('cookieSeen', 'shown');
     cookieBanner.classList.remove('show-cookie-warning');
     cookieBanner.addEventListener('transitionend', () => {
-      console.log('ended');
       cookieBanner.style.display = 'none';
     });
   },
@@ -156,7 +155,7 @@ function pointerEventsRestore() {
 
 const openMenuTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
+  defaults: { ease: 'power3.out', duration: 1, delay: 0 },
 });
 
 openMenuTl
