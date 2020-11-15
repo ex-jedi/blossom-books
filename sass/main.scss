@@ -667,6 +667,7 @@ body:not(.user-is-tabbing) textarea:focus {
   background-color: $background-colour-two;
   opacity: 0;
   z-index: 10;
+  transition: all 0.5s 0.25s;
 
   @include breakpoint(1100) {
     font-size: $font-size-extra-small;
@@ -709,7 +710,6 @@ body:not(.user-is-tabbing) textarea:focus {
 
 .cookie-warning-wrapper.show-cookie-warning {
   opacity: 1;
-  transition: all 1s 1s;
 }
 
 //*=========================================

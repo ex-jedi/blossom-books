@@ -104,6 +104,7 @@ cookieWarningButton.addEventListener(
     localStorage.setItem('cookieSeen', 'shown');
     cookieBanner.classList.remove('show-cookie-warning');
     cookieBanner.addEventListener('transitionend', () => {
+      console.log('ended');
       cookieBanner.style.display = 'none';
     });
   },
