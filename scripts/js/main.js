@@ -136,18 +136,18 @@ const mainNavTrigger = document.querySelector('.main-nav-trigger');
 const mainNav = document.querySelector('.main-nav');
 const navLink = document.querySelectorAll('.main-nav-link');
 
-// Add aria-expanded false to responsive menu
-let menuOpen = false;
-
 // Restore pointerevents
 function pointerEventsRestore() {
   mainNavTrigger.style.pointerEvents = 'auto';
-  if (!menuOpen) {
-    mainNavTrigger.textContent = 'MENU';
-    mainNavTrigger.style.padding = '0 5rem';
-  } else {
+  if (mainNav.dataset.state === 'open') {
     mainNavTrigger.textContent = 'CLOSE MENU';
     mainNavTrigger.style.padding = '0';
+  } else {
+    mainNavTrigger.textContent = 'MENU';
+    mainNavTrigger.style.padding = '0 5rem';
+    // Stripping out styles injected by GreenSock to show normal menu if screen is resized
+    mainNav.removeAttribute('style');
+    navLink.forEach((link) => link.removeAttribute('style'));
   }
 }
 
@@ -155,7 +155,7 @@ function pointerEventsRestore() {
 
 const openMenuTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
+  defaults: { ease: 'power3.out', duration: 1, delay: 0 },
 });
 
 openMenuTl
@@ -180,14 +180,14 @@ closeMenuTl
   .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
 
 function menuOpenerHandler() {
-  if (!menuOpen) {
+  if (mainNav.dataset.state === 'closed') {
     openMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
-    menuOpen = true;
+    mainNav.dataset.state = 'open';
   } else {
     closeMenuTl.restart();
     mainNavTrigger.style.pointerEvents = 'none';
-    menuOpen = false;
+    mainNav.dataset.state = 'closed';
   }
 }
 

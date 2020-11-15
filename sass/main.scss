@@ -140,6 +140,12 @@ img {
     margin-bottom: 10vh;
     transform: translateY(120%);
   }
+
+  @include height-breakpoint(450) {
+    justify-content: space-evenly;
+    height: 80vh;
+    margin-bottom: 20vh;
+  }
 }
 
 .main-nav-link {
@@ -150,7 +156,7 @@ img {
   margin: 0 0 $paragraph-spacing-medium;
 
   @include breakpoint(800) {
-    margin: 0 0 $section-spacing-small;
+    margin: 0 0 $section-spacing-extra-small;
     color: $font-colour-light;
     opacity: 0;
     transform: translateY(30px);
@@ -160,8 +166,12 @@ img {
       margin: 0;
     }
   }
-  @include breakpoint(700) {
+  @include breakpoint(500) {
     margin: 0 0 $paragraph-spacing-large;
+  }
+
+  @include height-breakpoint(450) {
+    margin: 0;
   }
 }
 
@@ -184,10 +194,16 @@ img {
     color: $font-colour-light;
     height: 10vh;
   }
+
+  @include height-breakpoint(450) {
+    height: 20vh;
+  }
 }
 
 .main-nav-trigger {
   display: block;
+  background-color: transparent;
+  border: none;
   color: inherit;
   text-decoration: none;
   padding: 0 $paragraph-spacing-medium;
@@ -667,6 +683,7 @@ body:not(.user-is-tabbing) textarea:focus {
   background-color: $background-colour-two;
   opacity: 0;
   z-index: 10;
+  transition: all 0.5s 0.25s;
 
   @include breakpoint(1100) {
     font-size: $font-size-extra-small;
@@ -709,7 +726,6 @@ body:not(.user-is-tabbing) textarea:focus {
 
 .cookie-warning-wrapper.show-cookie-warning {
   opacity: 1;
-  transition: all 1s 1s;
 }
 
 //*=========================================
