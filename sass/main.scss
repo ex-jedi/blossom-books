@@ -150,7 +150,7 @@ img {
   margin: 0 0 $paragraph-spacing-medium;
 
   @include breakpoint(800) {
-    margin: 0 0 $section-spacing-small;
+    margin: 0 0 $section-spacing-extra-small;
     color: $font-colour-light;
     opacity: 0;
     transform: translateY(30px);
@@ -160,7 +160,7 @@ img {
       margin: 0;
     }
   }
-  @include breakpoint(700) {
+  @include breakpoint(500) {
     margin: 0 0 $paragraph-spacing-large;
   }
 }
