@@ -536,7 +536,7 @@ select {
   }
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: inherit;
   }
 }
@@ -560,6 +560,11 @@ select {
   100% {
     transform: translateY(0);
   }
+}
+
+footer .footer-social-media-link {
+  // Stronger selector to override link style in .main-footer
+  text-decoration: none;
 }
 
 .footer-social-media-icon {
