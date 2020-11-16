@@ -52,6 +52,11 @@
     strong {
       color: $font-colour-main;
     }
+
+    a {
+      text-decoration: underline;
+      color: inherit;
+    }
   }
 
   @include breakpoint(1600) {
