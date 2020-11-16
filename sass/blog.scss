@@ -295,6 +295,11 @@
       margin-bottom: 0;
     }
   }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 p.paragraph-reveal {
@@ -321,7 +326,7 @@ p.paragraph-reveal {
 }
 
 .post-categories-link {
-  text-decoration: none;
+  text-decoration: underline;
   color: $font-colour-two;
 }
 
