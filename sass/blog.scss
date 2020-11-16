@@ -155,7 +155,7 @@
 
 .blog-category-link {
   font-size: $font-size-small;
-  text-decoration: none;
+  text-decoration: underline;
   display: inline-block;
   width: fit-content;
   text-align: center;
@@ -230,7 +230,7 @@
 
 .blog-index-title-link {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 //*==============================================================================

@@ -81,59 +81,6 @@ $input-font-size: $font-size-small;
 //Spacing
 $input-spacing: 1rem;
 
-//********** Links **********
-
-//* Fancy Link Underline
-@mixin link-underline($colour) {
-  transition: all $transition-one-cubic;
-  border-bottom: 3px solid transparent;
-  padding-bottom: 5px;
-
-  &:hover,
-  &focus {
-    border-bottom: 3px solid $colour;
-    padding-bottom: 0;
-    margin-bottom: 5px;
-    outline: 0;
-
-    @include breakpoint(800) {
-      border-bottom: 3px solid transparent;
-    }
-  }
-}
-
-//* Fancy Link Underline With Visited styles
-@mixin link-underline-visited($colour) {
-  transition: all $transition-one-cubic;
-  border-bottom: 3px solid transparent;
-  padding-bottom: 5px;
-
-  @include breakpoint(800) {
-    border-bottom: 3px solid transparent;
-    text-decoration: underline;
-  }
-
-  &:hover,
-  &focus {
-    border-bottom: 3px solid $colour;
-    padding-bottom: 0;
-    margin-bottom: 5px;
-    outline: 0;
-
-    @include breakpoint(800) {
-      border-bottom: 3px solid transparent;
-    }
-  }
-
-  &:visited {
-    border-bottom: 3px solid $link-visited;
-
-    @include breakpoint(800) {
-      border-bottom: 3px solid transparent;
-    }
-  }
-}
-
 //*=========================================
 //** Colours  **
 //*=========================================
