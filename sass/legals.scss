@@ -15,7 +15,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
   }
 }
@@ -32,7 +32,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
     padding: 0;
   }
@@ -56,11 +56,11 @@
     padding: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: 0 $section-spacing-extra-small $paragraph-spacing-medium;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 
@@ -70,5 +70,5 @@
 }
 
 strong {
-  font-weight: 800;
+  font-weight: 850;
 }

@@ -44,7 +44,7 @@ const blogPostImage = document.querySelectorAll('.blog-post-image');
 blogPostImage.forEach((image) => {
   ScrollTrigger.matchMedia({
     // Desktop
-    '(min-width: 801px)': function () {
+    '(min-width: 851px)': function () {
       gsap.to(image, {
         scrollTrigger: {
           trigger: image,
@@ -57,7 +57,7 @@ blogPostImage.forEach((image) => {
       });
     },
     // Tablet / Mobile
-    '(max-width: 800px)': function () {
+    '(max-width: 850px)': function () {
       gsap.to(image, {
         scrollTrigger: {
           trigger: image,

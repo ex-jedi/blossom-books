@@ -61,7 +61,7 @@ function headerImageChange() {
 function headerPlantAnimation() {
   // Responsive trigger hooks for ScrollTrigger
   // MatchMedia media queries
-  const mediaNineHundred = window.matchMedia('(max-width: 800px)');
+  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
 
   // Change trigger points on screen size
   let plantAnimationStart = 'top 45%';

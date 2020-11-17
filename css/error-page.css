@@ -36,7 +36,7 @@
     margin-bottom: 15rem;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .main-logo {
     margin-bottom: 10rem;
   }
@@ -78,7 +78,7 @@
     padding: 0 15rem 15rem;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .error-content-section {
     padding: 0 5rem 10rem;
   }
@@ -144,7 +144,7 @@
     margin-bottom: calc(15rem / 2);
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .error-section-text-wrapper {
     font-size: 5rem;
     margin-bottom: calc(10rem / 2);

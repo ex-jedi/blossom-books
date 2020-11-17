@@ -20,7 +20,7 @@
     padding: $section-spacing-smaller $section-spacing-extra-small;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-extra-small $paragraph-spacing-small;
   }
 }
@@ -35,7 +35,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
   }
 
@@ -116,7 +116,7 @@
     transition: $transition-two-cubic;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto $section-spacing-extra-small;
   }
 }
@@ -175,7 +175,7 @@
     margin-bottom: -40rem;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     transform: translateY(-35rem);
     margin-bottom: -35rem;
   }
@@ -263,7 +263,7 @@
     margin: 0 auto $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto $section-spacing-extra-small;
   }
 }
@@ -281,7 +281,7 @@
     margin: 0 auto $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto $section-spacing-extra-small;
   }
 
@@ -320,7 +320,7 @@ p.paragraph-reveal {
     margin: 0 auto $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto $section-spacing-extra-small;
   }
 }

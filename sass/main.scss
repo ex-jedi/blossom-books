@@ -124,7 +124,7 @@ img {
     left: $paragraph-spacing-small;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(column);
     justify-content: center;
     align-items: center;
@@ -164,7 +164,7 @@ img {
     margin: 0 0 $paragraph-spacing-medium;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 0 $section-spacing-extra-small;
     color: $font-colour-light;
     opacity: 0;
@@ -193,7 +193,7 @@ img {
   left: 0;
   right: 0;
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(row);
     justify-content: center;
     align-items: center;
@@ -531,7 +531,7 @@ select {
     padding: 0 $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: 0 $section-spacing-extra-small;
   }
 
@@ -585,7 +585,7 @@ footer .footer-social-media-link {
     margin: 0 auto;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto;
   }
 
@@ -704,7 +704,7 @@ body:not(.user-is-tabbing) textarea:focus {
     font-size: $font-size-extra-small;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(column);
   }
 }
@@ -717,7 +717,7 @@ body:not(.user-is-tabbing) textarea:focus {
     margin: 0 $paragraph-spacing-small 0 0;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     text-align: center;
     margin: 0 0 $paragraph-spacing-small;
   }

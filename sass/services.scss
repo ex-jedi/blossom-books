@@ -11,7 +11,7 @@
     padding-bottom: calc(#{$section-spacing-smaller} / 2);
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding-bottom: calc(#{$section-spacing-extra-small} / 2);
   }
 }
@@ -23,7 +23,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
   }
 }
@@ -73,7 +73,7 @@
     padding: calc(#{$section-spacing-smaller} / 2) $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium;
   }
 
@@ -94,7 +94,7 @@
   }
 
   strong {
-    font-weight: 800;
+    font-weight: 850;
     color: $font-colour-light;
   }
 }
@@ -109,7 +109,7 @@
     margin: $section-spacing-smaller 0;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: $section-spacing-extra-small 0;
   }
 
@@ -138,7 +138,7 @@
     padding-top: calc(#{$section-spacing-smaller} / 2);
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: calc(#{$section-spacing-extra-small} / 2) $paragraph-spacing-medium
       $section-spacing-extra-small;
   }
