@@ -107,7 +107,7 @@ img {
 .main-nav {
   @include flex(row);
   justify-content: flex-end;
-  min-height: 700px;
+  // min-height: 600px;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   transform: rotate(-180deg);
@@ -141,8 +141,12 @@ img {
     transform: translateY(120%);
   }
 
-  @include height-breakpoint(450) {
+  @include breakpoint(500) {
     justify-content: space-evenly;
+  }
+
+  @include height-breakpoint(450) {
+    justify-content: space-between;
     height: 80vh;
     margin-bottom: 20vh;
   }
@@ -150,10 +154,15 @@ img {
 
 .main-nav-link {
   text-decoration: none;
-  font-size: $font-size-main;
+  font-size: $font-size-medium;
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
+
+  @include height-breakpoint(900) {
+    font-size: $font-size-small;
+    margin: 0 0 $paragraph-spacing-medium;
+  }
 
   @include breakpoint(800) {
     margin: 0 0 $section-spacing-extra-small;
@@ -166,8 +175,9 @@ img {
       margin: 0;
     }
   }
+
   @include breakpoint(500) {
-    margin: 0 0 $paragraph-spacing-large;
+    margin: 0;
   }
 
   @include height-breakpoint(450) {
