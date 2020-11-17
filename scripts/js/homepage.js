@@ -101,8 +101,8 @@ function steamingCup() {
   });
 
   mugSteam
-    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '20% 100%', duration: 2.5, ease: 'power1.in' })
-    .to('.st1', { drawSVG: '100% 100%', duration: 2.5, ease: 'power1.out' });
+    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
+    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
 }
 
 steamingCup();
