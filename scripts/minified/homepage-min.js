@@ -105,11 +105,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 // ********** Utils **********
 
 
-
+// ********** GSAP **********
 gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
 
 // ********** GSAP Scroll Trigger Animations **********
@@ -7639,7 +7638,6 @@ _getGSAP() && gsap.registerPlugin(DrawSVGPlugin);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieWarning", function() { return cookieWarning; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleFirstTab", function() { return handleFirstTab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleMouseDownOnce", function() { return handleMouseDownOnce; });
 // *=========================================
 // ** Cookie Warning  **
 // *=========================================

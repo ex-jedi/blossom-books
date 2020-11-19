@@ -46,4 +46,4 @@ function handleMouseDownOnce() {
   window.addEventListener('keydown', handleFirstTab);
 }
 
-export { cookieWarning, handleFirstTab, handleMouseDownOnce };
+export { cookieWarning, handleFirstTab };

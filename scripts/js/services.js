@@ -1,11 +1,16 @@
 // *=========================================
-// ** GSAP  **
+// ** Imports  **
 // *=========================================
 
+// ********** GSAP **********
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// ********** Utils **********
+import { cookieWarning, handleFirstTab } from './utils.js';
+
+// ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // * Adding class to paragraphs created by Perch to set them up for fading in.
@@ -23,3 +28,19 @@ ScrollTrigger.create({
   id: 'About me section',
   toggleClass: { targets: '.services-section, .arrow-wrapper', className: 'active' },
 });
+
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
+
+// *=========================================
+// ** Utils  **
+// *=========================================
+
+// ********** Cookie Warning **********
+
+cookieWarning();
+
+// ********** Tab Outline **********
+
+window.addEventListener('keydown', handleFirstTab);

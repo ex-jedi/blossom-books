@@ -2,13 +2,18 @@
 // ** Blog Post JS  **
 // *==============================================================================
 // *=========================================
-// ** GSAP  **
+// ** Imports  **
 // *=========================================
 
+// ********** GSAP **********
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// ********** Utils **********
+import { cookieWarning, handleFirstTab } from './utils.js';
+
+// ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // ********** Blog post paragraph fade in **********
@@ -71,3 +76,19 @@ blogPostImage.forEach((image) => {
     },
   });
 });
+
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
+
+// *=========================================
+// ** Utils  **
+// *=========================================
+
+// ********** Cookie Warning **********
+
+cookieWarning();
+
+// ********** Tab Outline **********
+
+window.addEventListener('keydown', handleFirstTab);

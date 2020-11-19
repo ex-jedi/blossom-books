@@ -1,11 +1,16 @@
 // *=========================================
-// ** GSAP  **
+// ** Imports  **
 // *=========================================
 
+// ********** GSAP **********
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// ********** Utils **********
+import { cookieWarning, handleFirstTab } from './utils.js';
+
+// ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
 
 // *=========================================
@@ -43,3 +48,19 @@ ScrollTrigger.create({
   id: 'About me section',
   toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
 });
+
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
+
+// *=========================================
+// ** Utils  **
+// *=========================================
+
+// ********** Cookie Warning **********
+
+cookieWarning();
+
+// ********** Tab Outline **********
+
+window.addEventListener('keydown', handleFirstTab);

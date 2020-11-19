@@ -3,16 +3,15 @@
 // *=========================================
 
 // ********** GSAP **********
-
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 // ********** Utils **********
+import { cookieWarning, handleFirstTab } from './utils.js';
 
-import { cookieWarning, handleFirstTab, handleMouseDownOnce } from './utils.js';
-
+// ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
 
 // ********** GSAP Scroll Trigger Animations **********
