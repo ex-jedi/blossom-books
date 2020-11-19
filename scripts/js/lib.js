@@ -118,28 +118,52 @@ function headerPlantAnimation() {
 // ** GSAP Homepage Scroll Trigger Animations   **
 // *=========================================
 
-function scrollChangeColour() {
+function scrollChangeColourOne() {
   // * Homepage section one change colour on scroll
   ScrollTrigger.create({
     trigger: '.homepage-section-one',
     start: 'top center',
     end: 'bottom center',
-    id: 'Homepage Section',
+    id: 'Homepage Section One',
     toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
   });
+}
 
+function scrollChangeColourTwo() {
   // * Homepage section two change colour on scroll
   ScrollTrigger.create({
     trigger: '.homepage-section-two',
     start: 'top center',
     end: 'bottom center',
-    id: 'Homepage Section',
+    id: 'Homepage Section Two',
     toggleClass: { targets: '.homepage-section-two', className: 'active' },
   });
+}
+
+// *=========================================
+// ** Homepage Mug Animation  **
+// *=========================================
+
+function steamingCup() {
+  const mugSteam = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0,
+  });
+
+  mugSteam
+    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
+    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
 }
 
 // *=========================================
 // ** Exports  **
 // *=========================================
 
-export { menuOpenerHandler, mainNavTrigger, headerPlantAnimation, scrollChangeColour };
+export {
+  menuOpenerHandler,
+  mainNavTrigger,
+  headerPlantAnimation,
+  scrollChangeColourOne,
+  scrollChangeColourTwo,
+  steamingCup,
+};

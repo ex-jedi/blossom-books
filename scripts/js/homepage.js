@@ -13,7 +13,14 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { cookieWarning, handleFirstTab } from './utils.js';
 
 // ********** Lib **********
-import { menuOpenerHandler, mainNavTrigger, headerPlantAnimation, scrollChangeColour } from './lib';
+import {
+  menuOpenerHandler,
+  mainNavTrigger,
+  headerPlantAnimation,
+  scrollChangeColourOne,
+  scrollChangeColourTwo,
+  steamingCup,
+} from './lib';
 
 // *=========================================
 // ** GSAP  **
@@ -21,7 +28,13 @@ import { menuOpenerHandler, mainNavTrigger, headerPlantAnimation, scrollChangeCo
 
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
 
-scrollChangeColour();
+scrollChangeColourOne();
+
+scrollChangeColourTwo();
+
+steamingCup();
+
+headerPlantAnimation();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -46,23 +59,6 @@ function headerImageChange() {
     loop();
   }, rand);
 })();
-
-headerPlantAnimation();
-
-// ********** Mug Animation **********
-
-function steamingCup() {
-  const mugSteam = gsap.timeline({
-    repeat: -1,
-    repeatDelay: 0,
-  });
-
-  mugSteam
-    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
-    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
-}
-
-steamingCup();
 
 // *==============================================================================
 // ** Imported  **

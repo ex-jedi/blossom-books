@@ -119,7 +119,13 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
 
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColour"])();
+Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourOne"])();
+
+Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourTwo"])();
+
+Object(_lib__WEBPACK_IMPORTED_MODULE_5__["steamingCup"])();
+
+Object(_lib__WEBPACK_IMPORTED_MODULE_5__["headerPlantAnimation"])();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -144,23 +150,6 @@ function headerImageChange() {
     loop();
   }, rand);
 })();
-
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["headerPlantAnimation"])();
-
-// ********** Mug Animation **********
-
-function steamingCup() {
-  const mugSteam = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
-    repeat: -1,
-    repeatDelay: 0,
-  });
-
-  mugSteam
-    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
-    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
-}
-
-steamingCup();
 
 // *==============================================================================
 // ** Imported  **
@@ -7661,7 +7650,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuOpenerHandler", function() { return menuOpenerHandler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mainNavTrigger", function() { return mainNavTrigger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerPlantAnimation", function() { return headerPlantAnimation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColour", function() { return scrollChangeColour; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourOne", function() { return scrollChangeColourOne; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourTwo", function() { return scrollChangeColourTwo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steamingCup", function() { return steamingCup; });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
@@ -7786,24 +7777,41 @@ function headerPlantAnimation() {
 // ** GSAP Homepage Scroll Trigger Animations   **
 // *=========================================
 
-function scrollChangeColour() {
+function scrollChangeColourOne() {
   // * Homepage section one change colour on scroll
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
     trigger: '.homepage-section-one',
     start: 'top center',
     end: 'bottom center',
-    id: 'Homepage Section',
+    id: 'Homepage Section One',
     toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
   });
+}
 
+function scrollChangeColourTwo() {
   // * Homepage section two change colour on scroll
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
     trigger: '.homepage-section-two',
     start: 'top center',
     end: 'bottom center',
-    id: 'Homepage Section',
+    id: 'Homepage Section Two',
     toggleClass: { targets: '.homepage-section-two', className: 'active' },
   });
+}
+
+// *=========================================
+// ** Homepage Mug Animation  **
+// *=========================================
+
+function steamingCup() {
+  const mugSteam = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
+    repeat: -1,
+    repeatDelay: 0,
+  });
+
+  mugSteam
+    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
+    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
 }
 
 // *=========================================
