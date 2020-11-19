@@ -2,6 +2,7 @@
 // ** Imports  **
 // *=========================================
 
+// TODO: Put all greensock into modules
 // ********** GSAP **********
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
@@ -11,7 +12,13 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 // ********** Utils **********
 import { cookieWarning, handleFirstTab } from './utils.js';
 
-// ********** GSAP **********
+// ********** Lib **********
+import { menuOpenerHandler, mainNavTrigger, headerPlantAnimation } from './lib';
+
+// *=========================================
+// ** GSAP  **
+// *=========================================
+
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
 
 // ********** GSAP Scroll Trigger Animations **********
@@ -58,41 +65,6 @@ function headerImageChange() {
   }, rand);
 })();
 
-// ********** Plant Animation **********
-
-// All in a function for export
-function headerPlantAnimation() {
-  // Responsive trigger hooks for ScrollTrigger
-  // MatchMedia media queries
-  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
-
-  // Change trigger points on screen size
-  let plantAnimationStart = 'top 45%';
-  let plantAnimationEnd = 'bottom 65%';
-  if (mediaNineHundred.matches) {
-    plantAnimationStart = 'top 70%';
-    plantAnimationEnd = 'bottom 70%';
-  }
-
-  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
-
-  gsap.fromTo(
-    plantIllustration,
-    { drawSVG: 0 },
-    {
-      duration: 3,
-      drawSVG: '100%',
-      scrollTrigger: {
-        trigger: '.header-plant-image-wrapper',
-        start: plantAnimationStart,
-        end: plantAnimationEnd,
-        id: 'Plant',
-        scrub: 1,
-      },
-    }
-  );
-}
-
 headerPlantAnimation();
 
 // ********** Mug Animation **********
@@ -113,6 +85,14 @@ steamingCup();
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
+
+// *=========================================
+// ** Lib  **
+// *=========================================
+
+// ********** Main Nav **********
+
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // *=========================================
 // ** Utils  **
