@@ -119,25 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
 
-// ********** GSAP Scroll Trigger Animations **********
-
-// * Homepage section one change colour on scroll
-gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
-  trigger: '.homepage-section-one',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
-});
-
-// * Homepage section two change colour on scroll
-gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
-  trigger: '.homepage-section-two',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-two', className: 'active' },
-});
+Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColour"])();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -7679,6 +7661,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuOpenerHandler", function() { return menuOpenerHandler; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mainNavTrigger", function() { return mainNavTrigger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerPlantAnimation", function() { return headerPlantAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColour", function() { return scrollChangeColour; });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
@@ -7793,6 +7776,34 @@ function headerPlantAnimation() {
       },
     }
   );
+}
+
+// *==============================================================================
+// ** GSAP Animations  **
+// *==============================================================================
+
+// *=========================================
+// ** GSAP Homepage Scroll Trigger Animations   **
+// *=========================================
+
+function scrollChangeColour() {
+  // * Homepage section one change colour on scroll
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
+    trigger: '.homepage-section-one',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Homepage Section',
+    toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
+  });
+
+  // * Homepage section two change colour on scroll
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
+    trigger: '.homepage-section-two',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Homepage Section',
+    toggleClass: { targets: '.homepage-section-two', className: 'active' },
+  });
 }
 
 // *=========================================
