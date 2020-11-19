@@ -90,22 +90,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 // *=========================================
 // ** Imports  **
 // *=========================================
 
 // TODO: Put all greensock into modules
-// ********** GSAP **********
-
-
-
-
 
 // ********** Utils **********
 
@@ -117,13 +108,13 @@ __webpack_require__.r(__webpack_exports__);
 // ** GSAP  **
 // *=========================================
 
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourOne"])();
+Object(_lib__WEBPACK_IMPORTED_MODULE_1__["scrollChangeColourOne"])();
 
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourTwo"])();
+Object(_lib__WEBPACK_IMPORTED_MODULE_1__["scrollChangeColourTwo"])();
 
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["steamingCup"])();
+Object(_lib__WEBPACK_IMPORTED_MODULE_1__["steamingCup"])();
 
-Object(_lib__WEBPACK_IMPORTED_MODULE_5__["headerPlantAnimation"])();
+Object(_lib__WEBPACK_IMPORTED_MODULE_1__["headerPlantAnimation"])();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -149,29 +140,23 @@ function headerImageChange() {
   }, rand);
 })();
 
-// *==============================================================================
-// ** Imported  **
-// *==============================================================================
-
 // *=========================================
-// ** Lib  **
+// ** Main Nav  **
 // *=========================================
 
-// ********** Main Nav **********
-
-_lib__WEBPACK_IMPORTED_MODULE_5__["mainNavTrigger"].addEventListener('click', _lib__WEBPACK_IMPORTED_MODULE_5__["menuOpenerHandler"]);
+_lib__WEBPACK_IMPORTED_MODULE_1__["mainNavTrigger"].addEventListener('click', _lib__WEBPACK_IMPORTED_MODULE_1__["menuOpenerHandler"]);
 
 // *=========================================
-// ** Utils  **
+// ** Cookie Warning  **
 // *=========================================
 
-// ********** Cookie Warning **********
+Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["cookieWarning"])();
 
-Object(_utils_js__WEBPACK_IMPORTED_MODULE_4__["cookieWarning"])();
+// *=========================================
+// ** Tab Outline  **
+// *=========================================
 
-// ********** Tab Outline **********
-
-window.addEventListener('keydown', _utils_js__WEBPACK_IMPORTED_MODULE_4__["handleFirstTab"]);
+window.addEventListener('keydown', _utils_js__WEBPACK_IMPORTED_MODULE_0__["handleFirstTab"]);
 
 
 
@@ -181,10 +166,249 @@ window.addEventListener('keydown', _utils_js__WEBPACK_IMPORTED_MODULE_4__["handl
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieWarning", function() { return cookieWarning; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleFirstTab", function() { return handleFirstTab; });
+// *=========================================
+// ** Cookie Warning  **
+// *=========================================
+
+function cookieWarning() {
+  const cookieBanner = document.querySelector('.cookie-warning-wrapper');
+  const cookieWarningButton = document.querySelector('.cookie-warning-button');
+
+  if (localStorage.getItem('cookieSeen') !== 'shown') {
+    cookieBanner.classList.add('show-cookie-warning');
+  } else {
+    cookieBanner.style.display = 'none';
+  }
+
+  cookieWarningButton.addEventListener(
+    'click',
+    () => {
+      localStorage.setItem('cookieSeen', 'shown');
+      cookieBanner.classList.remove('show-cookie-warning');
+      cookieBanner.addEventListener('transitionend', () => {
+        cookieBanner.style.display = 'none';
+      });
+    },
+    { once: true }
+  );
+}
+
+// *=========================================
+// ** Accessibility  **
+// *=========================================
+
+// * Adding focus outline class when tab key is used
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    document.body.classList.add('user-is-tabbing');
+
+    window.removeEventListener('keydown', handleFirstTab);
+    window.addEventListener('mousedown', handleMouseDownOnce);
+  }
+}
+
+function handleMouseDownOnce() {
+  document.body.classList.remove('user-is-tabbing');
+
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+}
+
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuOpenerHandler", function() { return menuOpenerHandler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mainNavTrigger", function() { return mainNavTrigger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerPlantAnimation", function() { return headerPlantAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourOne", function() { return scrollChangeColourOne; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourTwo", function() { return scrollChangeColourTwo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steamingCup", function() { return steamingCup; });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+// ********** GSAP **********
+
+
+
+
+
+// *=========================================
+// ** GSAP  **
+// *=========================================
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
+
+// *=========================================
+// ** Main Nav  **
+// *=========================================
+const mainNavTriggerWrapper = document.querySelector('.main-nav-trigger-wrapper');
+const mainNavTrigger = document.querySelector('.main-nav-trigger');
+const mainNav = document.querySelector('.main-nav');
+const navLink = document.querySelectorAll('.main-nav-link');
+
+// Restore pointerevents
+function pointerEventsRestore() {
+  mainNavTrigger.style.pointerEvents = 'auto';
+  if (mainNav.dataset.state === 'open') {
+    mainNavTrigger.textContent = 'CLOSE MENU';
+    mainNavTrigger.style.padding = '0';
+  } else {
+    mainNavTrigger.textContent = 'MENU';
+    mainNavTrigger.style.padding = '0 5rem';
+    // Stripping out styles injected by GreenSock to show normal menu if screen is resized
+    mainNav.removeAttribute('style');
+    navLink.forEach((link) => link.removeAttribute('style'));
+  }
+}
+
+// * Open menu
+
+const openMenuTl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
+  paused: true,
+  defaults: { ease: 'power3.out', duration: 1, delay: 0 },
+});
+
+openMenuTl
+  .to(mainNav, { y: '0%' })
+  .addLabel('colorChange', '-=0.3')
+  .to(navLink, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
+
+// * Close menu
+
+const closeMenuTl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
+  paused: true,
+  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
+});
+
+closeMenuTl
+  .to(navLink, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
+  .addLabel('colorChange', '-=0.5')
+  .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
+  .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')
+  .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
+
+function menuOpenerHandler() {
+  if (mainNav.dataset.state === 'closed') {
+    openMenuTl.restart();
+    mainNavTrigger.style.pointerEvents = 'none';
+    mainNav.dataset.state = 'open';
+  } else {
+    closeMenuTl.restart();
+    mainNavTrigger.style.pointerEvents = 'none';
+    mainNav.dataset.state = 'closed';
+  }
+}
+
+// *=========================================
+// ** Homepage Header Plant Animation  **
+// *=========================================
+
+// All in a function for export
+function headerPlantAnimation() {
+  // Responsive trigger hooks for ScrollTrigger
+  // MatchMedia media queries
+  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
+
+  // Change trigger points on screen size
+  let plantAnimationStart = 'top 45%';
+  let plantAnimationEnd = 'bottom 65%';
+  if (mediaNineHundred.matches) {
+    plantAnimationStart = 'top 70%';
+    plantAnimationEnd = 'bottom 70%';
+  }
+
+  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
+
+  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].fromTo(
+    plantIllustration,
+    { drawSVG: 0 },
+    {
+      duration: 3,
+      drawSVG: '100%',
+      scrollTrigger: {
+        trigger: '.header-plant-image-wrapper',
+        start: plantAnimationStart,
+        end: plantAnimationEnd,
+        id: 'Plant',
+        scrub: 1,
+      },
+    }
+  );
+}
+
+// *==============================================================================
+// ** GSAP Animations  **
+// *==============================================================================
+
+// *=========================================
+// ** GSAP Homepage Scroll Trigger Animations   **
+// *=========================================
+
+function scrollChangeColourOne() {
+  // * Homepage section one change colour on scroll
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
+    trigger: '.homepage-section-one',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Homepage Section One',
+    toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
+  });
+}
+
+function scrollChangeColourTwo() {
+  // * Homepage section two change colour on scroll
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
+    trigger: '.homepage-section-two',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Homepage Section Two',
+    toggleClass: { targets: '.homepage-section-two', className: 'active' },
+  });
+}
+
+// *=========================================
+// ** Homepage Mug Animation  **
+// *=========================================
+
+function steamingCup() {
+  const mugSteam = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
+    repeat: -1,
+    repeatDelay: 0,
+  });
+
+  mugSteam
+    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
+    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
+}
+
+// *=========================================
+// ** Exports  **
+// *=========================================
+
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gsap", function() { return gsapWithCSS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return gsapWithCSS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TweenMax", function() { return TweenMaxWithCSS; });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TweenLite", function() { return _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["TweenLite"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimelineMax", function() { return _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["TimelineMax"]; });
@@ -227,7 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Circ", function() { return _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["Circ"]; });
 
-/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CSSPlugin", function() { return _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__["CSSPlugin"]; });
 
 
@@ -238,7 +462,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4095,7 +4319,7 @@ var Power0 = _easeMap.Power0,
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4105,7 +4329,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getBBox", function() { return _getBBox; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_createElement", function() { return _createElement; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkPrefix", function() { return _checkPropPrefix; });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /*!
  * CSSPlugin 3.5.1
  * https://greensock.com
@@ -5497,7 +5721,7 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(CSSPlugin);
 
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5640,7 +5864,7 @@ _getGSAP() && gsap.registerPlugin(CSSRulePlugin);
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7246,7 +7470,7 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7578,245 +7802,6 @@ var DrawSVGPlugin = {
   getPosition: _getPosition
 };
 _getGSAP() && gsap.registerPlugin(DrawSVGPlugin);
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieWarning", function() { return cookieWarning; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleFirstTab", function() { return handleFirstTab; });
-// *=========================================
-// ** Cookie Warning  **
-// *=========================================
-
-function cookieWarning() {
-  const cookieBanner = document.querySelector('.cookie-warning-wrapper');
-  const cookieWarningButton = document.querySelector('.cookie-warning-button');
-
-  if (localStorage.getItem('cookieSeen') !== 'shown') {
-    cookieBanner.classList.add('show-cookie-warning');
-  } else {
-    cookieBanner.style.display = 'none';
-  }
-
-  cookieWarningButton.addEventListener(
-    'click',
-    () => {
-      localStorage.setItem('cookieSeen', 'shown');
-      cookieBanner.classList.remove('show-cookie-warning');
-      cookieBanner.addEventListener('transitionend', () => {
-        cookieBanner.style.display = 'none';
-      });
-    },
-    { once: true }
-  );
-}
-
-// *=========================================
-// ** Accessibility  **
-// *=========================================
-
-// * Adding focus outline class when tab key is used
-function handleFirstTab(e) {
-  if (e.keyCode === 9) {
-    document.body.classList.add('user-is-tabbing');
-
-    window.removeEventListener('keydown', handleFirstTab);
-    window.addEventListener('mousedown', handleMouseDownOnce);
-  }
-}
-
-function handleMouseDownOnce() {
-  document.body.classList.remove('user-is-tabbing');
-
-  window.removeEventListener('mousedown', handleMouseDownOnce);
-  window.addEventListener('keydown', handleFirstTab);
-}
-
-
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuOpenerHandler", function() { return menuOpenerHandler; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mainNavTrigger", function() { return mainNavTrigger; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerPlantAnimation", function() { return headerPlantAnimation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourOne", function() { return scrollChangeColourOne; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourTwo", function() { return scrollChangeColourTwo; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steamingCup", function() { return steamingCup; });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-// ********** GSAP **********
-
-
-
-
-
-// *=========================================
-// ** GSAP  **
-// *=========================================
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
-
-// *=========================================
-// ** Main Nav  **
-// *=========================================
-const mainNavTriggerWrapper = document.querySelector('.main-nav-trigger-wrapper');
-const mainNavTrigger = document.querySelector('.main-nav-trigger');
-const mainNav = document.querySelector('.main-nav');
-const navLink = document.querySelectorAll('.main-nav-link');
-
-// Restore pointerevents
-function pointerEventsRestore() {
-  mainNavTrigger.style.pointerEvents = 'auto';
-  if (mainNav.dataset.state === 'open') {
-    mainNavTrigger.textContent = 'CLOSE MENU';
-    mainNavTrigger.style.padding = '0';
-  } else {
-    mainNavTrigger.textContent = 'MENU';
-    mainNavTrigger.style.padding = '0 5rem';
-    // Stripping out styles injected by GreenSock to show normal menu if screen is resized
-    mainNav.removeAttribute('style');
-    navLink.forEach((link) => link.removeAttribute('style'));
-  }
-}
-
-// * Open menu
-
-const openMenuTl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
-  paused: true,
-  defaults: { ease: 'power3.out', duration: 1, delay: 0 },
-});
-
-openMenuTl
-  .to(mainNav, { y: '0%' })
-  .addLabel('colorChange', '-=0.3')
-  .to(navLink, { y: 0, opacity: 1, stagger: 0.2, duration: 0.5 }, 'colorChange')
-  .to(mainNavTriggerWrapper, { backgroundColor: '#f4f1f0' }, 'colorChange')
-  .to(mainNavTrigger, { color: '#6c9184', onComplete: pointerEventsRestore }, 'colorChange');
-
-// * Close menu
-
-const closeMenuTl = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
-  paused: true,
-  defaults: { ease: 'power3.in', duration: 1, delay: 0 },
-});
-
-closeMenuTl
-  .to(navLink, { y: 40, opacity: 0, stagger: -0.2, duration: 0.5 })
-  .addLabel('colorChange', '-=0.5')
-  .to(mainNavTriggerWrapper, { backgroundColor: '#6c9184' }, 'colorChange')
-  .to(mainNavTrigger, { color: '#f4f1f0' }, 'colorChange')
-  .to(mainNav, { y: '120%', onComplete: pointerEventsRestore }, 'colorChange');
-
-function menuOpenerHandler() {
-  if (mainNav.dataset.state === 'closed') {
-    openMenuTl.restart();
-    mainNavTrigger.style.pointerEvents = 'none';
-    mainNav.dataset.state = 'open';
-  } else {
-    closeMenuTl.restart();
-    mainNavTrigger.style.pointerEvents = 'none';
-    mainNav.dataset.state = 'closed';
-  }
-}
-
-// *=========================================
-// ** Homepage Header Plant Animation  **
-// *=========================================
-
-// All in a function for export
-function headerPlantAnimation() {
-  // Responsive trigger hooks for ScrollTrigger
-  // MatchMedia media queries
-  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
-
-  // Change trigger points on screen size
-  let plantAnimationStart = 'top 45%';
-  let plantAnimationEnd = 'bottom 65%';
-  if (mediaNineHundred.matches) {
-    plantAnimationStart = 'top 70%';
-    plantAnimationEnd = 'bottom 70%';
-  }
-
-  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
-
-  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].fromTo(
-    plantIllustration,
-    { drawSVG: 0 },
-    {
-      duration: 3,
-      drawSVG: '100%',
-      scrollTrigger: {
-        trigger: '.header-plant-image-wrapper',
-        start: plantAnimationStart,
-        end: plantAnimationEnd,
-        id: 'Plant',
-        scrub: 1,
-      },
-    }
-  );
-}
-
-// *==============================================================================
-// ** GSAP Animations  **
-// *==============================================================================
-
-// *=========================================
-// ** GSAP Homepage Scroll Trigger Animations   **
-// *=========================================
-
-function scrollChangeColourOne() {
-  // * Homepage section one change colour on scroll
-  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
-    trigger: '.homepage-section-one',
-    start: 'top center',
-    end: 'bottom center',
-    id: 'Homepage Section One',
-    toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
-  });
-}
-
-function scrollChangeColourTwo() {
-  // * Homepage section two change colour on scroll
-  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
-    trigger: '.homepage-section-two',
-    start: 'top center',
-    end: 'bottom center',
-    id: 'Homepage Section Two',
-    toggleClass: { targets: '.homepage-section-two', className: 'active' },
-  });
-}
-
-// *=========================================
-// ** Homepage Mug Animation  **
-// *=========================================
-
-function steamingCup() {
-  const mugSteam = gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].timeline({
-    repeat: -1,
-    repeatDelay: 0,
-  });
-
-  mugSteam
-    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '25% 100%', duration: 2, ease: 'power1.in' })
-    .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
-}
-
-// *=========================================
-// ** Exports  **
-// *=========================================
-
-
 
 
 /***/ })

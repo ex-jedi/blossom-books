@@ -3,11 +3,6 @@
 // *=========================================
 
 // TODO: Put all greensock into modules
-// ********** GSAP **********
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 // ********** Utils **********
 import { cookieWarning, handleFirstTab } from './utils.js';
@@ -58,26 +53,20 @@ function headerImageChange() {
   }, rand);
 })();
 
-// *==============================================================================
-// ** Imported  **
-// *==============================================================================
-
 // *=========================================
-// ** Lib  **
+// ** Main Nav  **
 // *=========================================
-
-// ********** Main Nav **********
 
 mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // *=========================================
-// ** Utils  **
+// ** Cookie Warning  **
 // *=========================================
-
-// ********** Cookie Warning **********
 
 cookieWarning();
 
-// ********** Tab Outline **********
+// *=========================================
+// ** Tab Outline  **
+// *=========================================
 
 window.addEventListener('keydown', handleFirstTab);
