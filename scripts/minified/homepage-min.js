@@ -117,8 +117,6 @@ __webpack_require__.r(__webpack_exports__);
 // ** GSAP  **
 // *=========================================
 
-gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__["CSSRulePlugin"], gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"], gsap_DrawSVGPlugin__WEBPACK_IMPORTED_MODULE_3__["DrawSVGPlugin"]);
-
 Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourOne"])();
 
 Object(_lib__WEBPACK_IMPORTED_MODULE_5__["scrollChangeColourTwo"])();

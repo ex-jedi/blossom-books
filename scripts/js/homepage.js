@@ -26,8 +26,6 @@ import {
 // ** GSAP  **
 // *=========================================
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
-
 scrollChangeColourOne();
 
 scrollChangeColourTwo();
