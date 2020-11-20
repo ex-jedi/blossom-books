@@ -140,7 +140,6 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top 95%',
           end: 'bottom top',
-          markers: true,
         });
       },
 
