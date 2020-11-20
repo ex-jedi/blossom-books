@@ -11,7 +11,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
   }
 }
@@ -31,7 +31,7 @@
     padding: 0 $section-spacing-smaller calc(#{$section-spacing-smaller} / 2);
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: 0 $paragraph-spacing-small $paragraph-spacing-medium;
   }
 }
@@ -45,7 +45,7 @@
     margin-bottom: $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin-bottom: $section-spacing-extra-small;
   }
 }
@@ -104,7 +104,7 @@
       $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-extra-small $paragraph-spacing-medium
       $section-spacing-extra-small;
   }
@@ -138,7 +138,7 @@
     padding: $section-spacing-smaller 0 0;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-extra-small 0 0;
   }
 

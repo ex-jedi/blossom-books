@@ -107,7 +107,7 @@ img {
 .main-nav {
   @include flex(row);
   justify-content: flex-end;
-  min-height: 700px;
+  // min-height: 600px;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   transform: rotate(-180deg);
@@ -124,7 +124,7 @@ img {
     left: $paragraph-spacing-small;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(column);
     justify-content: center;
     align-items: center;
@@ -141,8 +141,12 @@ img {
     transform: translateY(120%);
   }
 
-  @include height-breakpoint(450) {
+  @include breakpoint(500) {
     justify-content: space-evenly;
+  }
+
+  @include height-breakpoint(450) {
+    justify-content: space-between;
     height: 80vh;
     margin-bottom: 20vh;
   }
@@ -150,12 +154,17 @@ img {
 
 .main-nav-link {
   text-decoration: none;
-  font-size: $font-size-main;
+  font-size: $font-size-medium;
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
 
-  @include breakpoint(800) {
+  @include height-breakpoint(900) {
+    font-size: $font-size-small;
+    margin: 0 0 $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(850) {
     margin: 0 0 $section-spacing-extra-small;
     color: $font-colour-light;
     opacity: 0;
@@ -166,8 +175,9 @@ img {
       margin: 0;
     }
   }
+
   @include breakpoint(500) {
-    margin: 0 0 $paragraph-spacing-large;
+    margin: 0;
   }
 
   @include height-breakpoint(450) {
@@ -183,7 +193,7 @@ img {
   left: 0;
   right: 0;
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(row);
     justify-content: center;
     align-items: center;
@@ -304,24 +314,25 @@ main {
 
 .general-contact-form-input {
   flex: 1 1 auto;
-  background-color: $background-colour-three;
+  background-color: transparent;
   border: 0;
   border-bottom: 4px solid $font-colour-light;
   width: 100%;
 
   &.active,
   &.focus {
-    background-color: $background-colour-main;
     border-bottom-color: $font-colour-main;
   }
 }
 
 .text-area-input-wrapper {
+  position: relative;
   align-items: flex-start;
 }
 
 .text-area-label {
   position: absolute;
+  top: 10px;
   transition: $transition-two;
   color: inherit;
 
@@ -341,27 +352,45 @@ main {
   );
   text-indent: $section-spacing-small;
   border: 0;
-  line-height: 1;
   resize: none;
-  line-height: 4.2rem;
+  line-height: 4.4rem;
   background-attachment: local;
   //TODO: Improve text spacing in text area
   // Text area underlining
   background-image: linear-gradient(
       to right,
-      $background-colour-main 0,
+      $background-colour-three 0,
       transparent 0
     ),
-    linear-gradient(to left, $background-colour-main 0, transparent 0),
+    linear-gradient(to left, $background-colour-three 0, transparent 0),
     repeating-linear-gradient(
-      $background-colour-main,
+      $background-colour-three,
       // Leave
-      $background-colour-main 4rem,
-      $font-colour-main 1.8rem,
+      $background-colour-three 4rem,
+      $font-colour-light 1.8rem,
       // Seems to control line thickness
-      $font-colour-main 4.3rem,
-      $background-colour-main 1.85rem
+      $font-colour-light 4.4rem,
+      $background-colour-three 1.85rem
     );
+
+  &.active {
+    // Text area underlining
+    background-image: linear-gradient(
+        to right,
+        $background-colour-main 0,
+        transparent 0
+      ),
+      linear-gradient(to left, $background-colour-main 0, transparent 0),
+      repeating-linear-gradient(
+        $background-colour-main,
+        // Leave
+        $background-colour-main 4rem,
+        $font-colour-main 1.8rem,
+        // Seems to control line thickness
+        $font-colour-main 4.4rem,
+        $background-colour-main 1.85rem
+      );
+  }
 }
 
 .contact-form-check-text {
@@ -521,7 +550,7 @@ select {
     padding: 0 $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: 0 $section-spacing-extra-small;
   }
 
@@ -575,7 +604,7 @@ footer .footer-social-media-link {
     margin: 0 auto;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 auto;
   }
 
@@ -694,7 +723,7 @@ body:not(.user-is-tabbing) textarea:focus {
     font-size: $font-size-extra-small;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     @include flex(column);
   }
 }
@@ -707,7 +736,7 @@ body:not(.user-is-tabbing) textarea:focus {
     margin: 0 $paragraph-spacing-small 0 0;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     text-align: center;
     margin: 0 0 $paragraph-spacing-small;
   }

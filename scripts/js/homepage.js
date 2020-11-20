@@ -1,35 +1,37 @@
 // *=========================================
+// ** Imports  **
+// *=========================================
+
+// ********** Utils **********
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
+
+// ********** Lib **********
+import {
+  menuOpenerHandler,
+  mainNavTrigger,
+  headerPlantAnimation,
+  scrollChangeColourOne,
+  scrollChangeColourTwo,
+  steamingCup,
+  contactFormScrollColourChange,
+  fadeInRotateParagraphs,
+} from './lib';
+
+// *=========================================
 // ** GSAP  **
 // *=========================================
 
-// ********** Import & Register **********
+scrollChangeColourOne();
 
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+scrollChangeColourTwo();
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger, DrawSVGPlugin);
+steamingCup();
 
-// ********** GSAP Scroll Trigger Animations **********
+headerPlantAnimation();
 
-// * Homepage section one change colour on scroll
-ScrollTrigger.create({
-  trigger: '.homepage-section-one',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-one, .main-header, .section-one-box-paragraph', className: 'active' },
-});
+contactFormScrollColourChange();
 
-// * Homepage section two change colour on scroll
-ScrollTrigger.create({
-  trigger: '.homepage-section-two',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'Homepage Section',
-  toggleClass: { targets: '.homepage-section-two', className: 'active' },
-});
+fadeInRotateParagraphs();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -55,54 +57,30 @@ function headerImageChange() {
   }, rand);
 })();
 
-// ********** Plant Animation **********
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
 
-// All in a function for export
-function headerPlantAnimation() {
-  // Responsive trigger hooks for ScrollTrigger
-  // MatchMedia media queries
-  const mediaNineHundred = window.matchMedia('(max-width: 800px)');
+// *=========================================
+// ** Utils **
+// *=========================================
 
-  // Change trigger points on screen size
-  let plantAnimationStart = 'top 45%';
-  let plantAnimationEnd = 'bottom 65%';
-  if (mediaNineHundred.matches) {
-    plantAnimationStart = 'top 70%';
-    plantAnimationEnd = 'bottom 70%';
-  }
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
-  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
+// *=========================================
+// ** Cookie Warning  **
+// *=========================================
 
-  gsap.fromTo(
-    plantIllustration,
-    { drawSVG: 0 },
-    {
-      duration: 3,
-      drawSVG: '100%',
-      scrollTrigger: {
-        trigger: '.header-plant-image-wrapper',
-        start: plantAnimationStart,
-        end: plantAnimationEnd,
-        id: 'Plant',
-        scrub: 1,
-      },
-    }
-  );
-}
+cookieWarning();
 
-headerPlantAnimation();
+// *=========================================
+// ** Tab Outline  **
+// *=========================================
 
-// ********** Mug Animation **********
+window.addEventListener('keydown', handleFirstTab);
 
-function steamingCup() {
-  const mugSteam = gsap.timeline({
-    repeat: -1,
-    repeatDelay: 0,
-  });
-
-  mugSteam
-    .fromTo('.st1', { drawSVG: 0 }, { drawSVG: '20% 100%', duration: 2.5, ease: 'power1.in' })
-    .to('.st1', { drawSVG: '100% 100%', duration: 2.5, ease: 'power1.out' });
-}
-
-steamingCup();
+// *=========================================
+// ** Hide text area label on scroll  **
+// *=========================================
+if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);

@@ -44,7 +44,7 @@
     padding: $section-spacing-smaller $section-spacing-smaller 0;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-extra-small $section-spacing-extra-small 0;
   }
 
@@ -219,7 +219,7 @@
     padding: $section-spacing-smaller $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     padding: $section-spacing-small $section-spacing-extra-small;
   }
 
@@ -259,7 +259,7 @@
     margin: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 $section-spacing-extra-small $section-spacing-smaller;
   }
 
@@ -288,11 +288,11 @@
     margin: 0 $section-spacing-smaller $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 $section-spacing-extra-small $section-spacing-smaller;
   }
 
-  @include breakpoint(800) {
+  @include breakpoint(850) {
     margin: 0 $paragraph-spacing-small $section-spacing-extra-small;
   }
 
