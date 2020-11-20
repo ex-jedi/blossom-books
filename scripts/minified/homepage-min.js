@@ -116,6 +116,8 @@ Object(_lib__WEBPACK_IMPORTED_MODULE_1__["steamingCup"])();
 
 Object(_lib__WEBPACK_IMPORTED_MODULE_1__["headerPlantAnimation"])();
 
+Object(_lib__WEBPACK_IMPORTED_MODULE_1__["contactFormScrollColourChange"])();
+
 // *=========================================
 // ** Header Image Switcher  **
 // *=========================================
@@ -158,6 +160,11 @@ Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["cookieWarning"])();
 
 window.addEventListener('keydown', _utils_js__WEBPACK_IMPORTED_MODULE_0__["handleFirstTab"]);
 
+// *=========================================
+// ** Hide text area label on scroll  **
+// *=========================================
+if (_utils_js__WEBPACK_IMPORTED_MODULE_0__["textAreaInput"]) _utils_js__WEBPACK_IMPORTED_MODULE_0__["textAreaInput"].addEventListener('scroll', _utils_js__WEBPACK_IMPORTED_MODULE_0__["textAreaScrollHandler"]);
+
 
 
 /***/ }),
@@ -168,6 +175,8 @@ window.addEventListener('keydown', _utils_js__WEBPACK_IMPORTED_MODULE_0__["handl
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cookieWarning", function() { return cookieWarning; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleFirstTab", function() { return handleFirstTab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "textAreaInput", function() { return textAreaInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "textAreaScrollHandler", function() { return textAreaScrollHandler; });
 // *=========================================
 // ** Cookie Warning  **
 // *=========================================
@@ -216,6 +225,27 @@ function handleMouseDownOnce() {
   window.addEventListener('keydown', handleFirstTab);
 }
 
+// *=========================================
+// ** Hiding Text area label on scroll  **
+// *=========================================
+
+const textAreaLabel = document.querySelector('.text-area-label');
+const textAreaInput = document.querySelector('.text-area-input');
+
+function textAreaScrollHandler() {
+  if (textAreaInput.scrollTop > 3) {
+    textAreaLabel.classList.add('fade-out');
+  } else if (textAreaInput.scrollTop > 20) {
+    textAreaInput.style.lineHeight = '10rem';
+  } else {
+    textAreaLabel.classList.remove('fade-out');
+  }
+}
+
+// *==============================================================================
+// ** Exports  **
+// *==============================================================================
+
 
 
 
@@ -231,6 +261,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourOne", function() { return scrollChangeColourOne; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollChangeColourTwo", function() { return scrollChangeColourTwo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steamingCup", function() { return steamingCup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "contactFormScrollColourChange", function() { return contactFormScrollColourChange; });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var gsap_CSSRulePlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
@@ -350,6 +381,23 @@ function headerPlantAnimation() {
 // *==============================================================================
 // ** GSAP Animations  **
 // *==============================================================================
+
+// *=========================================
+// ** Contact form color change  **
+// *=========================================
+
+function contactFormScrollColourChange() {
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["ScrollTrigger"].create({
+    trigger: '.general-contact-form-section',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Contact Form',
+    toggleClass: {
+      targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
+      className: 'active',
+    },
+  });
+}
 
 // *=========================================
 // ** GSAP Homepage Scroll Trigger Animations   **

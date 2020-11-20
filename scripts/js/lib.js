@@ -115,6 +115,23 @@ function headerPlantAnimation() {
 // *==============================================================================
 
 // *=========================================
+// ** Contact form color change  **
+// *=========================================
+
+function contactFormScrollColourChange() {
+  ScrollTrigger.create({
+    trigger: '.general-contact-form-section',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'Contact Form',
+    toggleClass: {
+      targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
+      className: 'active',
+    },
+  });
+}
+
+// *=========================================
 // ** GSAP Homepage Scroll Trigger Animations   **
 // *=========================================
 
@@ -166,4 +183,5 @@ export {
   scrollChangeColourOne,
   scrollChangeColourTwo,
   steamingCup,
+  contactFormScrollColourChange,
 };

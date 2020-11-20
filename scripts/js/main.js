@@ -15,17 +15,17 @@ ScrollTrigger.defaults({
   // markers: true,
 });
 
-// * Contact form color change
-ScrollTrigger.create({
-  trigger: '.general-contact-form-section',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'Contact Form',
-  toggleClass: {
-    targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
-    className: 'active',
-  },
-});
+// // * Contact form color change
+// ScrollTrigger.create({
+//   trigger: '.general-contact-form-section',
+//   start: 'top center',
+//   end: 'bottom center',
+//   id: 'Contact Form',
+//   toggleClass: {
+//     targets: '.general-contact-form-section, .general-contact-form-input, .main-contact-submit-button',
+//     className: 'active',
+//   },
+// });
 
 // ********** Fading in paragraphs **********
 
@@ -86,21 +86,3 @@ fadeInParagraphs.forEach((paragraph) => {
 });
 
 // ? TODO: Cookie warning was here
-
-// *=========================================
-// ** Main  **
-// *=========================================
-
-// ********** Hiding Text area label on scroll **********
-const textAreaLabel = document.querySelector('.text-area-label');
-const textAreaInput = document.querySelector('.text-area-input');
-
-function textAreaScrollHandler() {
-  if (textAreaInput.scrollTop > 3) {
-    textAreaLabel.classList.add('fade-out');
-  } else {
-    textAreaLabel.classList.remove('fade-out');
-  }
-}
-
-if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);

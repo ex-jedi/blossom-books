@@ -5,7 +5,7 @@
 // TODO: Put all greensock into modules
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab } from './utils.js';
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 
 // ********** Lib **********
 import {
@@ -15,6 +15,7 @@ import {
   scrollChangeColourOne,
   scrollChangeColourTwo,
   steamingCup,
+  contactFormScrollColourChange,
 } from './lib';
 
 // *=========================================
@@ -28,6 +29,8 @@ scrollChangeColourTwo();
 steamingCup();
 
 headerPlantAnimation();
+
+contactFormScrollColourChange();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -70,3 +73,8 @@ cookieWarning();
 // *=========================================
 
 window.addEventListener('keydown', handleFirstTab);
+
+// *=========================================
+// ** Hide text area label on scroll  **
+// *=========================================
+if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);

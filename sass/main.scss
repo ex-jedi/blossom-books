@@ -314,24 +314,25 @@ main {
 
 .general-contact-form-input {
   flex: 1 1 auto;
-  background-color: $background-colour-three;
+  background-color: transparent;
   border: 0;
   border-bottom: 4px solid $font-colour-light;
   width: 100%;
 
   &.active,
   &.focus {
-    background-color: $background-colour-main;
     border-bottom-color: $font-colour-main;
   }
 }
 
 .text-area-input-wrapper {
+  position: relative;
   align-items: flex-start;
 }
 
 .text-area-label {
   position: absolute;
+  top: 10px;
   transition: $transition-two;
   color: inherit;
 
@@ -351,9 +352,8 @@ main {
   );
   text-indent: $section-spacing-small;
   border: 0;
-  line-height: 1;
   resize: none;
-  line-height: 4.2rem;
+  line-height: 4.4rem;
   background-attachment: local;
   //TODO: Improve text spacing in text area
   // Text area underlining
@@ -369,7 +369,7 @@ main {
       $background-colour-main 4rem,
       $font-colour-main 1.8rem,
       // Seems to control line thickness
-      $font-colour-main 4.3rem,
+      $font-colour-main 4.4rem,
       $background-colour-main 1.85rem
     );
 }

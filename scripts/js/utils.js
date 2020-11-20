@@ -46,4 +46,25 @@ function handleMouseDownOnce() {
   window.addEventListener('keydown', handleFirstTab);
 }
 
-export { cookieWarning, handleFirstTab };
+// *=========================================
+// ** Hiding Text area label on scroll  **
+// *=========================================
+
+const textAreaLabel = document.querySelector('.text-area-label');
+const textAreaInput = document.querySelector('.text-area-input');
+
+function textAreaScrollHandler() {
+  if (textAreaInput.scrollTop > 3) {
+    textAreaLabel.classList.add('fade-out');
+  } else if (textAreaInput.scrollTop > 20) {
+    textAreaInput.style.lineHeight = '10rem';
+  } else {
+    textAreaLabel.classList.remove('fade-out');
+  }
+}
+
+// *==============================================================================
+// ** Exports  **
+// *==============================================================================
+
+export { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler };
