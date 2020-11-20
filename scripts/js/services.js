@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 
 // ********** Lib **********
-import { contactFormScrollColourChange, fadeInRotateParagraphs } from './lib.js';
+import { mainNavTrigger, menuOpenerHandler, contactFormScrollColourChange, fadeInRotateParagraphs } from './lib.js';
 
 // ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
@@ -37,30 +37,26 @@ ScrollTrigger.create({
 // *==============================================================================
 
 // *=========================================
-// ** Hide text area label on scroll  **
+// ** Utils  **
 // *=========================================
-
+// ********** Txt area scroll **********
 if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
 
-// *=========================================
-// ** Contact form colour change  **
-// *=========================================
-contactFormScrollColourChange();
-
-// *=========================================
-// ** Paragraph fade-in  **
-// *=========================================
-
-fadeInRotateParagraphs();
-
-// *=========================================
-// ** Cookie Warning  **
-// *=========================================
-
+// ********** Cookie warning **********
 cookieWarning();
 
+// ********** Tab Outline **********
+window.addEventListener('keydown', handleFirstTab);
+
 // *=========================================
-// ** Tab Outline  **
+// ** Lib  **
 // *=========================================
 
-window.addEventListener('keydown', handleFirstTab);
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
+
+// ********** Contact form colour change **********
+contactFormScrollColourChange();
+
+// ********** Paragraph fade in **********
+fadeInRotateParagraphs();

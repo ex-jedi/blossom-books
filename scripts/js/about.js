@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // ********** Utils **********
 import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 
-import { contactFormScrollColourChange, fadeInRotateParagraphs } from './lib.js';
+import { mainNavTrigger, menuOpenerHandler, contactFormScrollColourChange, fadeInRotateParagraphs } from './lib.js';
 
 // ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
@@ -78,6 +78,9 @@ if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandle
 // *=========================================
 // ** Lib  **
 // *=========================================
+
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // ********** Fade in paragraphs **********
 fadeInRotateParagraphs();
