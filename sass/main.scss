@@ -359,19 +359,38 @@ main {
   // Text area underlining
   background-image: linear-gradient(
       to right,
-      $background-colour-main 0,
+      $background-colour-three 0,
       transparent 0
     ),
-    linear-gradient(to left, $background-colour-main 0, transparent 0),
+    linear-gradient(to left, $background-colour-three 0, transparent 0),
     repeating-linear-gradient(
-      $background-colour-main,
+      $background-colour-three,
       // Leave
-      $background-colour-main 4rem,
-      $font-colour-main 1.8rem,
+      $background-colour-three 4rem,
+      $font-colour-light 1.8rem,
       // Seems to control line thickness
-      $font-colour-main 4.4rem,
-      $background-colour-main 1.85rem
+      $font-colour-light 4.4rem,
+      $background-colour-three 1.85rem
     );
+
+  &.active {
+    // Text area underlining
+    background-image: linear-gradient(
+        to right,
+        $background-colour-main 0,
+        transparent 0
+      ),
+      linear-gradient(to left, $background-colour-main 0, transparent 0),
+      repeating-linear-gradient(
+        $background-colour-main,
+        // Leave
+        $background-colour-main 4rem,
+        $font-colour-main 1.8rem,
+        // Seems to control line thickness
+        $font-colour-main 4.4rem,
+        $background-colour-main 1.85rem
+      );
+  }
 }
 
 .contact-form-check-text {
