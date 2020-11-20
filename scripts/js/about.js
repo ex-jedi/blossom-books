@@ -2,19 +2,16 @@
 // ** Imports  **
 // *=========================================
 
-// TODO: Remove GSAP once everything is in lib.js
-// ********** GSAP **********
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 // ********** Utils **********
 import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 
-import { mainNavTrigger, menuOpenerHandler, contactFormScrollColourChange, fadeInRotateParagraphs } from './lib.js';
-
-// ********** GSAP **********
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+import {
+  mainNavTrigger,
+  menuOpenerHandler,
+  contactFormScrollColourChange,
+  fadeInRotateParagraphs,
+  aboutMeSectionColourChange,
+} from './lib.js';
 
 // *=========================================
 // ** GSAP  **
@@ -46,18 +43,6 @@ function headerImageChange() {
   }, rand);
 })();
 
-// *=========================================
-// ** Section Colour Change  **
-// *=========================================
-
-ScrollTrigger.create({
-  trigger: '.about-me-section',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'About me section',
-  toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
-});
-
 // *==============================================================================
 // ** Imported  **
 // *==============================================================================
@@ -84,3 +69,6 @@ mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // ********** Fade in paragraphs **********
 fadeInRotateParagraphs();
+
+// ********** Section Colour Change **********
+aboutMeSectionColourChange();

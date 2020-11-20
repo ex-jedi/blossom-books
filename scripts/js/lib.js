@@ -250,6 +250,22 @@ function servicesScrollColourChange() {
   });
 }
 
+// *==============================================================================
+// ** About Me Page  **
+// *==============================================================================
+
+// ********** About Me Section Colour Change **********
+
+function aboutMeSectionColourChange() {
+  ScrollTrigger.create({
+    trigger: '.about-me-section',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'About me section',
+    toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
+  });
+}
+
 // *=========================================
 // ** Exports  **
 // *=========================================
@@ -264,4 +280,5 @@ export {
   contactFormScrollColourChange,
   fadeInRotateParagraphs,
   servicesScrollColourChange,
+  aboutMeSectionColourChange,
 };

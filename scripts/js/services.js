@@ -12,6 +12,7 @@ import {
   contactFormScrollColourChange,
   fadeInRotateParagraphs,
   servicesScrollColourChange,
+  aboutMeSectionColourChange,
 } from './lib.js';
 
 // *==============================================================================
@@ -45,3 +46,6 @@ fadeInRotateParagraphs();
 
 // ********** Services scroll colour change **********
 servicesScrollColourChange();
+
+// ********** About Me Section Colour Change **********
+aboutMeSectionColourChange();
