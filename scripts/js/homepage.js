@@ -16,6 +16,7 @@ import {
   scrollChangeColourTwo,
   steamingCup,
   contactFormScrollColourChange,
+  fadeInRotateParagraphs,
 } from './lib';
 
 // *=========================================
@@ -31,6 +32,8 @@ steamingCup();
 headerPlantAnimation();
 
 contactFormScrollColourChange();
+
+fadeInRotateParagraphs();
 
 // *=========================================
 // ** Header Image Switcher  **
