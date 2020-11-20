@@ -6,4 +6,4 @@
         <?php perch_content('Privacy And Cookie Policy'); ?>
 		</main>
 <?php perch_layout('main-footer'); ?>
-<?php perch_layout('main-footer-end-js'); ?>
+<?php perch_layout('legals-footer-end-js'); ?>

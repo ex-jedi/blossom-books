@@ -2,72 +2,38 @@
 // ** Blog Post JS  **
 // *==============================================================================
 // *=========================================
-// ** GSAP  **
+// ** Imports  **
 // *=========================================
 
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// ********** Utils **********
+import { cookieWarning, handleFirstTab } from './utils.js';
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+// ********** Lib **********
+import { mainNavTrigger, menuOpenerHandler, blogPostParagraphFadeIn, blogImageScrollResize } from './lib.js';
+
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
+
+// *=========================================
+// ** Utils  **
+// *=========================================
+
+// ********** Cookie Warning **********
+cookieWarning();
+
+// ********** Tab Outline **********
+window.addEventListener('keydown', handleFirstTab);
+
+// *=========================================
+// ** Lib  **
+// *=========================================
+
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
 
 // ********** Blog post paragraph fade in **********
-const blogPostParagraphs = document.querySelectorAll('.blog-text-block p');
+blogPostParagraphFadeIn();
 
-blogPostParagraphs.forEach((paragraph) => {
-  ScrollTrigger.create({
-    trigger: paragraph,
-    toggleClass: 'paragraph-reveal',
-    start: 'top 100%',
-    end: 'bottom -400px',
-    id: 'Paragraphs',
-  });
-});
-
-// ********** Blog main image resize on scroll **********
-const blogPostImage = document.querySelectorAll('.blog-post-image');
-
-// blogPostImage.forEach((image) => {
-//   gsap.to(image, {
-//     scrollTrigger: {
-//       trigger: image,
-//       start: 'top 85%',
-//       end: 'bottom 85%',
-//       scrub: 1,
-//       toggleActions: 'resume',
-//       markers: true,
-//     },
-//     scale: 1.3,
-//   });
-// });
-
-blogPostImage.forEach((image) => {
-  ScrollTrigger.matchMedia({
-    // Desktop
-    '(min-width: 851px)': function () {
-      gsap.to(image, {
-        scrollTrigger: {
-          trigger: image,
-          start: 'top 90%',
-          end: 'bottom 90%',
-          scrub: 1,
-          toggleActions: 'resume',
-        },
-        scale: 1.3,
-      });
-    },
-    // Tablet / Mobile
-    '(max-width: 850px)': function () {
-      gsap.to(image, {
-        scrollTrigger: {
-          trigger: image,
-          start: 'top 90%',
-          end: 'bottom 60%',
-          scrub: 1,
-          toggleActions: 'resume',
-        },
-        scale: 1.3,
-      });
-    },
-  });
-});
+// ********** Blog image scroll resize **********
+blogImageScrollResize();

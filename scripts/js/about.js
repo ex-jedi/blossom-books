@@ -1,12 +1,23 @@
 // *=========================================
+// ** Imports  **
+// *=========================================
+
+// ********** Utils **********
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
+
+import {
+  mainNavTrigger,
+  menuOpenerHandler,
+  contactFormScrollColourChange,
+  fadeInRotateParagraphs,
+  aboutMeSectionColourChange,
+} from './lib.js';
+
+// *=========================================
 // ** GSAP  **
 // *=========================================
 
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+contactFormScrollColourChange();
 
 // *=========================================
 // ** Header Image Switcher  **
@@ -32,14 +43,32 @@ function headerImageChange() {
   }, rand);
 })();
 
+// *==============================================================================
+// ** Imported  **
+// *==============================================================================
+
 // *=========================================
-// ** Section Colour Change  **
+// ** Utils  **
 // *=========================================
 
-ScrollTrigger.create({
-  trigger: '.about-me-section',
-  start: 'top center',
-  end: 'bottom center',
-  id: 'About me section',
-  toggleClass: { targets: '.about-me-section, .arrow-wrapper', className: 'active' },
-});
+// ********** Cookie Warning **********
+cookieWarning();
+
+// ********** Tab Outline **********
+window.addEventListener('keydown', handleFirstTab);
+
+// ********** Hide text area label on scroll **********
+if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
+
+// *=========================================
+// ** Lib  **
+// *=========================================
+
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
+
+// ********** Fade in paragraphs **********
+fadeInRotateParagraphs();
+
+// ********** Section Colour Change **********
+aboutMeSectionColourChange();
