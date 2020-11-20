@@ -2,19 +2,11 @@
 // ** Imports  **
 // *=========================================
 
-// ********** GSAP **********
-import { gsap } from 'gsap';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 // ********** Utils **********
 import { cookieWarning, handleFirstTab } from './utils.js';
 
 // ********** Lib **********
-import { mainNavTrigger, menuOpenerHandler } from './lib.js';
-
-// ********** GSAP **********
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+import { mainNavTrigger, menuOpenerHandler, blogIndexFadeIn } from './lib.js';
 
 // ********** Cat subtitle show and hide **********
 
@@ -29,20 +21,6 @@ function categoryClickHandler() {
 }
 
 catTitle.addEventListener('click', categoryClickHandler);
-
-// ********** Fading in article titles **********
-
-// Grabbing blog index titles
-const fadeInParagraphs = gsap.utils.toArray('.blog-index-title');
-
-fadeInParagraphs.forEach((title) => {
-  ScrollTrigger.create({
-    trigger: title,
-    toggleClass: 'title-reveal',
-    start: 'top 98%',
-    end: 'bottom top',
-  });
-});
 
 // *==============================================================================
 // ** Imported  **
@@ -64,3 +42,6 @@ window.addEventListener('keydown', handleFirstTab);
 
 // ********** Main Nav **********
 mainNavTrigger.addEventListener('click', menuOpenerHandler);
+
+// ********** Blog Article Title Fade In **********
+blogIndexFadeIn();

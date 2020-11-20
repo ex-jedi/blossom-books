@@ -266,6 +266,25 @@ function aboutMeSectionColourChange() {
   });
 }
 
+// *==============================================================================
+// ** Blog Index  **
+// *==============================================================================
+// ********** Fading in article titles **********
+
+// Grabbing blog index titles
+function blogIndexFadeIn() {
+  const fadeInParagraphs = gsap.utils.toArray('.blog-index-title');
+
+  fadeInParagraphs.forEach((title) => {
+    ScrollTrigger.create({
+      trigger: title,
+      toggleClass: 'title-reveal',
+      start: 'top 98%',
+      end: 'bottom top',
+    });
+  });
+}
+
 // *=========================================
 // ** Exports  **
 // *=========================================
@@ -281,4 +300,5 @@ export {
   fadeInRotateParagraphs,
   servicesScrollColourChange,
   aboutMeSectionColourChange,
+  blogIndexFadeIn,
 };
