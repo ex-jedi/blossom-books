@@ -151,7 +151,6 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top bottom',
           end: 'bottom -100px',
-          markers: true,
         });
       },
 
