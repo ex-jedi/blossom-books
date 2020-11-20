@@ -1,7 +1,7 @@
 // *=========================================
 // ** Imports  **
 // *=========================================
-
+// TODO: Remove GSAP
 // ********** GSAP **********
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
@@ -9,6 +9,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // ********** Utils **********
 import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
+
+// ********** Lib **********
+import { contactFormScrollColourChange } from './lib.js';
 
 // ********** GSAP **********
 gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
@@ -34,8 +37,15 @@ ScrollTrigger.create({
 // *==============================================================================
 
 // *=========================================
-// ** Utils  **
+// ** Hide text area label on scroll  **
 // *=========================================
+
+if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
+
+// *=========================================
+// ** Contact form colour change  **
+// *=========================================
+contactFormScrollColourChange();
 
 // ********** Cookie Warning **********
 
@@ -44,8 +54,3 @@ cookieWarning();
 // ********** Tab Outline **********
 
 window.addEventListener('keydown', handleFirstTab);
-
-// *=========================================
-// ** Hide text area label on scroll  **
-// *=========================================
-if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
