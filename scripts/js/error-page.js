@@ -9,6 +9,9 @@
 // ********** Utils **********
 import { cookieWarning, handleFirstTab } from './utils.js';
 
+// ********** Lib **********
+import { mainNavTrigger, menuOpenerHandler } from './lib.js';
+
 // *=========================================
 // ** Picture Switcher  **
 // *=========================================
@@ -43,3 +46,10 @@ cookieWarning();
 // ********** Tab Outline **********
 
 window.addEventListener('keydown', handleFirstTab);
+
+// *=========================================
+// ** Lib  **
+// *=========================================
+
+// ********** Main Nav **********
+mainNavTrigger.addEventListener('click', menuOpenerHandler);
