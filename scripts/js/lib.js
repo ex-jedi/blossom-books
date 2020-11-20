@@ -285,6 +285,61 @@ function blogIndexFadeIn() {
   });
 }
 
+// *==============================================================================
+// ** Blog Post  **
+// *==============================================================================
+
+// ********** Blog post paragraph fade in **********
+function blogPostParagraphFadeIn() {
+  const blogPostParagraphs = document.querySelectorAll('.blog-text-block p');
+
+  blogPostParagraphs.forEach((paragraph) => {
+    ScrollTrigger.create({
+      trigger: paragraph,
+      toggleClass: 'paragraph-reveal',
+      start: 'top 100%',
+      end: 'bottom -400px',
+      id: 'Paragraphs',
+    });
+  });
+}
+
+// ********** Blog main image resize on scroll **********
+function blogImageScrollResize() {
+  const blogPostImage = document.querySelectorAll('.blog-post-image');
+
+  blogPostImage.forEach((image) => {
+    ScrollTrigger.matchMedia({
+      // Desktop
+      '(min-width: 851px)': function () {
+        gsap.to(image, {
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 90%',
+            end: 'bottom 90%',
+            scrub: 1,
+            toggleActions: 'resume',
+          },
+          scale: 1.3,
+        });
+      },
+      // Tablet / Mobile
+      '(max-width: 850px)': function () {
+        gsap.to(image, {
+          scrollTrigger: {
+            trigger: image,
+            start: 'top 90%',
+            end: 'bottom 60%',
+            scrub: 1,
+            toggleActions: 'resume',
+          },
+          scale: 1.3,
+        });
+      },
+    });
+  });
+}
+
 // *=========================================
 // ** Exports  **
 // *=========================================
@@ -301,4 +356,6 @@ export {
   servicesScrollColourChange,
   aboutMeSectionColourChange,
   blogIndexFadeIn,
+  blogPostParagraphFadeIn,
+  blogImageScrollResize,
 };
