@@ -2,8 +2,6 @@
 // ** Imports  **
 // *=========================================
 
-// TODO: Put all greensock into modules
-
 // ********** Utils **********
 import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 

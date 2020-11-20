@@ -40,11 +40,9 @@ errorPageSlideshow();
 // *=========================================
 
 // ********** Cookie Warning **********
-
 cookieWarning();
 
 // ********** Tab Outline **********
-
 window.addEventListener('keydown', handleFirstTab);
 
 // *=========================================

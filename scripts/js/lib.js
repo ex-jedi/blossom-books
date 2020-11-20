@@ -118,19 +118,19 @@ function headerPlantAnimation() {
 // ** Fading in paragraphs  **
 // *=========================================
 
-// * Adding class to paragraphs created by Perch to set them up for fading in.
-// Grabbing paragraphs from multiple pages
-const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
-const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
-// Merge the paragraphs into one array
-const fadeInParagraph = [...aboutMeParagraphs, ...servicesParagraphs];
-// Add class to paragraphs
-fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
-
-// Grabbing all paragraphs to fade in
-const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
-
 function fadeInRotateParagraphs() {
+  // * Adding class to paragraphs created by Perch to set them up for fading in.
+  // Grabbing paragraphs from multiple pages
+  const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
+  const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
+  // Merge the paragraphs into one array
+  const fadeInParagraph = [...aboutMeParagraphs, ...servicesParagraphs];
+  // Add class to paragraphs
+  fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
+
+  // Grabbing all paragraphs to fade in
+  const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
+
   fadeInParagraphs.forEach((paragraph) => {
     ScrollTrigger.matchMedia({
       // desktop
@@ -234,6 +234,22 @@ function steamingCup() {
     .to('.st1', { drawSVG: '100% 100%', duration: 2, ease: 'power1.out' });
 }
 
+// *==============================================================================
+// ** Services Page  **
+// *==============================================================================
+
+// ********** Section Colour Change **********
+
+function servicesScrollColourChange() {
+  ScrollTrigger.create({
+    trigger: '.services-section',
+    start: 'top center',
+    end: 'bottom center',
+    id: 'About me section',
+    toggleClass: { targets: '.services-section, .arrow-wrapper', className: 'active' },
+  });
+}
+
 // *=========================================
 // ** Exports  **
 // *=========================================
@@ -247,4 +263,5 @@ export {
   steamingCup,
   contactFormScrollColourChange,
   fadeInRotateParagraphs,
+  servicesScrollColourChange,
 };
