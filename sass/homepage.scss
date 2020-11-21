@@ -24,6 +24,15 @@
   }
 }
 
+.main-nav {
+  transition: $transition-three;
+  &.active {
+    a {
+      color: $font-colour-light;
+    }
+  }
+}
+
 .header-main-content-wrapper {
   @include flex(row);
   align-items: flex-end;
