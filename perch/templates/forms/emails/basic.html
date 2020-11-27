@@ -6,7 +6,7 @@
   <meta name="x-apple-disable-message-reformatting">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="telephone=no" name="format-detection">
-  <title>New Template</title>
+  <title><perch:email id="email_subject"></title>
   <!--[if (mso 16)]>
     <style type="text/css">
     a {text-decoration: none;}
@@ -121,7 +121,7 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr style="border-collapse:collapse">
-                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:23px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:35px;color:#756C91;text-align:center"><strong>Your Message<br></strong></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:20px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:30px;color:#756C91;text-align:left"><strong>Name</strong><br>NAME<br><br><strong>Email</strong><br>EMAIL<br><br><strong>Message</strong><br>MESSAGE<br><br><strong></strong><b>Would you like to receive occasional emails</b><strong>?</strong><br>CONSENT</p></td>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:23px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:35px;color:#756C91;text-align:center"><strong>Your Message<br></strong></p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:20px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:30px;color:#756C91;text-align:left"><strong>Name</strong><br><perch:email id="name"><br><br><strong>Email</strong><br><perch:email id="email"><br><br><strong>Message</strong><br><perch:email id="message" encode="false"><br><br><strong></strong><b>Would you like to receive occasional emails</b><strong>?</strong><br><perch:email id="emailConsent"></p></td>
                      </tr>
                    </table></td>
                  </tr>
