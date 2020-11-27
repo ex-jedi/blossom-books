@@ -24,6 +24,15 @@
   }
 }
 
+.main-nav {
+  transition: $transition-three;
+  &.active {
+    a {
+      color: $font-colour-light;
+    }
+  }
+}
+
 .header-main-content-wrapper {
   @include flex(row);
   align-items: flex-end;
@@ -422,6 +431,7 @@
   margin: 0 auto $section-spacing-small;
 
   @include breakpoint(1300) {
+    width: 100%;
     margin: 0 auto $section-spacing-smaller;
   }
 

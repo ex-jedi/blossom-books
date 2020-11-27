@@ -73,43 +73,6 @@ function menuOpenerHandler() {
   }
 }
 
-// *=========================================
-// ** Homepage Header Plant Animation  **
-// *=========================================
-
-// All in a function for export
-function headerPlantAnimation() {
-  // Responsive trigger hooks for ScrollTrigger
-  // MatchMedia media queries
-  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
-
-  // Change trigger points on screen size
-  let plantAnimationStart = 'top 45%';
-  let plantAnimationEnd = 'bottom 65%';
-  if (mediaNineHundred.matches) {
-    plantAnimationStart = 'top 70%';
-    plantAnimationEnd = 'bottom 70%';
-  }
-
-  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
-
-  gsap.fromTo(
-    plantIllustration,
-    { drawSVG: 0 },
-    {
-      duration: 3,
-      drawSVG: '100%',
-      scrollTrigger: {
-        trigger: '.header-plant-image-wrapper',
-        start: plantAnimationStart,
-        end: plantAnimationEnd,
-        id: 'Plant',
-        scrub: 1,
-      },
-    }
-  );
-}
-
 // *==============================================================================
 // ** GSAP Animations For Multiple Pages  **
 // *==============================================================================
@@ -193,9 +156,45 @@ function contactFormScrollColourChange() {
   });
 }
 
+// *==============================================================================
+// ** Homepage  **
+// *==============================================================================
 // *=========================================
-// ** GSAP Homepage Scroll Trigger Animations   **
+// ** Homepage Header Plant Animation  **
 // *=========================================
+
+// All in a function for export
+function headerPlantAnimation() {
+  // Responsive trigger hooks for ScrollTrigger
+  // MatchMedia media queries
+  const mediaNineHundred = window.matchMedia('(max-width: 850px)');
+
+  // Change trigger points on screen size
+  let plantAnimationStart = 'top 45%';
+  let plantAnimationEnd = 'bottom 65%';
+  if (mediaNineHundred.matches) {
+    plantAnimationStart = 'top 70%';
+    plantAnimationEnd = 'bottom 70%';
+  }
+
+  const plantIllustration = document.querySelectorAll('.header-plant-image-wrapper svg path');
+
+  gsap.fromTo(
+    plantIllustration,
+    { drawSVG: 0 },
+    {
+      duration: 3,
+      drawSVG: '100%',
+      scrollTrigger: {
+        trigger: '.header-plant-image-wrapper',
+        start: plantAnimationStart,
+        end: plantAnimationEnd,
+        id: 'Plant',
+        scrub: 1,
+      },
+    }
+  );
+}
 
 function scrollChangeColourOne() {
   // * Homepage section one change colour on scroll
@@ -215,13 +214,11 @@ function scrollChangeColourTwo() {
     start: 'top center',
     end: 'bottom center',
     id: 'Homepage Section Two',
-    toggleClass: { targets: '.homepage-section-two', className: 'active' },
+    toggleClass: { targets: '.homepage-section-two, .main-nav', className: 'active' },
   });
 }
 
-// *=========================================
-// ** Homepage Mug Animation  **
-// *=========================================
+// ********** Homepage Mug Animation **********
 
 function steamingCup() {
   const mugSteam = gsap.timeline({
