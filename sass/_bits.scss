@@ -187,13 +187,24 @@ $transition-two-cubic: $timing-duration-slow $cubic-one 0s;
 //** Media Queries   **
 //*=========================================
 
-//********** Width **********
+//********** Max Width **********
 
 @mixin breakpoint($point) {
   @if unitless($point) {
     $point: 1px * $point;
   }
   @media (max-width: $point) {
+    @content;
+  }
+}
+
+//********** Min Width **********
+
+@mixin min-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (min-width: $point) {
     @content;
   }
 }
