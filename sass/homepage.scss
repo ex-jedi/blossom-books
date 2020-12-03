@@ -25,10 +25,14 @@
 }
 
 .main-nav {
-  transition: $transition-three;
-  &.active {
-    a {
-      color: $font-colour-light;
+  @include min-breakpoint(850) {
+    .main-nav-link {
+      transition: $transition-three;
+    }
+    &.active {
+      .main-nav-link {
+        color: $font-colour-light;
+      }
     }
   }
 }
