@@ -36,7 +36,6 @@
 <?php perch_content('Analytics'); ?>
 
 <!-- Cookie Warning -->
-<!-- TODO: Move to footer -->
 <?php perch_content("Cookie Warning"); ?>
 
 </head>

@@ -84,7 +84,6 @@ img {
   background-color: $background-colour-main;
   position: relative;
   font-size: $font-size-main;
-  //TODO: Header z-index: might be causing the footer to peek through on iOS;
   z-index: 4;
 }
 
@@ -158,6 +157,7 @@ img {
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
+  white-space: nowrap;
 
   @include height-breakpoint(900) {
     font-size: $font-size-small;
@@ -355,7 +355,6 @@ main {
   resize: none;
   line-height: 4.4rem;
   background-attachment: local;
-  //TODO: Improve text spacing in text area
   // Text area underlining
   background-image: linear-gradient(
       to right,
