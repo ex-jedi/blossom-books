@@ -158,6 +158,7 @@ img {
   text-transform: lowercase;
   color: $font-colour-two;
   margin: 0 0 $paragraph-spacing-medium;
+  white-space: nowrap;
 
   @include height-breakpoint(900) {
     font-size: $font-size-small;
