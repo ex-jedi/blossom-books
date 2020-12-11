@@ -1,6 +1,6 @@
 <?php include('../perch/runtime.php'); ?>
 <?php perch_layout('main-header'); ?>
-<?php perch_layout("empty-header-end"); ?>
+<?php perch_layout("main-header-end"); ?>
 <main class="blog-main-content archive-main-content">
 	<section class="blog-section blog-index-section blog-archive-section">
 			<?php
@@ -40,7 +40,7 @@
 		      		// No other options have been used; no posts have been displayed yet.
 		      		// So display all posts.
 
-							echo '<h1 class="blog-heading blog-page-heading archive-page-heading">Archive</h1>';
+							echo '<h1 class="blog-index-page-title section-heading">Archive</h1>';
 
 							echo '<div class="blog-index-category-list">';
 							$categories = perch_blog_categories(array(
@@ -72,6 +72,9 @@
 
 		    ?>
 	</section>
-</main>
+			<section class="contact-form section">
+				<?php perch_content("General Contact Form"); ?>
+			</section>
+		</main>
 <?php perch_layout('main-footer'); ?>
 <?php perch_layout("blog-index-footer-end-js"); ?>
