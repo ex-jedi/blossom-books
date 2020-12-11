@@ -97,3 +97,17 @@ div.markItUpHeader {
   display: none;
   visibility: hidden;
 }
+
+/* Hiding tags from Post meta admin  */
+input#postTags,
+input#postTags,
+label[for='postTags'] ~ span.inline-help,
+label[for='postTags'] {
+  display: none;
+}
+
+/* Hiding allow Comments checkbox and title from Post meta admin  */
+label[for='postAllowComments'],
+label[for='postAllowComments'] ~ .form-entry {
+  display: none;
+}
