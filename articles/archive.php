@@ -1,6 +1,6 @@
 <?php include('../perch/runtime.php'); ?>
 <?php perch_layout('main-header'); ?>
-<?php perch_layout("main-header-end"); ?>
+<?php perch_layout("empty-header-end"); ?>
 <main class="blog-main-content archive-main-content">
 	<section class="blog-section blog-index-section blog-archive-section">
 			<?php
@@ -72,9 +72,6 @@
 
 		    ?>
 	</section>
-			<section class="contact-form section">
-				<?php perch_content("General Contact Form"); ?>
-			</section>
-		</main>
+</main>
 <?php perch_layout('main-footer'); ?>
 <?php perch_layout("blog-index-footer-end-js"); ?>
