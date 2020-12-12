@@ -306,6 +306,28 @@
   }
 }
 
+.blog-embed {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin: 0 auto $section-spacing-smaller;
+  }
+
+  @include breakpoint(850) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
+}
+
+.blog-general-embed {
+  iframe {
+    max-width: 100%;
+  }
+}
+
 p.paragraph-reveal {
   opacity: 1;
   transform: translateY(0);

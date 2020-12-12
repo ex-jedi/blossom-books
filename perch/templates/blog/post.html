@@ -21,15 +21,17 @@
 <perch:blog id="postSlug" type="slug" editable="true" label="Blog Post Slug" help="This is the text that goes after your web address (blossombooks.co/articles/this-bit-is-the-slug). This is generated automatically and incorporates the article title. You won't normally need to change this. If you do need to change this use numbers, letters and hyphens only. If you use spaces the link won't work. If the slug is changed after the page has been published, links using the previous slug won't work anymore." for="postTitle" suppress="true" order="4">
 
 <!-- Perch Blocks -->
-<!-- Full width image -->
+<!-- Text block  -->
 <perch:blocks order="5">
   <perch:block type="textarea" icon="edit" label="Text Block">
     <div class="blog-text-block">
       <perch:blog id="blog-post-text" type="textarea" editor="redactor" html="true" help="This block can be dragged up or down to reorder" count="words">
-    </div>
-  </perch:block>
+      </div>
+    </perch:block>
 
+  <!-- Full width image -->
   <perch:block type="fullwidthimage" icon="photo" label="Image" >
+    <div class="blog-post-image-wrapper">
       <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350" help="This block can be dragged up or down to reorder">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
       sizes="100vw"
       srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
@@ -37,9 +39,8 @@
               <perch:blog type="image" id="fullWidthBlogImage" width="1200"> 1200w,
               <perch:blog type="image" id="fullWidthBlogImage" width="900"> 900w,
               <perch:blog type="image" id="fullWidthBlogImage" width="600"> 600w">
+    </div>
   </perch:block>
-
-  <!-- Text block  -->
 
     <!-- Pull Quote -->
     <perch:block type="pull-quote" icon="quote" label="Pull Quote With Optional Citation">
@@ -73,14 +74,16 @@
       </blockquote>
   	</perch:block>
 
-    <perch:block type="embed" icon="video" label="Embed Videos"> <!-- Video Embed  -->
-      <div class=" embed blog-embed">
+    <!-- Video Embed  -->
+    <perch:block type="embed" icon="video" label="Embed Videos">
+      <div class="blog-embed blog-video-embed">
         <perch:blog id="videoEmbedBlock" type="textarea" editor="markitup" html="true" help="Paste the embed code into the box. This block can be dragged up or down to reorder" size="m">
         </div>
     </perch:block>
 
-    <perch:block type="socialMediaEmbed" icon="chat" label="General Embeds"> <!-- Video Embed  -->
-    <div class="embed blog-general-embed">
+    <!-- General Embed  -->
+    <perch:block type="socialMediaEmbed" icon="chat" label="General Embeds">
+    <div class="blog-embed blog-general-embed">
       <perch:blog id="socialEmbedBlock" type="textarea" editor="markitup" html="true" help="For social media and other embedded content. Paste code into the box. This block can be dragged up or down to reorder" size="m">
       </div>
   </perch:block>
