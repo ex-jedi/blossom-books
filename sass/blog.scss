@@ -322,6 +322,12 @@
   }
 }
 
+.blog-general-embed {
+  iframe {
+    max-width: 100%;
+  }
+}
+
 p.paragraph-reveal {
   opacity: 1;
   transform: translateY(0);

@@ -6,7 +6,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab } from './utils.js';
+import { cookieWarning, handleFirstTab, reframe } from './utils.js';
 
 // ********** Lib **********
 import { mainNavTrigger, menuOpenerHandler, blogPostParagraphFadeIn, blogImageScrollResize } from './lib.js';
@@ -24,6 +24,9 @@ cookieWarning();
 
 // ********** Tab Outline **********
 window.addEventListener('keydown', handleFirstTab);
+
+// ********** Reframe **********
+reframe('.blog-video-embed iframe');
 
 // *=========================================
 // ** Lib  **
