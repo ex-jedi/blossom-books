@@ -17,8 +17,6 @@
 		));
 
 		?>
-		<!-- Google Analytics -->
-		<?php perch_content('Analytics'); ?>
 
 	<!-- Cookie Warning -->
 	<!-- TODO: Move to footer -->

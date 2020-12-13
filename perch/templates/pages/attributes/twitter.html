@@ -6,6 +6,6 @@
 <perch:if exists="og_image">
   <meta property="twitter:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="og_image" type="image">"/>
   <perch:else/>
-  <meta property="twitter:image" content="<perch:pages id="domain" type="hidden">/images/default-sharing-image.png"/>
+  <meta property="twitter:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="sharing_image" type="hidden">"/>
 </perch:if>
 <meta name="twitter:url" content="<perch:pages id="mainurl" type="hidden">"/>
