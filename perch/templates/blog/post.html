@@ -95,7 +95,14 @@
   <div class="blog-post-date-author">
     	<time class="dt-published" itemprop="dateCreated" datetime="<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Meta information" order="7">">
     		<perch:blog id="postDateTime" type="date" time="true" format="%d %B %Y">
-    	</time>
+      </time>
+  <perch:if exists="authorGivenName">
+		by
+		<span class="author" itemprop="creator">
+			<perch:blog id="authorGivenName" type="hidden" />
+			<perch:blog id="authorFamilyName" type="hidden" />
+		</span>
+	</perch:if>
   </div>
 
   <perch:categories id="categories" set="blog" label="Categories" suppress="true" max="1" size="m">
