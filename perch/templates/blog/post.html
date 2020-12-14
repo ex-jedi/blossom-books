@@ -7,7 +7,7 @@
 <div class="post-body-wrapper">
 <!--Top  Image -->
 <div class="blog-post-image-wrapper">
-  <img class="blog-post-main-image blog-post-image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
+  <img class="blog-post-main-image blog-post-image" itemprop="image" src="<perch:blog id="blogPostMainImage" type="image" width="1700" label="Main Image" order="1">" alt="<perch:blog id="alt" type="text" label="Image Description" help="Briefly describe what the image is showing" size="l" order="2">"
   sizes="75vw"
   srcset="<perch:blog type="image" id="blogPostMainImage" width="1700" > 1700w,
   <perch:blog type="image" id="blogPostMainImage" width="1500" > 1500w,
@@ -32,7 +32,7 @@
   <!-- Full width image -->
   <perch:block type="fullwidthimage" icon="photo" label="Image" >
     <div class="blog-post-image-wrapper">
-      <img class="blog-post-body-image blog-post-image" loading="lazy" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350" help="This block can be dragged up or down to reorder">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
+      <img class="blog-post-body-image blog-post-image" loading="lazy" itemprop="image" src="<perch:blog id="fullWidthBlogImage" type="image" width="1350" help="This block can be dragged up or down to reorder">" alt="<perch:blog id="alt" type="text" label="Image alt description">"
       sizes="100vw"
       srcset="<perch:blog type="image" id="fullWidthBlogImage" width="1750"> 1750w,
               <perch:blog type="image" id="fullWidthBlogImage" width="1500"> 1500w,
