@@ -7,7 +7,7 @@
 			<a href="/terms.php">Terms of use</a>
 		</p>
 		<p class="footer-copyright" >
-			&copy; <?php echo date("Y"); ?> Blossom Books
+			&copy; <?php echo date("Y"); ?> <span itemprop="name">Blossom Books</span>
 		</p>
 		<p class="footer-credit">
 			Web design & development, brand design & illustration by <a href="https://phoenixandphoenix.co/" class="promo-link">phoenix & phoenix</a>
