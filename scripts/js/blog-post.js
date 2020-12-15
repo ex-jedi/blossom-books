@@ -6,7 +6,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, reframe } from './utils.js';
+import { cookieWarning, handleFirstTab, reframe, mainLogoLink } from './utils.js';
 
 // ********** Lib **********
 import { mainNavTrigger, menuOpenerHandler, blogPostParagraphFadeIn, blogImageScrollResize } from './lib.js';
@@ -27,6 +27,9 @@ window.addEventListener('keydown', handleFirstTab);
 
 // ********** Reframe **********
 reframe('.blog-video-embed iframe');
+
+// ********** Add domain to logo template for Schema markup  **********
+mainLogoLink();
 
 // *=========================================
 // ** Lib  **

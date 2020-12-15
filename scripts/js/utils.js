@@ -64,6 +64,16 @@ function textAreaScrollHandler() {
 }
 
 // *=========================================
+// ** Add domain to logo template for Schema markup  **
+// *=========================================
+const logoLink = document.querySelector('.main-logo-link');
+const pageUrl = window.location.origin;
+
+function mainLogoLink() {
+  logoLink.href = pageUrl;
+}
+
+// *=========================================
 // ** Reframe.js  **
 // *=========================================
 
@@ -122,4 +132,4 @@ function reframe(target, cName) {
 // ** Exports  **
 // *==============================================================================
 
-export { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler, reframe };
+export { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler, reframe, mainLogoLink };

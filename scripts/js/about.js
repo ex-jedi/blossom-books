@@ -3,7 +3,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler, mainLogoLink } from './utils.js';
 
 import {
   mainNavTrigger,
@@ -59,6 +59,10 @@ window.addEventListener('keydown', handleFirstTab);
 
 // ********** Hide text area label on scroll **********
 if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
+
+// ********** Add domain to logo template for Schema markup  **********
+
+mainLogoLink();
 
 // *=========================================
 // ** Lib  **

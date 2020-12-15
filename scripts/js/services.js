@@ -3,7 +3,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler, mainLogoLink } from './utils.js';
 
 // ********** Lib **********
 import {
@@ -30,6 +30,10 @@ cookieWarning();
 
 // ********** Tab Outline **********
 window.addEventListener('keydown', handleFirstTab);
+
+// ********** Add domain to logo template for Schema markup  **********
+
+mainLogoLink();
 
 // *=========================================
 // ** Lib  **
