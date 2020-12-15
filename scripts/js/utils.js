@@ -66,11 +66,12 @@ function textAreaScrollHandler() {
 // *=========================================
 // ** Add domain to logo template for Schema markup  **
 // *=========================================
+// TODO: Fix this!
 const logoLink = document.querySelector('.main-logo-link');
 const pageUrl = window.location.origin;
 
 function mainLogoLink() {
-  logoLink.href = pageUrl;
+  // logoLink.href = pageUrl;
 }
 
 // *=========================================
