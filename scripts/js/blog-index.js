@@ -3,7 +3,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab } from './utils.js';
+import { cookieWarning, handleFirstTab, mainLogoLink } from './utils.js';
 
 // ********** Lib **********
 import { mainNavTrigger, menuOpenerHandler, blogIndexFadeIn } from './lib.js';
@@ -35,6 +35,9 @@ cookieWarning();
 
 // ********** Tab Outline **********
 window.addEventListener('keydown', handleFirstTab);
+
+// ********** Add domain to logo template for Schema markup  **********
+mainLogoLink();
 
 // *=========================================
 // ** Lib  **

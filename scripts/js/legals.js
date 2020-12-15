@@ -2,7 +2,7 @@
 // ** Imports  **
 // *=========================================
 
-import { cookieWarning } from './utils.js';
+import { cookieWarning, mainLogoLink } from './utils.js';
 
 import { mainNavTrigger, menuOpenerHandler } from './lib.js';
 
@@ -16,6 +16,10 @@ import { mainNavTrigger, menuOpenerHandler } from './lib.js';
 
 // ********** Cookie warning **********
 cookieWarning();
+
+// ********** Add domain to logo template for Schema markup  **********
+
+mainLogoLink();
 
 // *=========================================
 // ** Lib  **
