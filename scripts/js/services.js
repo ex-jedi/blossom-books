@@ -3,7 +3,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler, mainLogoLink } from './utils.js';
+import { cookieWarning, handleFirstTab, textAreaInput, textAreaScrollHandler } from './utils.js';
 
 // ********** Lib **********
 import {

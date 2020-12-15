@@ -2,7 +2,7 @@
 // ** Imports  **
 // *=========================================
 
-import { cookieWarning, mainLogoLink } from './utils.js';
+import { cookieWarning } from './utils.js';
 
 import { mainNavTrigger, menuOpenerHandler } from './lib.js';
 

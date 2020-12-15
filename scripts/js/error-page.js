@@ -7,7 +7,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, mainLogoLink } from './utils.js';
+import { cookieWarning, handleFirstTab } from './utils.js';
 
 // ********** Lib **********
 import { mainNavTrigger, menuOpenerHandler } from './lib.js';

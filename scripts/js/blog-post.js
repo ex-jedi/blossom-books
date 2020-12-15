@@ -6,7 +6,7 @@
 // *=========================================
 
 // ********** Utils **********
-import { cookieWarning, handleFirstTab, reframe, mainLogoLink } from './utils.js';
+import { cookieWarning, handleFirstTab, reframe } from './utils.js';
 
 // ********** Lib **********
 import { mainNavTrigger, menuOpenerHandler, blogPostParagraphFadeIn, blogImageScrollResize } from './lib.js';
