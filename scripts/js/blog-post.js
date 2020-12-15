@@ -28,9 +28,6 @@ window.addEventListener('keydown', handleFirstTab);
 // ********** Reframe **********
 reframe('.blog-video-embed iframe');
 
-// ********** Add domain to logo template for Schema markup  **********
-mainLogoLink();
-
 // *=========================================
 // ** Lib  **
 // *=========================================

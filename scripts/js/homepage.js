@@ -84,9 +84,3 @@ window.addEventListener('keydown', handleFirstTab);
 // ** Hide text area label on scroll  **
 // *=========================================
 if (textAreaInput) textAreaInput.addEventListener('scroll', textAreaScrollHandler);
-
-// *=========================================
-// ** Add domain to logo template for Schema markup  **
-// *=========================================
-
-mainLogoLink();

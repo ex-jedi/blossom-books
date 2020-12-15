@@ -36,9 +36,6 @@ cookieWarning();
 // ********** Tab Outline **********
 window.addEventListener('keydown', handleFirstTab);
 
-// ********** Add domain to logo template for Schema markup  **********
-mainLogoLink();
-
 // *=========================================
 // ** Lib  **
 // *=========================================
