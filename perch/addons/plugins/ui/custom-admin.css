@@ -2,11 +2,12 @@
 body {
   /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
     =================================================== */
-  --colour-main: #ff8000;
+  --colour-main: #6c9184;
   --colour-main-hover: #424242;
   --admin-colour-one: #bebebe;
   --admin-colour-two: rgb(253, 253, 253);
-  --admin-color-dark: hsl(216, 12%, 8%);
+  --admin-color-dark: hsl(255, 15%, 50%);
+  --font-color-light: hsl(15, 15%, 95%);
 
   /* GROUP VARIABLES -- DECORATION -- TEXT
     =================================================== */
@@ -49,6 +50,16 @@ header a,
   background-color: var(--admin-color-dark);
 }
 
+.sidebar .back {
+  border: 1px solid var(--admin-colour-two);
+  font-size: 17px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .back:hover {
+  border: 1px solid var(--admin-colour-two) !important;
+}
+
 .subnav li a {
   border-left: 4px solid var(--admin-color-dark);
 }
@@ -56,13 +67,8 @@ header a,
 .sidebar a,
 .sidebar h2,
 .sidebar h3 {
-  color: #fff !important;
+  color: var(--font-color-light) !important;
   opacity: 1;
-}
-
-/* Max font size so text fits  */
-.sidebar-back {
-  font-size: 22px;
 }
 
 /* Makes text in text fields a bit larger */
