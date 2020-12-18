@@ -289,6 +289,12 @@ main {
   width: 100%;
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(850) {
+    @include flex(column);
+    align-items: flex-start;
+    margin-bottom: $section-spacing-extra-small;
+  }
 }
 
 .contact-form-title {
@@ -310,12 +316,18 @@ main {
   font-weight: 700;
   vertical-align: bottom;
   line-height: 0.7;
+
+  @include breakpoint(850) {
+    margin-bottom: 2rem;
+  }
 }
 
 .general-contact-form-input {
   flex: 1 1 auto;
   background-color: transparent;
   border: 0;
+  padding: 0;
+
   border-bottom: 4px solid $font-colour-light;
   width: 100%;
 
@@ -335,9 +347,14 @@ main {
   top: 10px;
   transition: $transition-two;
   color: inherit;
+  margin: 0;
 
   &.fade-out {
     opacity: 0;
+  }
+
+  @include breakpoint(850) {
+    top: 0;
   }
 }
 
@@ -350,8 +367,10 @@ main {
     $background-colour-main,
     $background-colour-main
   );
+
   text-indent: $section-spacing-small;
   border: 0;
+  padding: 0;
   resize: none;
   line-height: 4.4rem;
   background-attachment: local;
@@ -389,6 +408,11 @@ main {
         $font-colour-main 4.4rem,
         $background-colour-main 1.85rem
       );
+  }
+
+  @include breakpoint(850) {
+    text-indent: 0;
+    margin-top: calc(#{$font-size-main} + 2rem);
   }
 }
 
