@@ -351,6 +351,10 @@ main {
 
   &.fade-out {
     opacity: 0;
+
+    @include breakpoint(850) {
+      opacity: 1;
+    }
   }
 
   @include breakpoint(850) {
