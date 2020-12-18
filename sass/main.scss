@@ -293,6 +293,7 @@ main {
   @include breakpoint(850) {
     @include flex(column);
     align-items: flex-start;
+    margin-bottom: $section-spacing-extra-small;
   }
 }
 
@@ -346,6 +347,7 @@ main {
   top: 10px;
   transition: $transition-two;
   color: inherit;
+  margin: 0;
 
   &.fade-out {
     opacity: 0;
