@@ -109,7 +109,6 @@ function fadeInRotateParagraphs() {
           start: 'top 95%',
           end: 'bottom top',
           toggleActions: 'play none none reverse',
-          markers: true,
         },
       }
     );
