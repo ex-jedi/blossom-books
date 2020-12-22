@@ -103,6 +103,8 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top 95%',
           end: 'bottom top',
+          invalidateOnRefresh: true,
+          markers: true,
         });
       },
 
@@ -113,6 +115,8 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top bottom',
           end: 'bottom -100px',
+          invalidateOnRefresh: true,
+          markers: true,
         });
       },
 
@@ -123,6 +127,8 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top bottom',
           end: 'bottom -300px',
+          invalidateOnRefresh: true,
+          markers: true,
         });
       },
 
@@ -133,6 +139,8 @@ function fadeInRotateParagraphs() {
           toggleClass: 'fade-in-rotate-reveal',
           start: 'top bottom',
           end: 'bottom -450px',
+          invalidateOnRefresh: true,
+          markers: true,
         });
       },
     });
@@ -338,6 +346,21 @@ function blogImageScrollResize() {
 }
 
 // *=========================================
+// ** Rerun fade in para's on refresh  **
+// *=========================================
+// * When the window is resized the scroll triggers end up in the wrong place. This is the temporary patch
+
+function widthChange(element) {
+  const currentWidth = element.innerWidth;
+  element.addEventListener('resize', function () {
+    if (element.innerWidth !== currentWidth) {
+      console.log('Refresh');
+      fadeInRotateParagraphs();
+    }
+  });
+}
+
+// *=========================================
 // ** Exports  **
 // *=========================================
 
@@ -355,4 +378,5 @@ export {
   blogIndexFadeIn,
   blogPostParagraphFadeIn,
   blogImageScrollResize,
+  widthChange,
 };
