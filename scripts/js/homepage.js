@@ -33,6 +33,8 @@ contactFormScrollColourChange();
 
 fadeInRotateParagraphs();
 
+widthChange(window);
+
 // *=========================================
 // ** Header Image Switcher  **
 // *=========================================

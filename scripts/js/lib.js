@@ -83,6 +83,7 @@ function menuOpenerHandler() {
 
 function fadeInRotateParagraphs() {
   // * Adding class to paragraphs created by Perch to set them up for fading in.
+  // TODO: Put this in separate function
   // Grabbing paragraphs from multiple pages
   const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
   const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
@@ -95,47 +96,22 @@ function fadeInRotateParagraphs() {
   const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
   fadeInParagraphs.forEach((paragraph) => {
-    ScrollTrigger.matchMedia({
-      // desktop
-      '(min-width: 1100px)': function () {
-        ScrollTrigger.create({
+    gsap.fromTo(
+      paragraph,
+      { opacity: 0, rotateX: 90 },
+      {
+        opacity: 1,
+        rotateX: 0,
+        ease: 'power1.in',
+        scrollTrigger: {
+          id: 'Paragraphs',
           trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
           start: 'top 95%',
           end: 'bottom top',
-        });
-      },
-
-      // Tablet
-      '(max-width: 1099px) and (min-width: 700px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -100px',
-        });
-      },
-
-      // Mobile
-      '(max-width: 699px) and (min-width: 450px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -300px',
-        });
-      },
-
-      // Small Mobile
-      '(max-width: 449px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -450px',
-        });
-      },
-    });
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
   });
 }
 
