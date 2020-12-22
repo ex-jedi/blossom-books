@@ -344,7 +344,7 @@ function blogImageScrollResize() {
 }
 
 // *=========================================
-// ** Rerun fade in para's on refresh  **
+// ** Rerun fade in paragraphs on refresh  **
 // *=========================================
 // * When the window is resized the scroll triggers end up in the wrong place. This is the temporary patch
 
@@ -352,7 +352,6 @@ function widthChange(element) {
   const currentWidth = element.innerWidth;
   element.addEventListener('resize', function () {
     if (element.innerWidth !== currentWidth) {
-      console.log('Refresh');
       fadeInRotateParagraphs();
     }
   });
