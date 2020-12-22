@@ -15,7 +15,6 @@ import {
   steamingCup,
   contactFormScrollColourChange,
   fadeInRotateParagraphs,
-  widthChange,
 } from './lib';
 
 // *=========================================
