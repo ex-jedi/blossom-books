@@ -83,6 +83,7 @@ function menuOpenerHandler() {
 
 function fadeInRotateParagraphs() {
   // * Adding class to paragraphs created by Perch to set them up for fading in.
+  // TODO: Put this in separate function
   // Grabbing paragraphs from multiple pages
   const aboutMeParagraphs = Array.from(document.querySelectorAll('.about-me-section p'));
   const servicesParagraphs = Array.from(document.querySelectorAll('.services-section p'));
@@ -104,7 +105,6 @@ function fadeInRotateParagraphs() {
           start: 'top 95%',
           end: 'bottom top',
           invalidateOnRefresh: true,
-          markers: true,
         });
       },
 
@@ -116,7 +116,6 @@ function fadeInRotateParagraphs() {
           start: 'top bottom',
           end: 'bottom -100px',
           invalidateOnRefresh: true,
-          markers: true,
         });
       },
 
@@ -128,7 +127,6 @@ function fadeInRotateParagraphs() {
           start: 'top bottom',
           end: 'bottom -300px',
           invalidateOnRefresh: true,
-          markers: true,
         });
       },
 
