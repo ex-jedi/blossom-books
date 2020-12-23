@@ -96,52 +96,22 @@ function fadeInRotateParagraphs() {
   const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
 
   fadeInParagraphs.forEach((paragraph) => {
-    ScrollTrigger.matchMedia({
-      // desktop
-      '(min-width: 1100px)': function () {
-        ScrollTrigger.create({
+    gsap.fromTo(
+      paragraph,
+      { opacity: 0, rotateX: 90 },
+      {
+        opacity: 1,
+        rotateX: 0,
+        ease: 'power1.in',
+        scrollTrigger: {
+          id: 'Paragraphs',
           trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
           start: 'top 95%',
           end: 'bottom top',
-          invalidateOnRefresh: true,
-        });
-      },
-
-      // Tablet
-      '(max-width: 1099px) and (min-width: 700px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -100px',
-          invalidateOnRefresh: true,
-        });
-      },
-
-      // Mobile
-      '(max-width: 699px) and (min-width: 450px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -300px',
-          invalidateOnRefresh: true,
-        });
-      },
-
-      // Small Mobile
-      '(max-width: 449px)': function () {
-        ScrollTrigger.create({
-          trigger: paragraph,
-          toggleClass: 'fade-in-rotate-reveal',
-          start: 'top bottom',
-          end: 'bottom -450px',
-          invalidateOnRefresh: true,
-          markers: true,
-        });
-      },
-    });
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
   });
 }
 
@@ -344,21 +314,6 @@ function blogImageScrollResize() {
 }
 
 // *=========================================
-// ** Rerun fade in para's on refresh  **
-// *=========================================
-// * When the window is resized the scroll triggers end up in the wrong place. This is the temporary patch
-
-function widthChange(element) {
-  const currentWidth = element.innerWidth;
-  element.addEventListener('resize', function () {
-    if (element.innerWidth !== currentWidth) {
-      console.log('Refresh');
-      fadeInRotateParagraphs();
-    }
-  });
-}
-
-// *=========================================
 // ** Exports  **
 // *=========================================
 
@@ -376,5 +331,4 @@ export {
   blogIndexFadeIn,
   blogPostParagraphFadeIn,
   blogImageScrollResize,
-  widthChange,
 };
