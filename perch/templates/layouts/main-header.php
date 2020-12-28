@@ -32,10 +32,8 @@
 		'template' => 'default.html'
 	));
 	?>
-
 <!-- Cookie Warning -->
 <?php perch_content("Cookie Warning"); ?>
-
 </head>
 	<body class="<?php perch_page_attribute('bodyClass', array('template' => 'bits.html' )); ?>" itemscope itemtype="http://schema.org/LocalBusiness">
 		<header class="main-header">
