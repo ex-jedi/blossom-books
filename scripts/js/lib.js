@@ -91,27 +91,19 @@ function fadeInRotateParagraphs() {
   const fadeInParagraph = [...aboutMeParagraphs, ...servicesParagraphs];
   // Add class to paragraphs
   fadeInParagraph.forEach((paragraph) => paragraph.classList.add('fade-in-rotate'));
-
   // Grabbing all paragraphs to fade in
-  const fadeInParagraphs = gsap.utils.toArray('.fade-in-rotate');
+  gsap.defaults({ ease: 'power3' });
+  gsap.set('.fade-in-rotate', { opacity: 0, rotateX: 90 });
 
-  fadeInParagraphs.forEach((paragraph) => {
-    gsap.fromTo(
-      paragraph,
-      { opacity: 0, rotateX: 90 },
-      {
-        opacity: 1,
-        rotateX: 0,
-        ease: 'power1.in',
-        scrollTrigger: {
-          id: 'Paragraphs',
-          trigger: paragraph,
-          start: 'top 95%',
-          end: 'bottom top',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    );
+  ScrollTrigger.batch('.fade-in-rotate', {
+    start: 'top 98%',
+    markers: true,
+    // interval: 0.1, // time window (in seconds) for batching to occur.
+    // batchMax: 3,   // maximum batch size (targets)
+    onEnter: (batch) => gsap.to(batch, { opacity: 1, rotateX: 0, ease: 'power1.in' }),
+    onLeaveBack: (batch) => gsap.to(batch, { opacity: 0, rotateX: 90, ease: 'power1.in' }),
+    onEnterBack: (batch) => gsap.to(batch, { opacity: 1, rotateX: 0, ease: 'power1.in' }),
+    // you can also define things like start, end, etc.
   });
 }
 
@@ -254,6 +246,7 @@ function blogIndexFadeIn() {
       toggleClass: 'title-reveal',
       start: 'top 98%',
       end: 'bottom top',
+      once: true,
     });
   });
 }
@@ -273,6 +266,7 @@ function blogPostParagraphFadeIn() {
       start: 'top 100%',
       end: 'bottom -400px',
       id: 'Paragraphs',
+      once: true,
     });
   });
 }
