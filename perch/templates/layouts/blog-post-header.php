@@ -17,14 +17,11 @@
 		));
 
 		?>
-
-	<!-- Cookie Warning -->
-	<!-- TODO: Move to footer -->
-	<?php perch_content("Cookie Warning"); ?>
-
-
 </head>
 	<body class="<?php perch_page_attribute('bodyClass', array('template' => 'bits.html' )); ?>" itemscope itemtype="http://schema.org/LocalBusiness">
+		<!-- Cookie Warning -->
+		<!-- TODO: Move to footer -->
+		<?php perch_content("Cookie Warning"); ?>
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>
