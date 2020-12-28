@@ -246,6 +246,7 @@ function blogIndexFadeIn() {
       toggleClass: 'title-reveal',
       start: 'top 98%',
       end: 'bottom top',
+      once: true,
     });
   });
 }
@@ -265,6 +266,7 @@ function blogPostParagraphFadeIn() {
       start: 'top 100%',
       end: 'bottom -400px',
       id: 'Paragraphs',
+      once: true,
     });
   });
 }
