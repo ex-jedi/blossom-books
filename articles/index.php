@@ -12,7 +12,6 @@
       ?>
     </div>
       <?php perch_blog_recent_posts(999); ?>
-    </div>
   </section>
   </main>
 <?php perch_layout('main-footer'); ?>
