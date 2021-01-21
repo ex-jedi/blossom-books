@@ -1,0 +1,10 @@
+{
+  "css.styleSheets": [
+    "/css/main.css",
+    "/css/homepage.css",
+    "/css/blog.css",
+    "/css/about-me.css",
+    "/css/legals.css",
+    "/css/services.css"
+  ]
+}
