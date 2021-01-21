@@ -97,7 +97,6 @@ function fadeInRotateParagraphs() {
 
   ScrollTrigger.batch('.fade-in-rotate', {
     start: 'top 98%',
-    markers: true,
     // interval: 0.1, // time window (in seconds) for batching to occur.
     // batchMax: 3,   // maximum batch size (targets)
     onEnter: (batch) => gsap.to(batch, { opacity: 1, rotateX: 0, ease: 'power1.in' }),
