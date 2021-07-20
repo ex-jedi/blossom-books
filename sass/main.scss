@@ -565,8 +565,6 @@ select {
   bottom: 0;
   left: 0;
   right: 0;
-  //? TODO: Footer is acting up in IOs unless z-index is -1 here.
-  //? TODO: Seems okay atm with 0. Keep an eye on it
   z-index: 1;
 
   @include breakpoint(1300) {
